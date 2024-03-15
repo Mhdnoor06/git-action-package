@@ -1,0 +1,87 @@
+.Topcontainer {
+  display: flex;
+  justify-content: center;
+  color: #3d5347;
+}
+
+.role {
+  display: flex;
+  color: #1d785a;
+  justify-content: center;
+}
+
+.Middlecontainer {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+}
+
+small {
+  display: block;
+  font-size: small;
+  font-weight: 500;
+  padding: 5px 15px;
+  background-color: #d0f9e4;
+}
+.Details p {
+  font-size: 14px;
+  padding: 15px 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.Btncontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.Btncontainer button {
+  margin: 10px;
+  padding: 10px 40px;
+  width: 80vw;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+}
+
+.Btncontainer button:nth-child(-n + 2) {
+  background-color: #1b8368;
+  color: white;
+  font-weight: 700;
+}
+
+.Btncontainer button:nth-last-child(1) {
+  border: 1px solid #ff5050;
+  background-color: white;
+  color: #ff7272;
+  font-weight: 700;
+}
+
+@media (min-width: 600px) {
+  .Mainconatiner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Middlecontainer {
+    width: 70%;
+  }
+  .Btncontainer button {
+    width: 45vw;
+  }
+  .deleteCard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .deleteCard .css-k008qs {
+    width: 55%;
+  }
+}

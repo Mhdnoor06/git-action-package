@@ -1,0 +1,33 @@
+/* SlidingDiv.css */
+.sliding-div {
+  width: 300px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  position: fixed;
+  top: 50%;
+  /* right: 50%; */
+  /* transform: translate(-50%, -50%); */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  background-color: #fff; /* Adjust background color as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.sliding-div.un-visible {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.sliding-div.hide {
+  /* opacity: 0; */
+  visibility: hidden;
+  transform: translateX(-100%);
+}
+
+.content {
+  padding: 10px;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

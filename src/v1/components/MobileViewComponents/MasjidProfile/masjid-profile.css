@@ -1,0 +1,185 @@
+.masjid-details {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.masjid-details .profile-bottom-part {
+  transform: translateY(-3vh);
+  margin: 0px 15px;
+}
+
+.masjid-details-body .masjid-info {
+  text-align: center;
+  margin-top: 0px;
+}
+.profile-card {
+  padding: 15px 15px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+.profile-card .profile-card-title {
+  color: #065f46;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+.profile-card .profile-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-card .profile-card-top img {
+  margin-left: 10px;
+  width: 13px;
+}
+.profile-card p {
+  font-size: 12px;
+}
+
+.profile-card h5 {
+  padding: 0px;
+  margin: 10px 0px;
+}
+
+.masjid-preview-img img {
+  width: 100%;
+  height: 42vh;
+  border-radius: 0px 0px 30px 30px;
+}
+
+.home-masjid-circular-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-masjid-circular-img img {
+  width: 107px;
+  height: 107px;
+  flex-shrink: 0;
+  margin-top: -60px;
+  border-radius: 107.128px;
+  border: 5.638px solid var(--white, #fff);
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.icon-box {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icon-box img {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+}
+.icon-box-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+}
+
+/* .slick-prev,
+.slick-next {
+  display: none !important;
+} */
+
+.slick-prev {
+  left: 10px !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+.slick-next {
+  right: 15px;
+  display: block !important;
+  z-index: 1 !important;
+}
+
+.masjid-preview-img .slick-dots {
+  bottom: 73px;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .profile-upload-icon {
+    left: 54%;
+  }
+  .home-masjid-circular-img {
+    justify-content: start;
+    width: auto;
+  }
+
+  .profile-card .profile-card-top {
+    justify-content: start;
+    align-items: self-start;
+  }
+
+  .profile-card .profile-top-container {
+    display: flex;
+  }
+  .profile-card .profile-top-container div:nth-child(2) {
+    width: 100%;
+  }
+  .profile-card .profile-card-title {
+    width: 235px;
+    margin-top: 10px;
+    margin-left: 4px;
+  }
+  .profile-card .profile-card-top img {
+    margin-top: 10px;
+  }
+  .profile-card {
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); */
+  }
+  .masjid-preview-img {
+    margin: 10px 15px;
+    border-radius: 30px 30px 0px 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background-color: #ffff;
+  }
+  .masjid-preview-img img {
+    width: 97%;
+    display: inline-block; /* Display as inline block to center */
+    margin: 10px;
+    height: 32vh;
+    border-radius: 30px;
+  }
+  .slick-prev {
+    left: 35px !important;
+    z-index: 1 !important;
+    display: block !important;
+  }
+  .slick-next {
+    right: 25px;
+    display: block !important;
+    z-index: 1 !important;
+  }
+  .icon-box-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon-box-container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masjid-details {
+    margin: 0 200px;
+    height: initial;
+  }
+
+  .masjid-preview-img img {
+    height: 40vh;
+  }
+}

@@ -1,0 +1,6 @@
+.piechartcomponent{
+    height: 17rem;
+    width: 16rem;
+    display: flex;
+    flex-direction: row;
+}

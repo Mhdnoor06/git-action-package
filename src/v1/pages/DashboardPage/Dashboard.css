@@ -1,0 +1,189 @@
+.HeadDashboardContainer {
+  /* border: 1px solid red; */
+  height: 99vh;
+  /* background-color: 1E2A20; */
+}
+
+.DashboardSidebarContainer {
+  /* border: 1px solid blue; */
+  height: 100vh;
+  width: 15vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: -5vh;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background: white;
+}
+
+.DashboardTopbarContainer {
+  /* border: 1px solid yellow; */
+  /* height: 5%; */
+  width: inherit;
+  /* height: 1vh; */
+}
+
+/* .SidebarBottom{
+    border: 1px solid purple;
+    height: 68.7vh;
+    background:#F9F9F9;
+    width: 100%;
+} */
+
+/* .SidebarTop{
+    height: 34%;
+    width: 101%;
+} */
+
+/* .minarTopImage{
+    width: 99%;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+
+.DashboardFeedContainer {
+  /* border: 1px solid pink; */
+  height: 95vh;
+  display: flex;
+  flex-direction: inline;
+}
+
+/* .DashboardFeedSubContainer{
+    border: 1px solid blue;
+    height: 88vh;
+    width: 100vw;
+   padding-left: 5vh;
+   padding-top: 4vh;
+}  */
+
+.DashboardEventsCarouselContainer {
+  /* border: 1px solid red; */
+  height: 44vh;
+}
+
+.DashboardAnnoucementsCarouselContainer {
+  /* border: 1px solid blue; */
+  height: 42vh;
+}
+
+.DashboardFeedBottomContainer {
+  /* border: 1px solid blue; */
+  height: 74vh;
+  display: flex;
+}
+
+.DashboardMasjidProfileContainer {
+  /* border: 1px solid green; */
+  /* height: 74vh; */
+  /* width: 59vw; */
+}
+
+.DashboardMasjidTimingsContainer {
+  /* border: 1px solid yellow; */
+  height: 30vh;
+  /* width: 30vw; */
+}
+
+.LogoSideBarContainer img {
+  width: 10vw;
+  height: fit-content;
+  padding-left: 0.3vw;
+}
+
+.LogoSideBarContainer {
+  margin-top: 2vh;
+}
+
+.DashboardCOmponentsFlexBox {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .HeadDashboardContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .MobileViewButtons {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .MobileViewButtons {
+    /* border: 1px solid Blue; */
+    height: 45vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Dashboard-Btn {
+    margin-bottom: 10px;
+    background: linear-gradient(
+      180deg,
+      #006c4d 0%,
+      #009268 48.75%,
+      #006c4d 100%
+    );
+    width: 301px;
+    height: 77.4000015258789px;
+    border-radius: 53px;
+    border: none;
+    font-family: 'lato';
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Logo-MobileView{
+    height: 10vh;
+    width: auto;
+  }
+  .Logo-div-MobileView{
+    height: 12vh;
+    /* border: 1px solid; */
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 2vh;
+  }
+  .Admin-dasboard{
+    height: 8vh;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vh;
+  }
+  .Admin-name{
+    color: #047756;
+    font-family: 'Lato';
+    font-size: 30px;
+    font-weight: 800;
+  }
+  .Admin-Portal{
+    color: #EC9D00;
+    font-family: 'Lato';
+    font-size: 30px;
+    font-weight: 800;
+    margin-left: 10px;
+  }
+  .Annoucement-MobileView{
+    height: 4vh;
+    margin-right: 2vw;
+  }
+  .Event-MobileView{
+    height: 4vh;
+  }
+  .Timings-MobileView{
+    height: 4vh;
+  }
+}

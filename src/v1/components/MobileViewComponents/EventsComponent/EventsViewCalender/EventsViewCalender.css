@@ -1,0 +1,127 @@
+@media (max-width: 1024px) {
+  .react-calendar__tile:disabled {
+    background-color: #f0f0f0d4;
+  }
+  .CalendarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .upcoming-tx {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding-left: 20px;
+  }
+  .upcoming-box {
+    display: flex;
+    width: 95%;
+    margin: 5px auto;
+    border-radius: 20px !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+  .eventContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eventcards {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eventcards-container {
+    width: 100%;
+  }
+}
+
+.evntbtn button {
+  padding: 10px 10px !important;
+  justify-content: center;
+  height: 32px !important;
+  margin: 20px 0;
+}
+
+/* @media (min-width: 550px) {
+  .eventContainer {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .green-dot {
+    right: 10px;
+  }
+
+  .evntbtn button {
+    padding: 10px 45px !important;
+  }
+
+  .react-calendar__month-view__days button {
+    height: 50px;
+  }
+
+  .event-card-image img {
+    border-radius: 8% !important;
+    width: 16vw !important;
+  }
+
+  .event-card {
+    width: 69% !important;
+  }
+} */
+
+@media (min-width: 768px) {
+  .eventContainer {
+    width: 93%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .calbtn {
+    width: 50%;
+    padding-top: 30px;
+  }
+
+  .event-card {
+    box-shadow: none !important;
+  }
+
+  .eventcards {
+    width: 100%;
+  }
+  .event-card-image img {
+    width: 14vw !important;
+  }
+
+  .eventcards-container {
+    width: 50%;
+    max-height: 350px;
+    overflow-y: auto;
+    background: #f2fff8;
+    padding: 10px;
+  }
+  .CalendarContainer .react-calendar {
+    background: #f2fff8;
+    box-shadow: none;
+  }
+}

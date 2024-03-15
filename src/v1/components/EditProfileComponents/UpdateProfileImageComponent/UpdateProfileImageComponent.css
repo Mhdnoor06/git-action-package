@@ -1,0 +1,295 @@
+
+.UpdateProfileImageContainerMazjid{
+    border: 4px solid #1b5e20;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2.90885px 7.99935px 0.727213px rgba(0, 0, 0, 0.25);
+
+}
+
+.ImageDisplayComponentMazjid{
+    height: 36vh;
+    /* width: 112vw; */
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+}
+
+.UploadImageButtons{
+    /* border: 1px solid blue; */
+    height: 28%;
+    width: 100%;
+    /* padding: 5px; */
+}
+
+.placeholderImage{
+    height:100%;
+    width:100%;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+.ImageUploadButtons{
+    display: flex;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    flex-direction: row ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PasteBoxForLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 100%;
+}
+
+.InputPasteLink{
+    border: 1px solid grey;
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 5px ;
+    padding-left: 10px;
+    text-align: start;
+    outline: none;
+    font-size: medium;
+}
+
+.TextBoxRightIcon{
+    height: 80%;
+    width:7%;
+    margin-left: 10px;
+}
+
+.selectedImage{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+}
+
+.ImagePreview{
+    /* border: 1px solid blue; */
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+.placeholderImage{
+    height: 90%;
+    position: relative
+}
+
+.deleteiconImageUpload{
+    cursor: pointer;
+    height: 80%;
+    width:80%;
+  }
+
+.deleteImage{
+    /* border: 1px solid red; */
+    height: 10%;
+    width: 10%;
+    display: flex;
+    border-radius: 12px;
+    right:0;
+    top:5px;
+    margin-right: 5px;
+    /* left:5px; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+  }
+
+
+  .progressbar-container {
+    position: relative;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    }
+    .progress {
+      z-index: 2;
+    }
+    .progressbar-complete {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        height: 100%;
+        background-color: #5225bd;
+        border-radius: 10px;
+        animation: g 2500ms infinite ease-in-out;
+        z-index: 2;
+    }
+    .progressbar-liquid {
+        z-index: 1;
+        width: 70px;
+        height: 70px;
+        animation: g 2500ms infinite ease-in-out, r 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+        position: absolute;
+        right: -5px;
+        top: -10px;
+        background-color: #5225bd;
+        border-radius: 40%;
+      }
+
+      
+@keyframes g {
+    0% { background-color: #5225bd; }
+    50% { background-color: #607e9e; }
+    100% { background-color: #5225bd; }
+  }
+  
+  @keyframes r {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+
+  .ImageUploadOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+.FinalUploadButton{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.placeholderImageMazjid{
+    height: 39vh;
+    position: relative;
+    padding: 1vh;
+}
+
+.UploadImageButtonsMazjid{
+    height: 5vh;
+    width: 49vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.ImageUploadOptionsMazjid{
+    display: flex;
+    height: 5vh;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+
+.ImagePreviewMazjid{
+    position: relative;
+    display: flex;
+    height: 114%;
+    border-radius: 20px;
+}
+
+
+.selectedImageMasjid{
+    height: 95%;
+    width: 99%;
+    border-radius: 20px;
+    padding: 1vh;
+}
+
+
+.FinalUploadButtonMazjid{
+    width: 21vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PasteBoxForLinkMasjid{
+    padding: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputPasteLinkMazjid{
+    border: 3px solid green;
+    height: 3vh;
+    width: 30vw;
+    border-radius: 10px;
+}
+
+.TextBoxRightIconMazjid{
+    cursor: pointer;
+    height: 2%;
+    width: 3%;
+}
+
+.progressbar-container-masjid{
+    position: absolute;
+    margin-top: 2rem;
+    width: 38vw;
+    height: 41px;
+    top: 53vh;
+    left: 55vw;
+    border: 2px solid #054635;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.progressbar-complete-masjid{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    background-color: #065F46;
+    border-radius: 10px;
+    animation: g 2500ms infinite ease-in-out;
+    z-index: 2;
+}
+
+.progressbar-liquid-mazjid{
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    animation: g 2500ms infinite ease-in-out, r 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #065F46;
+    border-radius: 40%;
+}
+
+.progress-masjid{
+    color: #054635;
+    font-size: 20px;
+    font-family: 'lato';
+    font-weight: 600;
+    z-index: 2;
+}
+
+.selectedImageMasjidDisplay{
+    height: 40vh;
+    width: 40vw;
+    padding-left: 0.3vw;
+    padding-top: 0.5vh;
+    border-radius: 23px;
+}

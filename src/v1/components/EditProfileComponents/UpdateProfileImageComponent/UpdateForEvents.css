@@ -1,0 +1,191 @@
+
+.UpdateProfileImageContainer{
+    border: 4px solid #065F46;
+    height: 43vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 11px;
+}
+
+.ImageDisplayComponent{
+    height: 35vh;
+    /* width: 112vw; */
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+.UploadImageButtons{
+    /* border: 1px solid blue; */
+    height: 7vh;
+    width: 69vh;
+}
+
+.placeholderImage {
+    height: 35vh;
+    position: relative;
+}
+
+.ImageUploadButtons{
+    display: flex;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    flex-direction: row ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PasteBoxForLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 3vh;
+    margin-top: -6vh;
+    width: 32vw;
+}
+
+.InputPasteLink{
+    /* border: 1px solid grey; */
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    padding: 5px ;
+    padding-left: 10px;
+    text-align: start;
+    outline: none;
+    font-size: medium;
+}
+
+.TextBoxRightIcon{
+    height: 80%;
+    width:7%;
+    margin-left: 10px;
+}
+
+.selectedImage{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+}
+
+.ImagePreview{
+    /* border: 1px solid blue; */
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+.deleteiconImageUpload{
+    cursor: pointer;
+    height: 80%;
+    width:80%;
+  }
+
+.deleteImage{
+    /* border: 1px solid red; */
+    height: 10%;
+    width: 10%;
+    display: flex;
+    border-radius: 12px;
+    right:0;
+    top:5px;
+    margin-right: 5px;
+    /* left:5px; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+  }
+
+
+  .progressbar-container {
+    position: absolute;
+    top: 50.2vh;
+    right: 7vw;
+    height: 4vh;
+    width: 10vw;
+    border: 2px solid #065F46;
+    overflow: hidden;
+    }
+    .progress {
+      z-index: 2;
+    }
+    .progressbar-complete {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        height: 100%;
+        background-color: #5225bd;
+        border-radius: 10px;
+        animation: g 2500ms infinite ease-in-out;
+        z-index: 2;
+    }
+    .progressbar-liquid {
+        z-index: 1;
+        width: 70px;
+        height: 70px;
+        animation: g 2500ms infinite ease-in-out, r 3000ms infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+        position: absolute;
+        right: -5px;
+        top: -10px;
+        background-color: #5225bd;
+        border-radius: 40%;
+      }
+
+      
+@keyframes g {
+    0% { background-color: #5225bd; }
+    50% { background-color: #607e9e; }
+    100% { background-color: #5225bd; }
+  }
+  
+  @keyframes r {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+
+  .ImageUploadOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 7vh;
+    align-items: center;
+  }
+
+
+.FinalUploadButton{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.AddEventRightContainer{
+    /* border: 1px solid; */
+    height: 35vh;
+    width: 79vw;
+}
+
+.css-ke5b6m-MuiButtonBase-root-MuiButton-root{
+    width: 12vw!important;
+    height: 5vh!important;
+    font-size: 2vh!important;
+    background-color: #065F46!important;
+}
+
+.css-ke5b6m-MuiButtonBase-root-MuiButton-root.Mui-disabled{
+    color: rgb(255 255 255)!important;
+}
+
+
+.UpdateProfileImageContainer{
+    display: flex;
+    flex-direction: column;
+}
+

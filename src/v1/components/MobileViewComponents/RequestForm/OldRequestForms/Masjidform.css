@@ -1,0 +1,26 @@
+.form-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.form-submit-succ button {
+  margin-right: 20px;
+}
+
+.MuiAutocomplete-popper {
+  z-index: 9999 !important; /* Ensure it's higher than other elements */
+  /* position: relative !important; */
+}

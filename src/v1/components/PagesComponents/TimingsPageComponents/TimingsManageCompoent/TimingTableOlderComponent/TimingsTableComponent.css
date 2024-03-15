@@ -1,0 +1,22 @@
+
+
+.tableRow{
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 20%;
+}
+
+.ManageTable{
+    /* border: 1px solid red; */
+    height:90%;
+}
+
+.prayerName{
+    border: none;
+    outline: none;
+}
+
+.TimingsInput{
+    border: none;
+    outline:none
+}

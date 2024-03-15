@@ -1,0 +1,195 @@
+.announcement {
+  display: flex;
+  align-items: center;
+  /* gap: 7vw; */
+}
+
+.announcebody .my-custom-btn {
+  height: 40px !important;
+  padding: 0px 16vw 0px 16vw !important;
+}
+
+.announcebody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noannouncement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noannouncement img {
+  width: 150px;
+  height: 150px;
+}
+
+.announcecard {
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.announcement-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.announcecard h4 {
+  margin: 1px;
+  font-size: 14px;
+}
+
+.announcecard p {
+  font-size: 13px;
+  margin: 1px;
+  color: #9f9e9e;
+}
+
+.announcementPreview h4 {
+  margin: 10px 0;
+}
+
+.announcementPreview p {
+  margin: 5px 0px 9px;
+  font-size: 14px;
+}
+.announcemenPreviewHeader p {
+  margin: 0;
+}
+
+.announcecard span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.announcementform {
+  background-color: white;
+  margin: 10px;
+  padding: 10px 22px 29px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+.announcementform p {
+  font-size: 12px;
+  text-align: center;
+}
+
+.announcementform .my-custom-btn {
+  height: 40px !important;
+  padding: 0px 30px 0px 30px !important;
+}
+
+.AddAnnouncement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcementPreview {
+  background-color: white;
+  padding: 20px 20px;
+  margin: 10px;
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.announcementPreview span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.announcedes {
+  border: 1px solid #d8d5d5;
+  /* padding: 10px; */
+  border-radius: 10px;
+}
+
+.announcedes p {
+  font-size: 13px;
+  margin: 10px 10px;
+  /* color: #9f9e9e; */
+  text-align: justify;
+  padding: 5px;
+}
+
+.announcementPreview .my-custom-btn {
+  height: 40px !important;
+  padding: 0px 14vw 0px 12vw !important;
+}
+
+.announceconfirm .deleteIcon img {
+  width: 40px !important;
+}
+
+/* announcementDetails */
+
+.announcementDetailCard {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+.announcementDetailCard p {
+  font-size: 13px;
+  margin: 0 4px 10px;
+}
+
+.announcementDetailCard span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+  /* font-size: 16px; */
+}
+.announcementCards {
+  width: 95%;
+}
+
+.announceconfirm .yes {
+  background-color: #ff7272 !important;
+}
+
+@media (min-width: 568px) {
+  .announcementCards {
+    width: 50%;
+  }
+
+  .announcebody .my-custom-btn {
+    padding: 0px 10vw 0px 10vw !important;
+  }
+
+  .announcementDetailCard {
+    margin: 10px 100px;
+  }
+  .announcementform {
+    margin: 10px 100px;
+    padding: 30px 30px;
+  }
+
+  .announcementPreview {
+    margin: 10px 100px;
+  }
+
+  .announcementPreview .my-custom-btn {
+    padding: 0px 6vw 0px 7vw !important;
+  }
+
+  .announcementform p {
+    font-size: 13px;
+    text-align: center;
+  }
+}

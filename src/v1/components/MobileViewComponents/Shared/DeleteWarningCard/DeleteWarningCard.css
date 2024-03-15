@@ -1,0 +1,84 @@
+.delete {
+  background-color: white;
+  margin: 0 20px;
+  border-radius: 15px;
+}
+
+.profileIcon {
+  display: flex;
+  justify-content: center;
+}
+
+.deleteIcon {
+  margin-top: -35px;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: 5px solid rgba(112, 112, 112, 0.775);
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.warning {
+  padding: 10px 20px;
+}
+
+.delete h5 {
+  text-align: center;
+  font-size: medium;
+  margin: 10px 0;
+  color: #3d544e;
+}
+
+.delete p {
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  border-radius: inherit;
+}
+
+.no {
+  background-color: #9f9e9e;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: 15px 25px;
+  border-bottom-left-radius: 15px;
+}
+
+.yes {
+  background-color: #ff7272;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: 15px 25px;
+  border-bottom-right-radius: 15px;
+}
+.update-yes {
+  background-color: #1b8368;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: 15px 25px;
+  border-bottom-right-radius: 15px;
+}
+
+.deleteCard .css-wm8dfs {
+  width: 340px;
+}
+
+@media (min-width: 520px) {
+  .deleteCard .css-wm8dfs {
+    width: 400px;
+  }
+}

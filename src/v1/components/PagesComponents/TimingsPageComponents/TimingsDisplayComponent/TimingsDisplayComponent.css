@@ -1,0 +1,172 @@
+.TimingsDisplayComponent {
+  /* border: 1px solid red; */
+  height: 76vh;
+  width: 70vw;
+  display: flex;
+}
+.MasjidTimingsButtonComponent {
+  /* border: 1px solid yellow; */
+  height: 11vh;
+  width: 34vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.UploadTimings {
+  background: #065f46;
+  border-radius: 4px;
+  box-shadow: 0px 8.90553px 8.90553px rgba(0, 0, 0, 0.25);
+  border: none;
+  height: 5vh;
+  width: 11vw;
+  cursor: pointer;
+  color: #f9f9f9;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.TimingsDisplayTopContainer {
+  /* border: 1px solid red; */
+  height: 76vh;
+  display: flex;
+  float: right;
+  width: 34vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.TimingsDisplayBottomContainerTable {
+  /* border: 1px solid red; */
+  height: 80vh;
+
+  width: 35vw;
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  /* border: 1px solid red; */
+  width: 35vw;
+  height: 58vh;
+  background: #f7f9fb;
+  border: 1.05367px solid #065f46;
+  box-shadow: 0px 12.4227px 20.7046px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.NoTimingsAvailable {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  color: #3e5842;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.tableHead {
+  height: 7vh;
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 34.8vw;
+  align-items: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.5vh;
+  color: #495057;
+}
+
+.tableBody {
+  height: 7vh;
+  border-bottom: 1px solid;
+  width: 34.8vw;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.5vh;
+  color: #495057;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tableRadius {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.PrayertimingsHead {
+  height: 7vh;
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 34.8vw;
+  align-items: center;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.5vh;
+  color: #065f46;
+}
+
+.DatePickerMUI {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MasjidManageTimingsButton {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2vh;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.UploadTimings img {
+  height: 2vh;
+}
+
+.SubContainerForPdf {
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5vh;
+  color: #495057;
+  margin-left: 0.5vw;
+  margin-top: 1vh;
+}
+
+.UploadTimingsWithSubHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 14vw;
+}
+
+.tableBody tr{
+  display: flex;
+    justify-content: space-around;
+}

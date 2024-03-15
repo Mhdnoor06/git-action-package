@@ -1,0 +1,142 @@
+
+
+.MasjidEventsContainer{
+    /* border: 1px solid red; */
+    /* height: 100%;
+    width: 95%; */
+    display: flex;
+    align-items: center;
+}
+
+.MasjidEventParentContainer {
+    height: 83vh;
+    margin-top: 3vh;
+    margin-left: 1vw;
+    width: 79vw;
+    background: #f9f9f9;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 25px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.MasjidEventsPageTopContainer{
+    height: 84vh;
+    width: 31vw;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MasjidEventsPageBottomContainer{
+    height: 79vh;
+    width: 80vw;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.MasjidEventsPageLogoContainer{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.MasjidEventsPageCancelContainer{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MasjidEventsPageBottomTopContainer{
+    /* border: 1px solid blue; */
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.EventsBottomTitleLeft{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 40%;
+}
+
+.EventsBottomTitleRight{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 20%;
+}
+
+.AddingEventPopupNew{
+    position: absolute;
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AddingEventPopup{
+    position: absolute;
+    background-color: rgba(0,0,0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.MasjidEventsContainerAddSection {
+    /* border: 1px solid red; */
+    position: absolute;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 68vh;
+    left: 67vw;
+    cursor: pointer;
+  }
+  
+  .MasjidAddEventContainer {
+    /* border: 1px solid red; */
+    border: none;
+    height: 5vh;
+    width: 11vw;
+    background: #065F46;
+    /* box-shadow: 0px 5.53425px 5.53425px rgb(0 0 0 / 25%); */
+    border-radius: 8.30137px;
+    cursor: pointer;
+  }
+  
+  .MasjidAddEventSentence {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.7534px;
+    line-height: 25px;
+    color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+
+  .MasjidEventsCancelIcon{
+    height: 50%;
+    width: 50%;
+    cursor: pointer;
+  }

@@ -1,0 +1,61 @@
+.topPreview {
+  text-align: center;
+  height: 60px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 15px;
+}
+
+.BackBtn {
+  position: absolute;
+  left: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.previewContainer h5 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.previewContainer p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.evntDesc {
+  padding: 0px 10px;
+}
+
+.strtEndContainer {
+  display: block;
+}
+
+.previewBtn .my-custom-btn {
+  padding: 0px 66px 0px 76px !important;
+}
+
+@media (min-width: 768px) {
+  .previewMainContainer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .previewMainContainer .MuiPaper-root {
+    width: 70% !important;
+  }
+
+  .strtEndContainer {
+    display: flex;
+    gap: 35px;
+  }
+}

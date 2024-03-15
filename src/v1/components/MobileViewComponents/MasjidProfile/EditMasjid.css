@@ -1,0 +1,269 @@
+.masjid-profile-main-div {
+  background: white;
+  border-radius: 30px;
+  padding: 6px;
+  margin: 8px;
+}
+
+.masjid-img img {
+  width: 100%;
+  height: 206px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: url(<path-to-image>),
+    lightgray 0px -7.5px / 100% 185.922% no-repeat;
+}
+
+.default-masjid-img img {
+  width: 100%;
+  height: 206px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: url(<path-to-image>),
+    lightgray 0px -7.5px / 100% 185.922% no-repeat;
+}
+
+.camera-and-delete {
+  position: relative;
+  bottom: 115px;
+  left: 86%;
+  /* z-index: 100; */
+}
+
+.camera-and-delete img {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 30.74px;
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 25px 0px rgba(113, 113, 113, 0.1);
+}
+
+.profile-upload-icon {
+  position: relative;
+  bottom: 80px;
+  left: 58%;
+  z-index: 1;
+}
+
+.profile-upload-icon img {
+  width: 35px;
+  cursor: pointer;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 30.74px;
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 25px 0px rgba(113, 113, 113, 0.1);
+}
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  width: 100%;
+}
+.masjid-circular-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.masjid-circular-img img {
+  width: 107px;
+  height: 107px;
+  z-index: 1;
+  margin-top: -140px;
+  flex-shrink: 0;
+  border-radius: 107.128px;
+  border: 5.638px solid var(--white, #fff);
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+.input-fields-container {
+  padding: 0px 10px;
+}
+.masjid-heading {
+  color: #1d785a;
+  text-align: center;
+  font-family: Lato;
+  font-size: x-large;
+  margin-top: -35px;
+}
+.phone-web {
+
+  display: flex;
+  justify-content: space-between;
+}
+.address-input,
+.facebook-input,
+.web-input,
+.phone-input,
+.input-description {
+  border-radius: 10px;
+  border: 1px solid #3d5347;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+}
+.input-description {
+  height: 100px;
+  width: 100%;
+}
+
+.phone-input {
+  width: 95%;
+  height: 30px;
+}
+
+.web-input {
+  width: 95%;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.facebook-input {
+  width: 100%;
+  height: 30px;
+}
+
+.address-input {
+  width: 100%;
+  height: 30px;
+}
+
+.input-p,
+.input-p-website {
+  color: #3d5347;
+  font-weight: 600;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.input-p-website {
+  margin-left: 15px;
+}
+
+.bottom-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cancel-button {
+  color: white;
+  background-color: #ff7272;
+  padding-inline: 40px;
+  padding-block: 8px;
+  border-radius: 50px;
+  border: none;
+}
+
+.update-button {
+  color: white;
+  background-color: #1b8368;
+  padding-inline: 40px;
+  padding-block: 8px;
+  border-radius: 50px;
+  border: none;
+}
+.container-upload-media {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 180px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-media {
+  position: relative;
+  left: 94%;
+  bottom: 12px;
+  margin-bottom: 10px;
+}
+
+.container-upload-profile {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 180px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-profile {
+  position: relative;
+  left: 94%;
+  bottom: 12px;
+  margin-bottom: 10px;
+}
+
+.upload-media-input {
+  margin-top: 30px;
+  margin-inline: 30px;
+  padding-block: 15px;
+  padding-inline: 30px;
+  border-radius: 25px;
+  background-color: #1b8368;
+}
+
+.upload-profile-input {
+  width: 210px;
+  height: 39px;
+  margin-inline: 60px;
+  padding-left: 30px;
+  padding-top: 12px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: var(--button, #1b8368);
+}
+
+.delete-profile-photo button {
+  width: 239px;
+  height: 39px;
+  margin-inline: 60px;
+  margin-block: 30px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 2px dashed var(--grey-nav, #9f9e9e);
+  background: var(--white, #fff);
+}
+
+.masjid-profile-main-div .slick-dots {
+  top: 260px;
+}
+
+@media (min-width: 576px) {
+  .profile-upload-icon {
+    left: 54%;
+  }
+}
+@media (min-width: 768px) {
+  .profile-upload-icon {
+    left: 54%;
+  }
+  .camera-and-delete {
+    display: flex;
+    bottom: 50px;
+  }
+  .camera-and-delete div {
+    margin-left: 7px;
+  }
+  .masjid-profile-main-div .slick-dots{
+    display: none !important;
+  }
+
+  .phone-web-fb-group{
+    display: flex;
+    justify-content: space-between;
+  }
+  .phone-web {
+    width: 65%;
+
+  }
+}

@@ -1,0 +1,241 @@
+.AnnounceHistoryContianer {
+  /* border: 1px solid red; */
+  height: 81vh;
+    width: 77vw;
+    margin-left: -6vw;
+}
+
+.AnnounceHistoryTopContainer {
+  /* border: 1px solid red; */
+  height: 6vh;
+  width: 65vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AnnounceHistoryBottomContainer {
+  /* border: 1px solid red; */
+  height: 72vh;
+    width: 77vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+}
+
+.AnnounceHistoryTitle {
+  /* border: 1px solid blue; */
+  height: 100%;
+  width: 20%;
+}
+
+.AnnounceHistoryCalendar{
+  cursor: pointer!important;
+}
+
+.AnnouncementCard {
+  border: 1px solid grey;
+  width: 90%;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.AnnounceTitle {
+  /* border: 1px solid red; */
+  width: 90%;
+  height: 50%;
+}
+
+.AnnounceBody {
+  /* border: 1px solid red; */
+  width: 90%;
+  height: 50%;
+}
+
+.AnnouncementBodyBox {
+  /* border: 1px solid red; */
+  margin-left: 10px;
+}
+
+.AnnouncementTitleBox {
+  /* border: 1px solid red; */
+  margin-left: 10px;
+}
+
+.AnnounceTitleKey {
+  font-size: large;
+  font-weight: 500;
+    color: #3e5842;
+
+}
+
+.AnnounceBodyKey {
+  font-size: large;
+  font-weight: 500;
+  color: #3e5842;
+
+}
+
+.AnnounceHistory {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 43px;
+  margin-left: 5px;
+  color: #3e5842;
+  /* border: 1px solid red; */
+}
+
+
+.AnnouncementHistoryPlaceholder{
+  width: 59vw;
+  height: 65vh;
+  float: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.AnnouncementPlaceholder{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48.1525px;
+    line-height: 58px;
+    color: #3E5842;
+    opacity: 0.5;
+}
+
+.AnnoucementInnerBody{
+  background: #059266;
+    box-shadow: 0px 2.90885px 7.99935px 0.727213px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    height: 9vh;
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding: 2vh;
+    cursor: pointer;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.PopUpannoucement{
+  position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    background-color: rgba(0,0,0, 4%);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.PopupBodyAnnounce{
+  height: 50vh;
+    width: 50vw;
+    background: #059266;
+    /* box-shadow: 0px 28px 42px rgb(0 0 0 / 25%); */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insidePopup{
+  display: flex;
+  flex-direction: column;
+  height: 48vh;
+  width: 48vw;
+  align-items: center;
+  border: 2px dashed #F7F9FB;
+  justify-content: flex-start;
+  border-radius: 8px;
+  
+}
+
+.topAnnounceComponent{
+  display: flex;
+  width: 46vw;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+.MessageType{
+  font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #FFFFFF;
+background: #065F46;
+border-radius: 2px;
+padding:5px;
+}
+
+.TitleAnnouce{
+color:#F9B52C;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 38px;
+}
+
+.DescriptionAnnouce{
+  font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 31px;
+
+color: #FFFFFF;
+}
+
+.AnnounceBtn{
+cursor: pointer;
+}
+
+.Annoucementbody{
+  display: flex;
+  flex-wrap: wrap;
+  width: 77vw;
+  height: 69vh;
+  overflow-y: scroll;
+}
+
+.Annoucementbody::-webkit-scrollbar{
+  background-color: #F5F5F5;
+  width: 0.3vw;
+  cursor: pointer;
+}
+
+
+.Annoucementbody::-webkit-scrollbar-thumb {
+  background-color: #495057;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Annoucementbody::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+  cursor: pointer;
+  
+}
+
+.Annoucementbody::-webkit-scrollbar-track {
+  background-color: #cecece;
+}

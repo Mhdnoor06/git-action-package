@@ -1,0 +1,54 @@
+.table-container{
+    border: 1px solid gray;
+    height: 60vh;
+    width: 70vw;
+    margin-left: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .tableHeadUpload{
+    border: 4px solid green;
+} */
+
+.tableHeaderPrayerNameUpload {
+    border: 1px solid #d7d7d7;
+}
+
+.table-head-component{
+    border: 1px solid black;
+}
+
+.tableRowUpload {
+    padding-left: 64px;
+    padding-bottom: 2px;
+    border: 1px solid #d7d7d7;
+    font-size: 14px;
+}
+
+.labelForUploadFile{
+    cursor: pointer;
+    background-color: #022C16;
+    padding: 15px 15px 15px 15px;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* ::-webkit-file-upload-button{
+
+} */
+/* 
+input[type="file"]{
+    display: none;
+} */
+
+table{
+    border-collapse: collapse;
+}
+
+.MasjidTimingsBottomComponent{
+    height: 80vh;
+}

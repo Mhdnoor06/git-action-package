@@ -1,0 +1,268 @@
+@media (max-width: 1024px) {
+  /* .event-container{
+    border: 2px solid red;
+  } */
+  .event-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+    /* height: 78vh; */
+  }
+
+  .event-container form {
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  .event-container .event-top {
+    display: flex;
+
+    align-items: center;
+    color: #3d5347;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+
+    /* jus */
+  }
+  .event-container .event-img-btn {
+    display: flex;
+    padding: 10px;
+    color: #9f9e9e;
+    margin-bottom: 20px;
+
+    background: #fff !important;
+
+    border: dashed 1px #9f9e9e;
+  }
+
+  .event-container label {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Inter;
+    line-height: 17px;
+    letter-spacing: 0em;
+
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3d5347;
+  }
+
+  .event-container input[type="number"],
+  .event-container input[type="time"] {
+    border-radius: 16px;
+
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #065f46;
+    font-size: 16px;
+  }
+  .event-container select,
+  .event-container textarea,
+  .event-container input[type="text"] {
+    border-radius: 22px;
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #065f46;
+    font-size: 16px;
+  }
+
+  .event-container select {
+    width: 100%;
+  }
+
+  .event-container input[type="date"] {
+    color: #9f9e9e;
+    border-radius: 16px;
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #065f46;
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    background-color: #065f46;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .event-container label[for="imageUpload"] {
+    display: block;
+    height: 40px;
+    background-color: #065f46; /* Button background color */
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+  }
+
+  .event-container label[for="imageUpload"]:hover {
+    background-color: #0056b3; /* Hover background color */
+  }
+
+  .event-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  /* CSS for Image Previews */
+  .event-container .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 10px; /* Adjust the gap between images */
+  }
+
+  .event-container .image-preview-item {
+    flex: 0 0 calc(33.33% - 10px); /* Adjust the width for 3 images per row */
+    position: relative;
+
+    margin-bottom: 20px; /* Adjust the margin between rows */
+    text-align: center;
+  }
+
+  .event-container .image-preview-item > img {
+    width: 70px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    /* background-color: gray; */
+    border-radius: 20px;
+    height: 70px;
+  }
+
+  .event-container .delete-event-btn {
+    position: absolute;
+    top: 42px;
+    left: 42px;
+    transform: translate(-50%, -50%);
+    /* background-color: #fff; */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .delete-button:hover {
+    background-color: #ff5555; /* Adjust the hover styling */
+  }
+  .location-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .location-inputs-edit {
+    width: 70vw !important;
+    justify-content: space-between;
+  }
+
+  .latitude-input,
+  .longitude-input {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    /* align-items: center; */
+  }
+
+  .latitude-input input[type="text"],
+  .longitude-input input[type="text"] {
+    width: 85%;
+    font-size: 14px;
+  }
+  .submit-btn-container {
+    display: flex;
+    justify-content: center;
+  }
+  .event-container .rmdp-week .rmdp-week-day {
+    font-size: 8px !important;
+  }
+  .event-container .address-check-box {
+    display: flex;
+    margin-bottom: 20px;
+
+    align-items: center;
+  }
+  .event-container .address-check-box label {
+    padding: 0px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: -2px;
+  }
+  .event-backBtn {
+    margin-top: 10px;
+  }
+
+  .evntTimeclock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .evntTimeclock > * {
+    width: 48%;
+  }
+
+  .rounded-select {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23666"><path d="M7 10l5 5 5-5z" /></svg>'); /* Add custom arrow for browsers that don't support CSS triangles */
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+  }
+
+  .rounded-select option {
+    border-radius: 10px; /* Rounded border for options */
+  }
+}
+
+@media (min-width: 628px) {
+  .event-form-container .MuiPaper-root {
+    width: 60% !important;
+  }
+  .event-form-container .CalendarContainer {
+    width: 50%;
+  }
+
+  .location-inputs {
+    width: 100%;
+  }
+
+  .latitude-input {
+    width: 48%;
+  }
+  /* .event-container input[type="date"] {
+    width: 85%;
+  } */
+  .css-504e0s {
+    height: 190px !important;
+  }
+
+  .calendar-icon {
+    right: 25px !important;
+  }
+
+  .event-container form {
+    padding: 0;
+  }
+}

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  background-color: #d0f9e4;
+}
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-center {
+  display: flex;
+  justify-content: center;
+}
+.col-center {
+  display: flex;
+  justify-content: center;
+}
+
+.page-title {
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #054635;
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 768) {
+  .page-title {
+    font-size: 24px !important;
+  }
+}

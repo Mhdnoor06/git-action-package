@@ -1,0 +1,20 @@
+.DasboardleftComponent{
+    /* border: 5px solid blue; */
+    width:50vw;
+    height: 90vh;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+.DashboardMasjidProfileContainer{
+    /* border: 5px solid black; */
+    height: 40vh;
+}
+
+.DasboardRightComponent {
+    /* border: 1px solid black; */
+    width: 31vw;
+    height: 91vh;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}

@@ -1,0 +1,109 @@
+/* BottomNavigation.css */
+
+.bottom-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+  height: 6vh;
+  border-top: 1px solid #ccc;
+  border-radius: 35px;
+  margin: auto 10px;
+  padding: 10px;
+}
+.bottom-nav-container {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+.bottom-nav-component {
+  height: 85vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex-direction: column;
+  justify-content: center;
+}
+/* .d-flex {
+  display: flex;
+} */
+.bottom-nav-with-condition {
+  height: 10vh;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 9px; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  transform: translateY(-10px);
+}
+
+.nav-icon {
+  width: 20px;
+}
+.nav-icon-active {
+  border: 15px solid #154f30;
+  border-radius: 50%;
+  background-color: #154f30;
+  width: 20px;
+  /* display: block; */
+  /* font-size: 20px; */
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+.scroll {
+  overflow-x: scroll;
+}
+.term-condition-tx {
+  /* Term & Conditions */
+
+  position: sticky;
+  width: 156px;
+  height: 17px;
+  margin: 20px auto;
+
+  /* top: 83vh; */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: #33443b;
+}
+
+.bottom-navigation .swiper-wrapper {
+  align-items: center;
+  padding: 10px 0;
+}
+
+.bottom-navigation .swiper {
+  width: 100%;
+}
+.nav-label {
+  margin-top: 5px;
+  font-size: 12px;
+}
+.nav-label-active {
+  margin-top: 5px;
+  color: #154f30;
+  font-size: 12px;
+}
+@media only screen and (max-width: 388px) {
+  .nav-label,
+  .nav-label-active {
+    font-size: 9px;
+  }
+}

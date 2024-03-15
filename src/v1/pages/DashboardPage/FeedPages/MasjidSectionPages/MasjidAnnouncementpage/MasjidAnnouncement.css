@@ -1,0 +1,58 @@
+.MasjidAnnouceContainer{
+    /* border: 1px solid; */
+    background: #F5F5F5;
+    height: 87vh;
+    width: 78vw;
+    margin-left: 3vw;
+    margin-top: 5vh;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+}
+
+.MasjidAnnounceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.MasjidAnnounceImageContainer{
+    margin: 3vh 3vh 3vh 3vh;
+}
+
+.MasjidAnnounceImageContainer img{
+    height: 7vh;
+}
+
+.MasjidAnnouceBottomContainer{
+    display: flex;
+    flex-direction: column;
+    width: 65vw;
+    height: 70vh;
+    margin-top: 3vh;
+    /* border: 5px solid; */
+}
+
+.MasjdAnnouncementHistoryBtn{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+display: flex;
+align-items: flex-end;
+text-decoration-line: underline;
+color: #212429;
+background-color: transparent;
+border-color: transparent;
+cursor: pointer;
+margin-top: 4vh;
+}
+
+.EditAnnounceCancelIcon{
+    position: absolute;
+    right: 5vw;
+    top: 11.5vh;
+    font-size: 3vh;
+    cursor: pointer;
+}

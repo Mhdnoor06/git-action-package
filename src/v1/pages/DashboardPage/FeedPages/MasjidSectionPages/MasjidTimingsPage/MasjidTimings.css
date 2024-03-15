@@ -1,0 +1,71 @@
+.MasjidTimingsContainer {
+  /* border: 1px solid red; */
+  height: 89vh;
+  width: 78vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MasjidTimigsComponnet {
+  /* border: 1px solid blue; */
+  height: 86vh;
+  margin-top: 6vh;
+  width: 100vw;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 2vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 6vw;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 50%);
+}
+
+.EventTopContainer{
+  display: flex;
+  /* border: 1px solid; */
+  width: 67vw;
+  height: 3vh;
+  justify-content: space-between;
+}
+
+.BackButton{
+  display: flex;
+}
+
+.MainContainerForEvents{
+  /* border: 1px solid black; */
+  height: 81vh;
+  width: 64vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EventLeftContainer{
+  border: 1px solid;
+  height: 80vh;
+  width: 32vw;
+}
+
+.EventRightContainer{
+  border: 1px solid;
+  height: 80vh;
+  width: 32vw;
+}
+
+.BackBtnToHome{
+  height: 3vh;
+}
+
+.ViewAll{
+  font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+text-decoration-line: underline;
+color: #065F46;
+cursor: pointer;
+}

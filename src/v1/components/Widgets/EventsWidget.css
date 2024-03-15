@@ -1,0 +1,71 @@
+.title {
+  color: #154f30;
+  font-size: medium;
+}
+
+.datee {
+  color: #6d7075;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  background-color: #e3e3e3;
+  border-radius: 15px;
+  padding: 3px 6px;
+  width: fit-content;
+}
+
+.btn {
+  padding: 5px 30px;
+  border-radius: 20px;
+  background-color: white;
+  color: #154f30;
+  font-weight: 600;
+  border: 2px solid #154f30;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.events-widget-container {
+  max-height: 450px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+/* ::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #c5c5c5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #154f30;
+  border-radius: 10px;
+} */
+
+/* .notavailable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+} */
+
+.noevents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 10px;
+}
+
+.widgetCard .css-j0tj0s {
+  height: 200px !important;
+  border-radius: 0 !important;
+}

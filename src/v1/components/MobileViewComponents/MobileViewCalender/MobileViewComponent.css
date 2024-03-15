@@ -1,0 +1,70 @@
+.prayer-right-calender {
+  padding: 20px 0px;
+  margin: auto auto;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .MobileView-main-container {
+    padding-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #ffff;
+  }
+  .MobileView-main-container .page-title {
+    margin-bottom: -2px;
+    text-align: center;
+    width: 50%;
+  }
+  .MobileView .customly-added-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .MobileView .customly-added-btn div {
+    width: 60%;
+  }
+
+  .MobileView {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding-bottom: 40px;
+  }
+  .MobileView .react-calendar {
+    box-shadow: none;
+    background: #f2fff8;
+  }
+  .MobileView .react-calendar__tile:disabled {
+    color: #3d5347;
+    background-color: #f0f0f000 !important;
+  }
+  .MobileView .react-calendar__navigation {
+    border-bottom: none;
+  }
+  .prayer-right-calender {
+    padding: 0px 10px;
+    width: 50%;
+  }
+  .prayer-right-calender .prayer-box-card-container {
+    box-shadow: none !important;
+  }
+  .prayer-right-calender .PrayerTimings-box {
+    border-top: none;
+  }
+  .prayer-right-calender .PrayerTimings-box .no-prayer {
+    width: 100vw;
+  }
+  .prayer-right-calender .time-zone {
+    margin: auto 30px;
+  }
+  .prayer-right-calender .PrayerTimings-box .Prayer-card-Tr td,
+  .prayer-right-calender .PrayerTimings-box .Prayer-card-header th,
+  .prayer-right-calender .PrayerTimings-box .Prayer-card-Tr th {
+    width: 15vw !important;
+    padding: 15px 0px 0px 0px;
+    text-align: center;
+  }
+}
