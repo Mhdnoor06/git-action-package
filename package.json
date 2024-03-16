@@ -1,5 +1,5 @@
 {
-  "name": "git-msa-pack",
+  "name": "tryingto-push-package",
   "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
