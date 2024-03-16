@@ -1,5 +1,5 @@
 {
-  "name": "tryingto-push-package",
+  "name": "@mhdnoor06/tryingto-push-package",
   "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
