@@ -1,8 +1,8 @@
 {
-  "name": "@mhdnoor06/masjid-admin-portal",
+  "name": "@Mhdnoor06/masjid-admin-portal",
   "version": "0.1.1",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@mhdnoor06"
+    "registry": "https://npm.pkg.github.com/@Mhdnoor06"
   },
   "dependencies": {
     "@date-io/date-fns": "1.x",
