@@ -2,7 +2,7 @@
   "name": "git-msa-pack",
   "version": "0.1.1",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@Mhdnoor06"
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@date-io/date-fns": "1.x",
