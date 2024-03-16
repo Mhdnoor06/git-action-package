@@ -1,5 +1,5 @@
 {
-  "name": "@msa-team/masjid-admin-portal",
+  "name": "@mhdnoor06/masjid-admin-portal",
   "version": "0.1.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@mhdnoor06"
