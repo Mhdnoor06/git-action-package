@@ -1,5 +1,5 @@
 {
-  "name": "@Mhdnoor06/masjid-admin-portal",
+  "name": "git-action-package",
   "version": "0.1.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@Mhdnoor06"
