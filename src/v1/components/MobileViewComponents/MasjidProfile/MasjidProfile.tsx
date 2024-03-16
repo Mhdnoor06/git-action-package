@@ -26,7 +26,7 @@ import { authLogout } from "../../../redux/actions/AuthActions/LogoutAction";
 import { FetchingTimingsByDateRange } from "../../../redux/actions/TimingsActions/FetchingTimingsByDateRangeAction";
 import Slider from "react-slick";
 import EditMasjid from "./EditMasjid";
-import { Button } from "remoteApp/Button";
+// import { Button } from "remoteApp/Button";
 
 const MasjidProfile = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -280,7 +280,7 @@ const MasjidProfile = () => {
                   <MoreBtn tsx={masjid?.description} txLength={250} />
 
                   <div>
-                    <Button />
+                    {/* <Button /> */}
                     <MyButton
                       label="Click Me"
                       onClick={() => alert("Clicked!")}

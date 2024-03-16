@@ -19,7 +19,7 @@ import Common_App from "./v1/Common/Common_App";
 const Dashboard = lazy(() => import("./v1/pages/DashboardPage/Dashboard"));
 const Widgets = lazy(() => import("./v1/components/Widgets/Widgets"));
 
-function App() {
+export function App() {
   const elementHandler = (component: React.ReactNode, route: string) => {
     return admin ? (
       admin.isVerified ? (

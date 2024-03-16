@@ -7,31 +7,30 @@ import federation from "@originjs/vite-plugin-federation";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    federation({
-      name: "app",
-      filename: "remoteEntry.js",
-      remotes: {
-        remoteApp: "http://localhost:5001/assets/remoteEntry.js",
-      },
-      exposes: {
-        "./Button": "./src/Button",
-      },
-      shared: ["react", "react-dom"],
-    }),
-    visualizer({
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }) as PluginOption,
-    viteTsconfigPaths(),
-    svgrPlugin(),
-  ],
+  plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
   build: {
-    modulePreload: false,
-    target: "esnext",
-    minify: false,
-    cssCodeSplit: false,
+    lib: {
+      entry: "./src/index.ts",
+      name: "MyReactLibrary",
+      // Specify output formats for your library. Including both ES module and UMD formats.
+      // ES for modern bundlers and UMD for broader compatibility.
+      fileName: (format) => `index.${format}.js`,
+    },
+    // Specifying formats to ensure your library is accessible in various environments.
+    formats: ["es", "umd"], // You can adjust this based on your target audience or requirements
+    rollupOptions: {
+      // Mark react and react-dom as external to avoid bundling them with your library.
+      // Consumers of your library should have them installed as dependencies.
+      external: ["react", "react-dom"],
+      output: {
+        // Define globals for UMD build, required for external dependencies.
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+    sourcemap: true,
+    emptyOutDir: true,
   },
 });

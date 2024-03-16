@@ -1,7 +1,9 @@
 {
-  "name": "masjid-admin-portal",
+  "name": "@msa-team/masjid-admin-portal",
   "version": "0.1.1",
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@mhdnoor06"
+  },
   "dependencies": {
     "@date-io/date-fns": "1.x",
     "@date-io/jalaali": "^2.16.1",
@@ -75,14 +77,15 @@
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5",
     "tz-lookup": "^6.1.25",
+    "vite-plugin-dts": "^3.7.3",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "dev": "vite --port 5173 --strictPort",
+    "dev": "vite --port 5001 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --port 5173 --strictPort",
-    "serve": "vite preview --port 5173 --strictPort"
+    "preview": "vite preview --port 5001 --strictPort",
+    "serve": "vite preview --port 5001 --strictPort"
   },
   "eslintConfig": {
     "extends": [
@@ -124,5 +127,12 @@
     "vite": "^5.0.10",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0"
-  }
+  },
+  "description": "Welcome to the MSA Connect Masjid Portals React app! This application serves as the frontend interface for managing the Masjid Administrator within the MSA Connect ecosystem.",
+  "main": "index.js",
+  "keywords": [
+    "portel"
+  ],
+  "author": "noor",
+  "license": "ISC"
 }

@@ -24,7 +24,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import Announcement from "../Announcement/Announcement";
 
-const BottomNavigation = () => {
+export const BottomNavigation = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [tmConOpener, setTmConOpener] = useState(false);
   const { tab } = useParams();
