@@ -16,6 +16,7 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/pickers": "^3.3.10",
+    "@mhdnoor06/tryingto-push-package": "^0.0.1",
     "@mui/lab": "^5.0.0-alpha.115",
     "@mui/material": "^5.11.3",
     "@mui/styled-engine-sc": "^5.11.0",
