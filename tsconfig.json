@@ -18,10 +18,10 @@
     "jsx": "react-jsx",
     "outDir": "dist",
     "declaration": true,
-    "declarationMap": true,
-    "typeRoots": ["./dist/index.d.ts"]
+    "declarationMap": true
+    // "typeRoots": ["./dist/index.d.ts"]
   },
-  "include": ["src", "./index.ts"],
+  "include": ["src", "src/index.ts"],
   "exclude": ["node_modules", "dist", "vite.config.ts"]
 }
 

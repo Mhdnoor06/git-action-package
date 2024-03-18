@@ -3,7 +3,7 @@ import { Action } from "../../Types";
 import { FETCH_LOCATION, FETCH_NEARBY_MASJIDS } from "../../actiontype";
 
 // Location Reducer
-interface LocationState {
+export interface LocationState {
   city: string;
   latitude: string;
   longitude: string;
@@ -28,7 +28,7 @@ export const locationReducer = (
 };
 
 // Nearby Masjids Reducer
-interface NearbyMasjidsState {
+export interface NearbyMasjidsState {
   nearbyMasjids: any[]; // Adjust the type based on your actual masjid data structure
 }
 
