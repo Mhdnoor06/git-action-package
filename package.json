@@ -130,7 +130,8 @@
     "vite-tsconfig-paths": "^4.2.0"
   },
   "description": "Welcome to the MSA Connect Masjid Portals React app! This application serves as the frontend interface for managing the Masjid Administrator within the MSA Connect ecosystem.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "portel"
   ],
