@@ -1,0 +1,1 @@
+{"version":3,"file":"FetchingAnnouncementReducer.d.ts","sourceRoot":"","sources":["../../../../../src/v1/redux/reducers/AnnouncementReducers/FetchingAnnouncementReducer.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,gBAAgB,EAAE,MAAM,aAAa,CAAC;AAG/C,QAAA,MAAM,2BAA2B,mDAAqC,gBAAgB,QAUrF,CAAC;AAEF,eAAe,2BAA2B,CAAC"}

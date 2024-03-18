@@ -1,0 +1,12 @@
+export declare const AUTH_LOGIN = "AUTH_LOGIN";
+export declare const AUTH_LOGOUT = "AUTH_LOGOUT";
+export declare const CHANGE_SNACKBAR = "CHANGE_SNACKBAR";
+export declare const FETCH_LATEST_UPDATED_EVENTS_BY_ADMIN = "FETCH_LATEST_UPDATED_EVENTS_BY_ADMIN";
+export declare const FETCH_LATEST_UPDATED_ANNOUNCEMENTS_BY_ADMIN = "FETCH_LATEST_UPDATED_ANNOUNCEMENTS_BY_ADMIN";
+export declare const FETCH_ADMIN_MASJID = "FETCH_ADMIN_MASJID";
+export declare const FETCH_ALL_MASJID = "FETCH_ALL_MASJID";
+export declare const GET_TIMINGS_BY_DATE_RANGE = "GET_TIMINGS_BY_DATE_RANGE";
+export declare const COMPLETE_EVENT_EDITING = "COMPLETE_EVENT_EDITING";
+export declare const FETCH_LOCATION = "FETCH_LOCATION";
+export declare const FETCH_NEARBY_MASJIDS = "FETCH_NEARBY_MASJIDS";
+//# sourceMappingURL=actiontype.d.ts.map

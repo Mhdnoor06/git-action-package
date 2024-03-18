@@ -1,0 +1,1 @@
+{"version":3,"file":"AnnouncementWidget.d.ts","sourceRoot":"","sources":["../../../../src/v1/components/Widgets/AnnouncementWidget.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAmB,MAAM,OAAO,CAAC;AAIxC,OAAO,oBAAoB,CAAC;AAI5B,UAAU,uBAAuB;IAC/B,UAAU,EAAE,GAAG,CAAC;CACjB;AAED,QAAA,MAAM,kBAAkB,EAAE,KAAK,CAAC,EAAE,CAAC,uBAAuB,CAgIzD,CAAC;AAEF,eAAe,kBAAkB,CAAC"}
