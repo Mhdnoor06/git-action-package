@@ -1,2 +1,3 @@
 export { default as App } from "./App";
+export { default as MyProvider } from "./MyProvider";
 //# sourceMappingURL=index.d.ts.map
