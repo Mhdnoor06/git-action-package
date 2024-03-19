@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), dts()],
   build: {
     lib: {
-      entry: "./src/index.ts",
+      entry: "src/index.ts",
       name: "MyReactLibrary",
       fileName: (format) => `index.${format}.js`,
     },

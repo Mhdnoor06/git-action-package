@@ -1,6 +1,6 @@
 {
   "name": "@mhdnoor06/tryingto-push-package",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -130,7 +130,7 @@
     "vite-tsconfig-paths": "^4.2.0"
   },
   "description": "Welcome to the MSA Connect Masjid Portals React app! This application serves as the frontend interface for managing the Masjid Administrator within the MSA Connect ecosystem.",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "portel"
