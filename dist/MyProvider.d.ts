@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-export declare const MyProvider: FC<{
+declare const MyProvider: FC<{
     children: React.ReactNode;
 }>;
 export default MyProvider;
