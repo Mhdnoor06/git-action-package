@@ -32,8 +32,49 @@
   flex: 1;
   text-align: center;
 }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #d0f9e4;
 
-@media (min-width: 768) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-color: #d0f9e4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@media (max-width: 524px) {
+  body {
+    background-image: url("./v1/photos/Newuiphotos/BG/BG.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+
+    background-size: contain;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("./v1/photos/Newuiphotos/BG/mainBG.svg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+
+    background-size: contain;
+  }
   .page-title {
     font-size: 24px !important;
   }

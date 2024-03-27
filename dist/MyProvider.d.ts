@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-declare const MyProvider: FC<{
+import React from "react";
+export declare const MyProvider: ({ children }: {
     children: React.ReactNode;
-}>;
+}) => JSX.Element;
 export default MyProvider;
 //# sourceMappingURL=MyProvider.d.ts.map
