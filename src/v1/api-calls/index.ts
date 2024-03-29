@@ -11,14 +11,13 @@ import {
 } from "../redux/Types";
 
 // export const rootURL = "https://admin-api.connectmazjid.com/api/v2";//prod API
-export const rootURL = "https://dev-admin-api.connectmazjid.com/api/v2"; //test
+// export const rootURL = "https://dev-admin-api.connectmazjid.com/api/v2";//test
 // export const rootURL = import.meta.env.VITE_ADMIN_BASE_URL;
-// export const rootURL =
-//   window.location.hostname === "musali-admin.netlify.app"
-//     ? "https://dev-admin-api.connectmazjid.com/api/v2"
-//     : import.meta.env.VITE_ADMIN_BASE_URL; //test API
+export const rootURL =
+  window.location.hostname === "musali-admin.netlify.app"
+    ? "https://dev-admin-api.connectmazjid.com/api/v2"
+    : import.meta.env.VITE_ADMIN_BASE_URL; //test API
 
-// console.log(rootURL)
 const API = axios.create({
   baseURL: rootURL,
 });

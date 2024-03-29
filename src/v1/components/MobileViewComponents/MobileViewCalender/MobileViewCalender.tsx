@@ -226,6 +226,7 @@ const MobileViewCalender = () => {
   const reloader = () => {
     setReload(!reloadTiming);
   };
+
   useEffect(() => {
     const navigationElement = document.querySelector(".react-calendar");
 
@@ -282,22 +283,25 @@ const MobileViewCalender = () => {
           }
         />
       ) : (
-        <div className="MobileView-main-container">
-          <h3 className="page-title">Prayer Timings</h3>
-          <div className="MobileView">
-            <div className="MobileViewContainer">
-              <div className="CalendarContainer">
-                {tZone ? (
-                  <SpecialCalendar
-                    value={selectedDates[1] ? selectedDates : selectedDates[0]}
-                    onDateChange={handleRangeDateChange}
-                    handleSingleDateClick={handleSingleDateClick}
-                    tileContent={tileContent}
-                    tileDisabled={tileDisabled}
-                    tileClassName={tileClassName}
-                  />
-                ) : null}
-                {/* {tZone ? (
+        <div className="mainprayerconatiner">
+          <div className="MobileView-main-container">
+            <h3 className="page-title">Prayer Timings</h3>
+            <div className="MobileView">
+              <div className="MobileViewContainer">
+                <div className="CalendarContainer">
+                  {tZone ? (
+                    <SpecialCalendar
+                      value={
+                        selectedDates[1] ? selectedDates : selectedDates[0]
+                      }
+                      onDateChange={handleRangeDateChange}
+                      handleSingleDateClick={handleSingleDateClick}
+                      tileContent={tileContent}
+                      tileDisabled={tileDisabled}
+                      tileClassName={tileClassName}
+                    />
+                  ) : null}
+                  {/* {tZone ? (
                 <div style={{ width: "100%" }}>
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <StaticDatePicker
@@ -319,25 +323,26 @@ const MobileViewCalender = () => {
                     tileClassName={tileClassName}
                     // calendarFocus="forwards"
                   /> */}
+                </div>
               </div>
-            </div>
 
-            <>
-              <div className="prayer-right-calender">
-                <PrayerBox
-                  prayer={selectedPrayers ? selectedPrayers.timings : []}
-                  tZone={tZone}
-                  timingId={selectedPrayers ? selectedPrayers?._id : ""}
-                  masjidId={admin.masjids[0]}
-                  reloader={reloader}
-                >
-                  {/* <h3 className="page-title">Prayer Timing</h3> */}
-                  <div style={{ margin: "10px auto" }}>
-                    <p className="time-zone">Time Zone : {tZone}</p>
-                  </div>
-                </PrayerBox>
-              </div>
-            </>
+              <>
+                <div className="prayer-right-calender">
+                  <PrayerBox
+                    prayer={selectedPrayers ? selectedPrayers.timings : []}
+                    tZone={tZone}
+                    timingId={selectedPrayers ? selectedPrayers?._id : ""}
+                    masjidId={admin.masjids[0]}
+                    reloader={reloader}
+                  >
+                    {/* <h3 className="page-title">Prayer Timing</h3> */}
+                    <div style={{ margin: "10px auto" }}>
+                      <p className="time-zone">Time Zone : {tZone}</p>
+                    </div>
+                  </PrayerBox>
+                </div>
+              </>
+            </div>
           </div>
         </div>
       )}

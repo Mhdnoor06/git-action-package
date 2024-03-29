@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 2024px) {
   .special-main {
     overflow: hidden;
     display: flex;
@@ -359,6 +359,13 @@
   align-items: center;
 }
 
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
 @media (max-width: 520px) {
   /* .my-custom-btn {
     padding: 0px 20vw 0px 17vw !important;
@@ -383,5 +390,15 @@
 
   .showform .CalendarContainer {
     width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .special-main .MuiPaper-root {
+    width: 35%;
+  }
+
+  .showform .CalendarContainer {
+    width: 30%;
   }
 }

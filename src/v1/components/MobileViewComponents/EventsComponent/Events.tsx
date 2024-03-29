@@ -24,6 +24,7 @@ import {
   UtcDateConverter,
   dateFormatter,
   dateReverter,
+  formatConvertDate,
 } from "../../../helpers/HelperFunction";
 import BackButton from "../Shared/BackButton";
 import { EventPublishNotification } from "../../../redux/actions/AnnouncementActions/EventPublishingNotification";
@@ -53,6 +54,7 @@ import CustomCalender from "../Shared/calendar/CustomCalender";
 import calender from "../../../photos/Newuiphotos/Icons/calender.svg";
 import EventPreview from "./EventPreview/EventPreview";
 import DeleteWarningCard from "../Shared/DeleteWarningCard/DeleteWarningCard";
+import { parseISO, format } from "date-fns";
 
 // const VisuallyHiddenInput = styled("input")({
 //   clip: "rect(0 0 0 0)",
@@ -144,7 +146,7 @@ const Events = ({
     e.stopPropagation();
   };
 
-  function formatDate(date: Date) {
+  function formatConvertDate(date: Date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
@@ -152,7 +154,7 @@ const Events = ({
   }
 
   const handleDateSelect = (date: Date) => {
-    const formattedDate = formatDate(date);
+    const formattedDate = formatConvertDate(date);
 
     if (selectedDateField === "startDate") {
       const otherDate = formData.endDate;
@@ -260,7 +262,7 @@ const Events = ({
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // function formatDate(date: Date) {
+  // function formatConvertDate(date: Date) {
   //   const year = date.getFullYear();
   //   const month = String(date.getMonth() + 1).padStart(2, "0");
   //   const day = String(date.getDate()).padStart(2, "0");
@@ -1162,7 +1164,7 @@ const Events = ({
                           name="startDate"
                           value={dateFormatter(formData.startDate)}
                           onChange={handleChange}
-                          min={formatDate(new Date())}
+                          min={formatConvertDate(new Date())}
                           // onClick={() => handleToggleCalendar("startDate")}
                           readOnly
                         />
@@ -1209,7 +1211,7 @@ const Events = ({
                           placeholder="dd-mm-yyyy"
                           value={dateFormatter(formData.endDate)}
                           onChange={handleChange}
-                          min={formatDate(new Date())}
+                          min={formatConvertDate(new Date())}
                           // onClick={() => handleToggleCalendar("endDate")}
                         />
                         <span
@@ -1283,22 +1285,19 @@ const Events = ({
                   <CustomCalender
                     tileDisabled={tileDisabled}
                     onDateSelect={handleDateSelect}
-                    value={new Date(formData[selectedDateField])}
+                    value={parseISO(String(formData[selectedDateField]))} // Convert value to string before passing it to parseISO
                     setValue={(value) => {
+                      // Ensure the value is a Date object
                       const dateValue =
                         typeof value === "function" ? value(new Date()) : value;
-                      formatDate(dateValue);
-                      if (selectedDateField === "startDate") {
-                        setFormData({
-                          ...formData,
-                          startDate: formatDate(dateValue),
-                        });
-                      } else if (selectedDateField === "endDate") {
-                        setFormData({
-                          ...formData,
-                          endDate: formatDate(dateValue),
-                        });
-                      }
+                      const formattedDate = format(
+                        dateValue,
+                        "yyyy-MM-dd'T'HH:mm:ssxxx"
+                      ); // Format the date as a string in ISO 8601 format
+                      setFormData({
+                        ...formData,
+                        [selectedDateField]: formattedDate,
+                      });
                     }}
                   />
                 </div>

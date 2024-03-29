@@ -37,7 +37,7 @@ const Login = () => {
   const [Captcha, setCaptcha] = useState("");
   const language = resources["en"];
   const [showPas, setShowPas] = useState(false);
-  // const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(true);
   const [checked, setChecked] = React.useState(false);
 
   const handleChange = () => {
@@ -200,7 +200,6 @@ const Login = () => {
               setShowPas={setShowPas}
               belowTx={false}
             />
-
             {/* <div className="RecapchaBtn">
               <ReCAPTCHA
                 ref={recaptcha}

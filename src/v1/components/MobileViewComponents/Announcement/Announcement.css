@@ -193,3 +193,29 @@
     text-align: center;
   }
 }
+
+@media (min-width: 1024px) {
+  .announcebody .my-custom-btn {
+    padding: 0px 5vw 0px 5vw !important;
+  }
+
+  .announcementCards {
+    margin-top: 20px;
+    width: 30%;
+  }
+
+  .announcementDetailCard {
+    width: 70%;
+    margin: auto;
+  }
+
+  .announcementform {
+    width: 70%;
+    margin: auto;
+  }
+
+  .announcementPreview {
+    width: 70%;
+    margin: auto;
+  }
+}

@@ -1,7 +1,8 @@
 import { Masjid } from "../../redux/Types";
 export declare const UtcDateConverter: (data: string, tZone: string) => string;
 export declare const tmFormatter: (tm: number | undefined, tZone: string) => string;
-export declare const dateFormatter: (date: string) => string;
+export declare const dateFormatter: (date: Date | string) => string;
+export declare const formatConvertDate: (date: Date | string) => string;
 export declare const UTCTimeConverter: (time: string, date: string, tZone: string) => number;
 export declare const confirmation: (tx?: string) => Promise<any>;
 export declare const dateReverter: (tm: string | undefined, tZone: string) => string;

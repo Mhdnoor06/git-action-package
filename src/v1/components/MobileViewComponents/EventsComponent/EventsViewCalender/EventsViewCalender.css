@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 2024px) {
   .react-calendar__tile:disabled {
     background-color: #f0f0f0d4;
   }
@@ -115,7 +115,7 @@
 
   .eventcards-container {
     width: 50%;
-    max-height: 350px;
+    height: 335px;
     overflow-y: auto;
     background: #f2fff8;
     padding: 10px;

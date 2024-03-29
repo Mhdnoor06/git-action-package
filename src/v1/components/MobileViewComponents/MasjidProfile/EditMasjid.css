@@ -5,7 +5,7 @@
   margin: 8px;
 }
 
-.masjid-img img {
+.masjid-img-1 {
   width: 100%;
   height: 206px;
   flex-shrink: 0;
@@ -85,15 +85,15 @@
   margin-top: -35px;
 }
 .phone-web {
-
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .address-input,
 .facebook-input,
 .web-input,
 .phone-input,
 .input-description {
+  padding: 5px;
   border-radius: 10px;
   border: 1px solid #3d5347;
   font-family: Inter;
@@ -244,9 +244,32 @@
   }
 }
 @media (min-width: 768px) {
+  .masjid-img-1 {
+    height: 250px !important;
+  }
   .profile-upload-icon {
     left: 54%;
   }
+
+  .masjid-circular-img {
+    justify-content: initial;
+    margin-left: 20px;
+  }
+
+  .masjid-circular-img img {
+    margin-top: -107px;
+  }
+
+  .profile-upload-icon {
+    /* right: 100px; */
+    top: -18px;
+    left: 110px;
+  }
+
+  .profile-upload-icon {
+    margin-top: -35px;
+  }
+
   .camera-and-delete {
     display: flex;
     bottom: 50px;
@@ -254,16 +277,35 @@
   .camera-and-delete div {
     margin-left: 7px;
   }
-  .masjid-profile-main-div .slick-dots{
+
+  .masjid-profile-main-div .slick-dots {
     display: none !important;
   }
 
-  .phone-web-fb-group{
+  .phone-web-fb-group {
     display: flex;
     justify-content: space-between;
   }
   .phone-web {
     width: 65%;
+  }
+}
 
+@media (min-width: 1024px) {
+  .masjid-img-1 {
+    height: 280px !important;
+  }
+
+  .masjid-profile-main-div {
+    margin: 10px 190px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .phone-web-fb-group {
+    justify-content: start;
+  }
+  .phone-web {
+    width: 39%;
   }
 }

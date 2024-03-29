@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 2024px) {
   /* .event-container{
     border: 2px solid red;
   } */
@@ -264,5 +264,37 @@
 
   .event-container form {
     padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .eventContainer {
+    width: 70%;
+  }
+  .eventcards {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* .eventcards-container {
+    margin: 0 40px;
+  } */
+
+  .event-card-image img {
+    width: 8vw !important;
+  }
+  .event-form-container .MuiPaper-root {
+    width: 38% !important;
+  }
+
+  .event-form-container .CalendarContainer {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .calbtn .green-dot::after {
+    top: 2px;
+    right: 19px;
   }
 }

@@ -17,8 +17,8 @@ const PrayerTimingSlider = ({
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsMobileHandler(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 767);
+      setIsMobileHandler(window.innerWidth <= 767);
     };
 
     window.addEventListener("resize", handleResize);

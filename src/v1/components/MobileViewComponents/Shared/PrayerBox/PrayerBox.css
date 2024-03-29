@@ -1,82 +1,158 @@
-/* Prayer box style */
-.prayer-box-card-container {
-  border-radius: 16px !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
-}
-.PrayerTimings-box {
-  border-top: 1px solid #eee9e9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  /* min-height: 35vh; */
-  /* width: 100vw; */
-  /* height: 40vh; */
-}
-.PrayerTimings-box .no-prayer {
-  min-height: 25vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.PrayerTimings-box .no-prayer img {
-  width: 220px;
-}
-.PrayerTimings-box .no-prayer p {
-  color: #9f9e9e;
-  font-size: 500;
-  width: 500;
-}
-.PrayerTimings-box table {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-}
-.PrayerTimings-box .Prayer-card-header {
-  display: flex;
-  color: #949494;
-  font-weight: bold;
-  font-size: 14px !important;
-  justify-content: space-evenly;
-  align-items: center;
-  font-family: Lato;
-  font-size: 15px;
-  font-weight: 700;
-}
-.PrayerTimings-box .Prayer-card-header th {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-.PrayerTimings-box .Prayer-card-header th:nth-child(1) {
-  padding-left: 10px;
-}
-
-.PrayerTimings-box .Prayer-card-header th:nth-child(3) {
-  text-align: center;
-  /* padding-left: 20px;
-    margin-right: -30px; */
-}
-
-.PrayerTimings-box .Prayer-card-Tr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0px 10px 30px;
-  border-radius: 16px;
-  font-family: Lato;
+.mid {
+  margin: 0 15px;
   font-size: 14px;
-  font-weight: 700;
-}
-
-.PrayerTimings-box .disable-tr {
-  display: none;
-}
-.PrayerTimings-box .gray-time {
-  color: gray;
   font-weight: 500;
+  text-align: center;
+}
 
-  font-size: 14px;
+.prayerTable {
+  width: 100%;
+}
+
+.prayerTable .MuiTable-root .MuiTableHead-root .MuiTableRow-root {
+  border-bottom: none;
+}
+
+.prayerTable .MuiTable-root .MuiTableBody-root .MuiTableRow-root:last-child {
+  border-bottom: none;
+}
+
+/* .OtherPrayer .box {
+  background-color: white;
+  padding: 10px 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  gap: 5px;
+  width: 150px;
+} */
+.OtherPrayer .box {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 4px 2px 3px -5px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
+  gap: 15px;
+  min-width: 85px; /* Adjust the minimum width as needed */
+  width: auto; /* Allow width to adjust based on content */
+}
+
+.box b {
+  margin: 0;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+}
+
+.box b:nth-last-child(-n + 2) {
+  color: #154f30;
+}
+
+.OtherPrayerContainer {
+  width: 100%;
+}
+
+.OtherPrayer div > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.left {
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.right {
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.WidgetSpecialTiming {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.WidgetSpecialTimingBox {
+  display: flex;
+  gap: 10px;
+}
+
+/* .prayerTable .css-14mty86-MuiTableCell-root {
+  line-height: 4vh;
+}
+
+.prayerTable .css-5cww23-MuiTableCell-root {
+  padding: 1.8vh;
+} */
+
+/* .swiper-slide {
+  width: 170px !important ;
+} */
+
+/* .WidgetSpecialTiming {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+} */
+
+/* .scr {
+  max-height: 490px;
+  overflow-y: auto;
+} */
+
+@media (max-height: 610px) {
+  .prayerTable .MuiTableCell-root {
+    line-height: 1rem !important;
+    padding: 8px !important;
+  }
+
+  /* .prayerTable .css-5cww23-MuiTableCell-root {
+    padding: 6px !important;
+  } */
+  .OtherPrayer {
+    height: 90px !important;
+  }
+
+  /* .WidgetSpecialTimingBox {
+    flex-direction: column;
+  } */
+}
+
+@media only screen and (min-width: 764px) {
+  .prayerTable .MuiTable-root .MuiTableRow-root,
+  .MuiTable-root .MuiTableCell-root {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .prayerTable .MuiTable-root .MuiTableHead-root .MuiTableRow-root {
+    border-top: none;
+  }
 }

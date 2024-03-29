@@ -111,6 +111,7 @@ function CustomCalender({
 
   function handleDateSelect(date: Date) {
     setValue(date);
+    // console.log(value);
     onDateSelect(date);
   }
 

@@ -119,38 +119,40 @@ const Dashboard = () => {
   return (
     <>
       {/* for mobile screen */}
-      {/* {isMobile ? (
-        <>
-          { */}
-      <Routes>
-        <Route
-          path="/mobileCalender"
-          element={<ProtectedRoute component={<MobileViewCalender />} />}
-        />
-        <Route
-          path="/feed/:tab"
-          element={<ProtectedRoute component={<BottomNavigation />} />}
-        />
-        <Route
-          path="/events-calender"
-          element={<ProtectedRoute component={<EventsViewCalender />} />}
-        />
-        <Route
-          path="/event/:id"
-          element={<ProtectedRoute component={<Events />} />}
-        />
-        <Route
-          path="/event-details/:id"
-          element={<ProtectedRoute component={<EventDetails />} />}
-        />
-        <Route
-          path="/special-prayers"
-          element={<ProtectedRoute component={<SpecialPrayersComponent />} />}
-        />
-      </Routes>
-      {/* }
-        </>
-      ) : (
+      {/* {isMobile ? ( */}
+      <>
+        {
+          <Routes>
+            <Route
+              path="/mobileCalender"
+              element={<ProtectedRoute component={<MobileViewCalender />} />}
+            />
+            <Route
+              path="/feed/:tab"
+              element={<ProtectedRoute component={<BottomNavigation />} />}
+            />
+            <Route
+              path="/events-calender"
+              element={<ProtectedRoute component={<EventsViewCalender />} />}
+            />
+            <Route
+              path="/event/:id"
+              element={<ProtectedRoute component={<Events />} />}
+            />
+            <Route
+              path="/event-details/:id"
+              element={<ProtectedRoute component={<EventDetails />} />}
+            />
+            <Route
+              path="/special-prayers"
+              element={
+                <ProtectedRoute component={<SpecialPrayersComponent />} />
+              }
+            />
+          </Routes>
+        }
+      </>
+      {/* ) : (
         //for desktop screen
 
         <Suspense fallback={<div>Loading...</div>}>

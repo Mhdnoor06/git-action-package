@@ -24,7 +24,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import Announcement from "../Announcement/Announcement";
 
-export const BottomNavigation = () => {
+const BottomNavigation = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [tmConOpener, setTmConOpener] = useState(false);
   const { tab } = useParams();
@@ -49,15 +49,15 @@ export const BottomNavigation = () => {
             clearInterval(interval);
             return;
           } else {
-            swiper.slideTo(totalSlides - 1, 800);
+            swiper.slideTo(totalSlides - 1, 500);
           }
         } else {
-          swiper.slideTo(0, 800);
+          swiper.slideTo(0, 500);
         }
         autoplayCounter++;
       };
 
-      const interval = setInterval(autoplayOnce, 800);
+      const interval = setInterval(autoplayOnce, 500);
 
       return () => clearInterval(interval);
     }
@@ -149,7 +149,7 @@ export const BottomNavigation = () => {
   const getSlidesPerView = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth < 350) return 4;
-    else if (screenWidth >= 350 && screenWidth < 600) return 5;
+    else if (screenWidth >= 350 && screenWidth < 600) return 4;
     else return 6;
   };
 

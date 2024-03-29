@@ -1,17 +1,17 @@
 var Ns = Object.defineProperty;
 var zs = (i, t, e) => t in i ? Ns(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
 var P = (i, t, e) => (zs(i, typeof t != "symbol" ? t + "" : t, e), e);
-import { aD as Bs, aU as Un, aC as Te, t as _, ah as Ws, bG as Hs, ap as Vs, ao as Ii, bH as Ys, a7 as Ge, bE as Us, a6 as ri, bn as $s, b1 as Xs } from "./index-bQQXQLco.mjs";
+import { ap as Bs, aJ as Un, ao as Te, y as _, a9 as Ws, bw as Hs, ae as Vs, ad as Ii, bx as Ys, Y as Ze, bu as Us, X as ri, bd as Xs, aS as $s } from "./index-XkptO5g9.mjs";
 import pt, { Component as Ks, forwardRef as pi, useState as dt, useRef as Fi, useEffect as ft } from "react";
-import { a as qs } from "./index.esm-51C85EO5.mjs";
-import { a as Qs, E as Gs } from "./EventPageFormComponent-QnQK7-98.mjs";
-import { e as Zs, C as Js, b as to, g as eo, f as io } from "./Dashboard-UG3V2pVr.mjs";
-import { R as no, P as so } from "./ReadMoreReadLess-qLSriopp.mjs";
+import { a as qs } from "./index.esm-dKdnsyf6.mjs";
+import { a as Qs, E as Zs } from "./EventPageFormComponent-9XBvpM1Z.mjs";
+import { e as Gs, C as Js, b as to, g as eo, f as io } from "./Dashboard-wU64Oe5M.mjs";
+import { R as no, P as so } from "./ReadMoreReadLess-LZuDJMQy.mjs";
 import { C as oo } from "./CANCEL-NjkmKVms.mjs";
 import "react-dom";
-import "./DatePicker-IsAGS9fO.mjs";
-import "./swiper-bundle-TtAczPya.mjs";
-import "./FetchingMasjidByAdminAction-mCKyf-Hl.mjs";
+import "./DatePicker-8NDaDOhh.mjs";
+import "./swiper-bundle-HqgJZv8V.mjs";
+import "./FetchingMasjidByAdminAction-0AI5KNsP.mjs";
 var ai = function() {
   return ai = Object.assign || function(i) {
     for (var t, e = 1, n = arguments.length; e < n; e++) {
@@ -174,7 +174,7 @@ var ao = /* @__PURE__ */ function() {
       throw c[1];
     return { value: c[0] ? c[1] : void 0, done: !0 };
   }
-}, $n = function(i, t) {
+}, Xn = function(i, t) {
   var e = {};
   for (var n in i)
     Object.prototype.hasOwnProperty.call(i, n) && t.indexOf(n) < 0 && (e[n] = i[n]);
@@ -196,7 +196,7 @@ var ao = /* @__PURE__ */ function() {
   };
 };
 function go(i, t, e) {
-  var n = t.height, s = t.width, o = $n(t, ["height", "width"]), r = ut({ height: n, width: s, location: "no", toolbar: "no", status: "no", directories: "no", menubar: "no", scrollbars: "yes", resizable: "no", centerscreen: "yes", chrome: "yes" }, o), a = window.open(i, "", Object.keys(r).map(function(c) {
+  var n = t.height, s = t.width, o = Xn(t, ["height", "width"]), r = ut({ height: n, width: s, location: "no", toolbar: "no", status: "no", directories: "no", menubar: "no", scrollbars: "yes", resizable: "no", centerscreen: "yes", chrome: "yes" }, o), a = window.open(i, "", Object.keys(r).map(function(c) {
     return "".concat(c, "=").concat(r[c]);
   }).join(", "));
   if (e)
@@ -249,7 +249,7 @@ var po = (
       e.onShareWindowClose, e.openShareDialogOnClick, e.opts;
       var c = e.resetButtonStyle, h = e.style;
       e.url, e.windowHeight, e.windowPosition, e.windowWidth;
-      var d = $n(e, ["beforeOnClick", "children", "className", "disabled", "disabledStyle", "forwardedRef", "networkLink", "networkName", "onShareWindowClose", "openShareDialogOnClick", "opts", "resetButtonStyle", "style", "url", "windowHeight", "windowPosition", "windowWidth"]), f = Zs("react-share__ShareButton", {
+      var d = Xn(e, ["beforeOnClick", "children", "className", "disabled", "disabledStyle", "forwardedRef", "networkLink", "networkName", "onShareWindowClose", "openShareDialogOnClick", "opts", "resetButtonStyle", "style", "url", "windowHeight", "windowPosition", "windowWidth"]), f = Gs("react-share__ShareButton", {
         "react-share__ShareButton--disabled": !!o,
         disabled: !!o
       }, s), u = ut(ut(c ? { backgroundColor: "transparent", border: "none", padding: 0, font: "inherit", color: "inherit", cursor: "pointer" } : {}, h), o && r);
@@ -286,7 +286,7 @@ var bo = mi({
   networkName: "facebook",
   path: "M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"
 });
-const Xn = bo;
+const $n = bo;
 var xo = /* @__PURE__ */ function() {
   var i = function(t, e) {
     return i = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(n, s) {
@@ -371,7 +371,7 @@ var So = mi({
   networkName: "whatsapp",
   path: "m42.32286,33.93287c-0.5178,-0.2589 -3.04726,-1.49644 -3.52105,-1.66732c-0.4712,-0.17346 -0.81554,-0.2589 -1.15987,0.2589c-0.34175,0.51004 -1.33075,1.66474 -1.63108,2.00648c-0.30032,0.33658 -0.60064,0.36247 -1.11327,0.12945c-0.5178,-0.2589 -2.17994,-0.80259 -4.14759,-2.56312c-1.53269,-1.37217 -2.56312,-3.05503 -2.86603,-3.57283c-0.30033,-0.5178 -0.03366,-0.80259 0.22524,-1.06149c0.23301,-0.23301 0.5178,-0.59547 0.7767,-0.90616c0.25372,-0.31068 0.33657,-0.5178 0.51262,-0.85437c0.17088,-0.36246 0.08544,-0.64725 -0.04402,-0.90615c-0.12945,-0.2589 -1.15987,-2.79613 -1.58964,-3.80584c-0.41424,-1.00971 -0.84142,-0.88027 -1.15987,-0.88027c-0.29773,-0.02588 -0.64208,-0.02588 -0.98382,-0.02588c-0.34693,0 -0.90616,0.12945 -1.37736,0.62136c-0.4712,0.5178 -1.80194,1.76053 -1.80194,4.27186c0,2.51134 1.84596,4.945 2.10227,5.30747c0.2589,0.33657 3.63497,5.51458 8.80262,7.74113c1.23237,0.5178 2.1903,0.82848 2.94111,1.08738c1.23237,0.38836 2.35599,0.33657 3.24402,0.20712c0.99159,-0.15534 3.04985,-1.24272 3.47963,-2.45956c0.44013,-1.21683 0.44013,-2.22654 0.31068,-2.45955c-0.12945,-0.23301 -0.46601,-0.36247 -0.98382,-0.59548m-9.40068,12.84407l-0.02589,0c-3.05503,0 -6.08417,-0.82849 -8.72495,-2.38189l-0.62136,-0.37023l-6.47252,1.68286l1.73463,-6.29129l-0.41424,-0.64725c-1.70875,-2.71846 -2.6149,-5.85116 -2.6149,-9.07706c0,-9.39809 7.68934,-17.06155 17.15993,-17.06155c4.58253,0 8.88029,1.78642 12.11655,5.02268c3.23625,3.21036 5.02267,7.50812 5.02267,12.06476c-0.0078,9.3981 -7.69712,17.06155 -17.14699,17.06155m14.58906,-31.58846c-3.93529,-3.80584 -9.1133,-5.95471 -14.62789,-5.95471c-11.36055,0 -20.60848,9.2065 -20.61625,20.52564c0,3.61684 0.94757,7.14565 2.75211,10.26282l-2.92557,10.63564l10.93337,-2.85309c3.0136,1.63108 6.4052,2.4958 9.85634,2.49839l0.01037,0c11.36574,0 20.61884,-9.2091 20.62403,-20.53082c0,-5.48093 -2.14111,-10.64081 -6.03239,-14.51915"
 });
-const Gn = So;
+const Zn = So;
 function Co() {
   return /(android|iphone|ipad|mobile)/i.test(navigator.userAgent);
 }
@@ -390,7 +390,7 @@ var Oo = xi("whatsapp", Ao, function(i) {
   windowWidth: 550,
   windowHeight: 400
 });
-const Zn = Oo, Po = "data:image/png;base64,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", To = ({
+const Gn = Oo, Po = "data:image/png;base64,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", To = ({
   EventDetails: i,
   setIsUpdating: t,
   EventPhotos: e,
@@ -485,21 +485,21 @@ const Zn = Oo, Po = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAA
         /* @__PURE__ */ _.jsxs("div", { className: "EventProfileTimingContainers", children: [
           /* @__PURE__ */ _.jsx("img", { src: Po, className: "CalenderLogo" }),
           /* @__PURE__ */ _.jsxs("span", { className: "EventProfileTimingValueDate", children: [
-            ((y = i == null ? void 0 : i.metaData) == null ? void 0 : y.startDate) != null && Ge((S = i == null ? void 0 : i.metaData) == null ? void 0 : S.startDate).format(
+            ((y = i == null ? void 0 : i.metaData) == null ? void 0 : y.startDate) != null && Ze((S = i == null ? void 0 : i.metaData) == null ? void 0 : S.startDate).format(
               "DD/MM/YYYY"
             ),
             " | "
           ] }),
           /* @__PURE__ */ _.jsxs("span", { className: "EventProfileTimingValueStart", children: [
             " ",
-            ((M = i == null ? void 0 : i.timings) == null ? void 0 : M.length) > 0 && Ge(((k = i == null ? void 0 : i.timings[0]) == null ? void 0 : k.startTime) * 1e3).format(
+            ((M = i == null ? void 0 : i.timings) == null ? void 0 : M.length) > 0 && Ze(((k = i == null ? void 0 : i.timings[0]) == null ? void 0 : k.startTime) * 1e3).format(
               "hh:mm A"
             ),
             " to"
           ] }),
           /* @__PURE__ */ _.jsxs("span", { className: "EventProfileTimingValueEnd", children: [
             " ",
-            ((C = i == null ? void 0 : i.timings) == null ? void 0 : C.length) > 0 && Ge(((O = i == null ? void 0 : i.timings[0]) == null ? void 0 : O.endTime) * 1e3).format(
+            ((C = i == null ? void 0 : i.timings) == null ? void 0 : C.length) > 0 && Ze(((O = i == null ? void 0 : i.timings[0]) == null ? void 0 : O.endTime) * 1e3).format(
               "hh:mm A"
             )
           ] })
@@ -543,15 +543,15 @@ const Zn = Oo, Po = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAA
             Kn,
             {
               url: (e == null ? void 0 : e.length) > 0 ? (A = e[0]) == null ? void 0 : A.url : "www.connectMazjid.com",
-              children: /* @__PURE__ */ _.jsx(Xn, { size: 32, round: !0 })
+              children: /* @__PURE__ */ _.jsx($n, { size: 32, round: !0 })
             }
           ) }),
           /* @__PURE__ */ _.jsx("div", { className: "FacebookSharingButton", children: /* @__PURE__ */ _.jsx(
-            Zn,
+            Gn,
             {
               url: (e == null ? void 0 : e.length) > 0 ? (T = e[0]) == null ? void 0 : T.url : "www.connectMazjid.com",
               title: `${i.eventName} will be happening at ${g.masjidName}`,
-              children: /* @__PURE__ */ _.jsx(Gn, { size: 32, round: !0 })
+              children: /* @__PURE__ */ _.jsx(Zn, { size: 32, round: !0 })
             }
           ) }),
           /* @__PURE__ */ _.jsx("div", { className: "FacebookSharingButton", children: /* @__PURE__ */ _.jsx(
@@ -860,7 +860,7 @@ const ji = {
   Lw: "ffff00",
   LwgYF: "9acd32"
 };
-function $o() {
+function Xo() {
   const i = {}, t = Object.keys(Ei), e = Object.keys(ji);
   let n, s, o, r, a;
   for (n = 0; n < t.length; n++) {
@@ -871,8 +871,8 @@ function $o() {
   return i;
 }
 let ge;
-function Xo(i) {
-  ge || (ge = $o(), ge.transparent = [0, 0, 0, 0]);
+function $o(i) {
+  ge || (ge = Xo(), ge.transparent = [0, 0, 0, 0]);
   const t = ge[i.toLowerCase()];
   return t && {
     r: t[0],
@@ -901,13 +901,13 @@ function qo(i) {
 function Qo(i) {
   return i && (i.a < 255 ? `rgba(${i.r}, ${i.g}, ${i.b}, ${gt(i.a)})` : `rgb(${i.r}, ${i.g}, ${i.b})`);
 }
-const Ze = (i) => i <= 31308e-7 ? i * 12.92 : Math.pow(i, 1 / 2.4) * 1.055 - 0.055, It = (i) => i <= 0.04045 ? i / 12.92 : Math.pow((i + 0.055) / 1.055, 2.4);
-function Go(i, t, e) {
+const Ge = (i) => i <= 31308e-7 ? i * 12.92 : Math.pow(i, 1 / 2.4) * 1.055 - 0.055, It = (i) => i <= 0.04045 ? i / 12.92 : Math.pow((i + 0.055) / 1.055, 2.4);
+function Zo(i, t, e) {
   const n = It(gt(i.r)), s = It(gt(i.g)), o = It(gt(i.b));
   return {
-    r: yt(Ze(n + e * (It(gt(t.r)) - n))),
-    g: yt(Ze(s + e * (It(gt(t.g)) - s))),
-    b: yt(Ze(o + e * (It(gt(t.b)) - o))),
+    r: yt(Ge(n + e * (It(gt(t.r)) - n))),
+    g: yt(Ge(s + e * (It(gt(t.g)) - s))),
+    b: yt(Ge(o + e * (It(gt(t.b)) - o))),
     a: i.a + e * (t.a - i.a)
   };
 }
@@ -924,7 +924,7 @@ function Ni(i) {
   var t = { r: 0, g: 0, b: 0, a: 255 };
   return Array.isArray(i) ? i.length >= 3 && (t = { r: i[0], g: i[1], b: i[2], a: 255 }, i.length > 3 && (t.a = yt(i[3]))) : (t = es(i, { r: 0, g: 0, b: 0, a: 1 }), t.a = yt(t.a)), t;
 }
-function Zo(i) {
+function Go(i) {
   return i.charAt(0) === "r" ? qo(i) : Vo(i);
 }
 class oe {
@@ -933,7 +933,7 @@ class oe {
       return t;
     const e = typeof t;
     let n;
-    e === "object" ? n = Ni(t) : e === "string" && (n = Fo(t) || Xo(t) || Zo(t)), this._rgb = n, this._valid = !!n;
+    e === "object" ? n = Ni(t) : e === "string" && (n = Fo(t) || $o(t) || Go(t)), this._rgb = n, this._valid = !!n;
   }
   get valid() {
     return this._valid;
@@ -964,7 +964,7 @@ class oe {
     return this;
   }
   interpolate(t, e) {
-    return t && (this._rgb = Go(this._rgb, t._rgb, e)), this;
+    return t && (this._rgb = Zo(this._rgb, t._rgb, e)), this;
   }
   clone() {
     return new oe(this.rgb);
@@ -1028,11 +1028,11 @@ function N(i) {
 function L(i) {
   return i !== null && Object.prototype.toString.call(i) === "[object Object]";
 }
-function $(i) {
+function X(i) {
   return (typeof i == "number" || i instanceof Number) && isFinite(+i);
 }
 function J(i, t) {
-  return $(i) ? i : t;
+  return X(i) ? i : t;
 }
 function I(i, t) {
   return typeof i > "u" ? t : i;
@@ -1196,7 +1196,7 @@ function ki(i) {
   return i * (180 / U);
 }
 function Vi(i) {
-  if (!$(i))
+  if (!X(i))
     return;
   let t = 1, e = 0;
   for (; Math.round(i * t) / t !== i; )
@@ -1321,7 +1321,7 @@ function pr(i, t) {
     return t ? (clearTimeout(e), e = setTimeout(i, t, n)) : i.apply(this, n), t;
   };
 }
-const cs = (i) => i === "start" ? "left" : i === "end" ? "right" : "center", Z = (i, t, e) => i === "start" ? t : i === "end" ? e : (t + e) / 2, mr = (i, t, e, n) => i === (n ? "left" : "right") ? e : i === "center" ? (t + e) / 2 : t, me = (i) => i === 0 || i === 1, Ui = (i, t, e) => -(Math.pow(2, 10 * (i -= 1)) * Math.sin((i - t) * z / e)), $i = (i, t, e) => Math.pow(2, -10 * i) * Math.sin((i - t) * z / e) + 1, ie = {
+const cs = (i) => i === "start" ? "left" : i === "end" ? "right" : "center", G = (i, t, e) => i === "start" ? t : i === "end" ? e : (t + e) / 2, mr = (i, t, e, n) => i === (n ? "left" : "right") ? e : i === "center" ? (t + e) / 2 : t, me = (i) => i === 0 || i === 1, Ui = (i, t, e) => -(Math.pow(2, 10 * (i -= 1)) * Math.sin((i - t) * z / e)), Xi = (i, t, e) => Math.pow(2, -10 * i) * Math.sin((i - t) * z / e) + 1, ie = {
   linear: (i) => i,
   easeInQuad: (i) => i * i,
   easeOutQuad: (i) => -i * (i - 2),
@@ -1345,9 +1345,9 @@ const cs = (i) => i === "start" ? "left" : i === "end" ? "right" : "center", Z =
   easeOutCirc: (i) => Math.sqrt(1 - (i -= 1) * i),
   easeInOutCirc: (i) => (i /= 0.5) < 1 ? -0.5 * (Math.sqrt(1 - i * i) - 1) : 0.5 * (Math.sqrt(1 - (i -= 2) * i) + 1),
   easeInElastic: (i) => me(i) ? i : Ui(i, 0.075, 0.3),
-  easeOutElastic: (i) => me(i) ? i : $i(i, 0.075, 0.3),
+  easeOutElastic: (i) => me(i) ? i : Xi(i, 0.075, 0.3),
   easeInOutElastic(i) {
-    return me(i) ? i : i < 0.5 ? 0.5 * Ui(i * 2, 0.1125, 0.45) : 0.5 + 0.5 * $i(i * 2 - 1, 0.1125, 0.45);
+    return me(i) ? i : i < 0.5 ? 0.5 * Ui(i * 2, 0.1125, 0.45) : 0.5 + 0.5 * Xi(i * 2 - 1, 0.1125, 0.45);
   },
   easeInBack(i) {
     return i * i * ((1.70158 + 1) * i - 1.70158);
@@ -1372,7 +1372,7 @@ function hs(i) {
   }
   return !1;
 }
-function Xi(i) {
+function $i(i) {
   return hs(i) ? i : new oe(i);
 }
 function Je(i) {
@@ -1468,7 +1468,7 @@ function wr(i, t) {
   let n = Ki.get(e);
   return n || (n = new Intl.NumberFormat(i, t), Ki.set(e, n)), n;
 }
-function $e(i, t, e) {
+function Xe(i, t, e) {
   return wr(t, e).format(i);
 }
 const ds = {
@@ -1489,7 +1489,7 @@ const ds = {
       minimumFractionDigits: a,
       maximumFractionDigits: a
     };
-    return Object.assign(l, this.options.ticks.format), $e(i, n, l);
+    return Object.assign(l, this.options.ticks.format), Xe(i, n, l);
   },
   logarithmic(i, t, e) {
     if (i === 0)
@@ -1509,7 +1509,7 @@ function vr(i, t) {
   let e = t.length > 3 ? t[2].value - t[1].value : t[1].value - t[0].value;
   return Math.abs(e) >= 1 && i !== Math.floor(i) && (e = i - Math.floor(i)), e;
 }
-var Xe = {
+var $e = {
   formatters: ds
 };
 function kr(i) {
@@ -1555,7 +1555,7 @@ function kr(i) {
       autoSkip: !0,
       autoSkipPadding: 3,
       labelOffset: 0,
-      callback: Xe.formatters.values,
+      callback: $e.formatters.values,
       minor: {},
       major: {},
       align: "center",
@@ -1823,7 +1823,7 @@ function q(i) {
   const t = Fr(i);
   return t.width = t.left + t.right, t.height = t.top + t.bottom, t;
 }
-function X(i, t) {
+function $(i, t) {
   i = i || {}, t = t || V.font;
   let e = I(i.size, t.size);
   typeof e == "string" && (e = parseInt(e, 10));
@@ -1885,10 +1885,10 @@ function Oi(i, t = [
       return Reflect.getPrototypeOf(i[0]);
     },
     has(r, a) {
-      return Zi(r).includes(a);
+      return Gi(r).includes(a);
     },
     ownKeys(r) {
-      return Zi(r);
+      return Gi(r);
     },
     set(r, a, l) {
       const c = r._storage || (r._storage = s());
@@ -2002,12 +2002,12 @@ function Ti(i, t, e, n) {
     ...s
   ], a = /* @__PURE__ */ new Set();
   a.add(n);
-  let l = Gi(a, r, e, o || e, n);
-  return l === null || nt(o) && o !== e && (l = Gi(a, r, o, l, n), l === null) ? !1 : Oi(Array.from(a), [
+  let l = Zi(a, r, e, o || e, n);
+  return l === null || nt(o) && o !== e && (l = Zi(a, r, o, l, n), l === null) ? !1 : Oi(Array.from(a), [
     ""
   ], s, o, () => Hr(t, e, n));
 }
-function Gi(i, t, e, n, s) {
+function Zi(i, t, e, n, s) {
   for (; e; )
     e = Wr(i, t, e, n, s);
   return e;
@@ -2033,7 +2033,7 @@ function bs(i, t) {
       return n;
   }
 }
-function Zi(i) {
+function Gi(i) {
   let t = i._keys;
   return t || (t = i._keys = Yr(i._scopes)), t;
 }
@@ -2059,7 +2059,7 @@ const Ke = (i) => i.ownerDocument.defaultView.getComputedStyle(i, null);
 function Ur(i, t) {
   return Ke(i).getPropertyValue(t);
 }
-const $r = [
+const Xr = [
   "top",
   "right",
   "bottom",
@@ -2069,16 +2069,16 @@ function At(i, t, e) {
   const n = {};
   e = e ? "-" + e : "";
   for (let s = 0; s < 4; s++) {
-    const o = $r[s];
+    const o = Xr[s];
     n[o] = parseFloat(i[t + "-" + o + e]) || 0;
   }
   return n.width = n.left + n.right, n.height = n.top + n.bottom, n;
 }
-const Xr = (i, t, e) => (i > 0 || t > 0) && (!e || !e.shadowRoot);
+const $r = (i, t, e) => (i > 0 || t > 0) && (!e || !e.shadowRoot);
 function Kr(i, t) {
   const e = i.touches, n = e && e.length ? e[0] : i, { offsetX: s, offsetY: o } = n;
   let r = !1, a, l;
-  if (Xr(s, o, i.target))
+  if ($r(s, o, i.target))
     a = s, l = o;
   else {
     const c = t.getBoundingClientRect();
@@ -2137,7 +2137,7 @@ function Ji(i, t, e) {
   const r = i.canvas;
   return r.style && (e || !r.style.height && !r.style.width) && (r.style.height = `${i.height}px`, r.style.width = `${i.width}px`), i.currentDevicePixelRatio !== n || r.height !== s || r.width !== o ? (i.currentDevicePixelRatio = n, r.height = s, r.width = o, i.ctx.setTransform(n, 0, 0, n, 0, 0), !0) : !1;
 }
-const Gr = function() {
+const Zr = function() {
   let i = !1;
   try {
     const t = {
@@ -2154,7 +2154,7 @@ function tn(i, t) {
   const e = Ur(i, t), n = e && e.match(/^(\d+)(\.\d+)?px$/);
   return n ? +n[1] : void 0;
 }
-const Zr = function(i, t) {
+const Gr = function(i, t) {
   return {
     x(e) {
       return i + i + t - e;
@@ -2191,7 +2191,7 @@ const Zr = function(i, t) {
   };
 };
 function jt(i, t, e) {
-  return i ? Zr(t, e) : Jr();
+  return i ? Gr(t, e) : Jr();
 }
 function _s(i, t) {
   let e, n;
@@ -2291,7 +2291,7 @@ const en = "transparent", ea = {
     return e > 0.5 ? t : i;
   },
   color(i, t, e) {
-    const n = Xi(i || en), s = n.valid && Xi(t || en);
+    const n = $i(i || en), s = n.valid && $i(t || en);
     return s && s.valid ? s.mix(n, e).hexString() : t;
   },
   number(i, t, e) {
@@ -2500,7 +2500,7 @@ function sn(i, t, e, n = {}) {
           continue;
         break;
       }
-      c = i.values[l], $(c) && (o || t === 0 || De(t) === De(c)) && (t += c);
+      c = i.values[l], X(c) && (o || t === 0 || De(t) === De(c)) && (t += c);
     }
     return t;
   }
@@ -2730,7 +2730,7 @@ class se {
     function g() {
       u = s[f];
       const m = u[a.axis];
-      return !$(u[t.axis]) || h > m || d < m;
+      return !X(u[t.axis]) || h > m || d < m;
     }
     for (f = 0; f < r && !(!g() && (this.updateRangeFromParsed(c, t, u, l), o)); ++f)
       ;
@@ -2747,7 +2747,7 @@ class se {
     const e = this._cachedMeta._parsed, n = [];
     let s, o, r;
     for (s = 0, o = e.length; s < o; ++s)
-      r = e[s][t.axis], $(r) && n.push(r);
+      r = e[s][t.axis], X(r) && n.push(r);
     return n;
   }
   getMaxOverflow() {
@@ -2962,7 +2962,7 @@ function ga(i, t, e) {
     offsetY: r
   };
 }
-class Gt extends se {
+class Zt extends se {
   constructor(t, e) {
     super(t, e), this.enableOptionSharing = !0, this.innerRadius = void 0, this.outerRadius = void 0, this.offsetX = void 0, this.offsetY = void 0;
   }
@@ -3041,7 +3041,7 @@ class Gt extends se {
     return e > 0 && !isNaN(t) ? z * (Math.abs(t) / e) : 0;
   }
   getLabelAndValue(t) {
-    const e = this._cachedMeta, n = this.chart, s = n.data.labels || [], o = $e(e._parsed[t], n.options.locale);
+    const e = this._cachedMeta, n = this.chart, s = n.data.labels || [], o = Xe(e._parsed[t], n.options.locale);
     return {
       label: s[t] || "",
       value: o
@@ -3085,7 +3085,7 @@ class Gt extends se {
     return this._getRingWeightOffset(this.chart.data.datasets.length) || 1;
   }
 }
-P(Gt, "id", "doughnut"), P(Gt, "defaults", {
+P(Zt, "id", "doughnut"), P(Zt, "defaults", {
   datasetElementType: !1,
   dataElementType: "arc",
   animation: {
@@ -3115,10 +3115,10 @@ P(Gt, "id", "doughnut"), P(Gt, "defaults", {
   radius: "100%",
   spacing: 0,
   indexAxis: "r"
-}), P(Gt, "descriptors", {
+}), P(Zt, "descriptors", {
   _scriptable: (t) => t !== "spacing",
   _indexable: (t) => t !== "spacing"
-}), P(Gt, "overrides", {
+}), P(Zt, "overrides", {
   aspectRatio: 1,
   plugins: {
     legend: {
@@ -3150,7 +3150,7 @@ P(Gt, "id", "doughnut"), P(Gt, "defaults", {
     }
   }
 });
-class di extends Gt {
+class di extends Zt {
 }
 P(di, "id", "pie"), P(di, "defaults", {
   cutout: 0,
@@ -3373,7 +3373,7 @@ function Ut(i, t) {
 function hn(i, t) {
   return i.filter((e) => ks.indexOf(e.pos) === -1 && e.box.axis === t);
 }
-function $t(i, t) {
+function Xt(i, t) {
   return i.sort((e, n) => {
     const s = t ? n : e, o = t ? e : n;
     return s.weight === o.weight ? s.index - o.index : s.weight - o.weight;
@@ -3421,7 +3421,7 @@ function ka(i, t) {
   return e;
 }
 function Ma(i) {
-  const t = wa(i), e = $t(t.filter((c) => c.box.fullSize), !0), n = $t(Ut(t, "left"), !0), s = $t(Ut(t, "right")), o = $t(Ut(t, "top"), !0), r = $t(Ut(t, "bottom")), a = hn(t, "x"), l = hn(t, "y");
+  const t = wa(i), e = Xt(t.filter((c) => c.box.fullSize), !0), n = Xt(Ut(t, "left"), !0), s = Xt(Ut(t, "right")), o = Xt(Ut(t, "top"), !0), r = Xt(Ut(t, "bottom")), a = hn(t, "x"), l = hn(t, "y");
   return {
     fullSize: e,
     leftAndTop: n.concat(o),
@@ -3486,7 +3486,7 @@ function Aa(i, t) {
     "bottom"
   ]);
 }
-function Zt(i, t, e, n) {
+function Gt(i, t, e, n) {
   const s = [];
   let o, r, a, l, c, h;
   for (o = 0, r = i.length, c = 0; o < r; ++o) {
@@ -3494,7 +3494,7 @@ function Zt(i, t, e, n) {
     const { same: d, other: f } = Sa(t, e, a, n);
     c |= d && s.length, h = h || f, l.fullSize || s.push(a);
   }
-  return c && Zt(s, t, e, n) || h;
+  return c && Gt(s, t, e, n) || h;
 }
 function _e(i, t, e, n, s) {
   i.top = e, i.left = t, i.right = t + n, i.bottom = e + s, i.width = n, i.height = s;
@@ -3562,7 +3562,7 @@ var _t = {
       x: s.left,
       y: s.top
     }, s), g = ka(l.concat(c), d);
-    Zt(a.fullSize, u, d, g), Zt(l, u, d, g), Zt(c, u, d, g) && Zt(l, u, d, g), Ca(u), fn(a.leftAndTop, u, d, g), u.x += u.w, u.y += u.h, fn(a.rightAndBottom, u, d, g), i.chartArea = {
+    Gt(a.fullSize, u, d, g), Gt(l, u, d, g), Gt(c, u, d, g) && Gt(l, u, d, g), Ca(u), fn(a.leftAndTop, u, d, g), u.x += u.w, u.y += u.h, fn(a.rightAndBottom, u, d, g), i.chartArea = {
       left: u.left,
       top: u.top,
       right: u.left + u.w,
@@ -3649,7 +3649,7 @@ function Ta(i, t) {
     }
   return i;
 }
-const Cs = Gr ? {
+const Cs = Zr ? {
   passive: !0
 } : !1;
 function La(i, t, e) {
@@ -3819,7 +3819,7 @@ P(Pt, "defaults", {}), P(Pt, "defaultRoutes");
 function Ha(i, t) {
   const e = i.options.ticks, n = Va(i), s = Math.min(e.maxTicksLimit || n, n), o = e.major.enabled ? Ua(t) : [], r = o.length, a = o[0], l = o[r - 1], c = [];
   if (r > s)
-    return $a(t, c, o, r / s), c;
+    return Xa(t, c, o, r / s), c;
   const h = Ya(o, t, s);
   if (r > 0) {
     let d, f;
@@ -3835,7 +3835,7 @@ function Va(i) {
   return Math.floor(Math.min(n, s));
 }
 function Ya(i, t, e) {
-  const n = Xa(i), s = t.length / e;
+  const n = $a(i), s = t.length / e;
   if (!n)
     return Math.max(s, 1);
   const o = ar(n);
@@ -3853,7 +3853,7 @@ function Ua(i) {
     i[e].major && t.push(e);
   return t;
 }
-function $a(i, t, e, n) {
+function Xa(i, t, e, n) {
   let s = 0, o = e[0], r;
   for (n = Math.ceil(n), r = 0; r < i.length; r++)
     r === o && (t.push(i[r]), s++, o = e[s * n]);
@@ -3866,7 +3866,7 @@ function ye(i, t, e, n, s) {
   for (c = Math.max(o, 0); c < r; c++)
     c === h && (t.push(i[c]), a++, h = Math.round(o + a * e));
 }
-function Xa(i) {
+function $a(i) {
   const t = i.length;
   let e, n;
   if (t < 2)
@@ -3901,22 +3901,22 @@ function Qa(i, t) {
     }
   });
 }
-function Xt(i) {
+function $t(i) {
   return i.drawTicks ? i.tickLength : 0;
 }
 function xn(i, t) {
   if (!i.display)
     return 0;
-  const e = X(i.font, t), n = q(i.padding);
+  const e = $(i.font, t), n = q(i.padding);
   return (N(i.text) ? i.text.length : 1) * e.lineHeight + n.height;
 }
-function Ga(i, t) {
+function Za(i, t) {
   return Tt(i, {
     scale: t,
     type: "scale"
   });
 }
-function Za(i, t, e) {
+function Ga(i, t, e) {
   return Tt(i, {
     tick: e,
     index: t,
@@ -3932,7 +3932,7 @@ function tl(i, t, e, n) {
   let d = 0, f, u, g;
   const m = r - s, p = a - o;
   if (i.isHorizontal()) {
-    if (u = Z(n, o, a), L(e)) {
+    if (u = G(n, o, a), L(e)) {
       const b = Object.keys(e)[0], x = e[b];
       g = h[b].getPixelForValue(x) + m - t;
     } else
@@ -3944,7 +3944,7 @@ function tl(i, t, e, n) {
       u = h[b].getPixelForValue(x) - p + t;
     } else
       e === "center" ? u = (c.left + c.right) / 2 - p + t : u = pn(i, e, t);
-    g = Z(n, r, s), d = e === "left" ? -B : B;
+    g = G(n, r, s), d = e === "left" ? -B : B;
   }
   return {
     titleX: u,
@@ -3973,8 +3973,8 @@ class zt extends Pt {
     return t = J(t, Number.POSITIVE_INFINITY), e = J(e, Number.NEGATIVE_INFINITY), n = J(n, Number.POSITIVE_INFINITY), s = J(s, Number.NEGATIVE_INFINITY), {
       min: J(t, n),
       max: J(e, s),
-      minDefined: $(t),
-      maxDefined: $(e)
+      minDefined: X(t),
+      maxDefined: X(e)
     };
   }
   getMinMax(t) {
@@ -4106,7 +4106,7 @@ class zt extends Pt {
       return;
     }
     const h = this._getLabelSizes(), d = h.widest.width, f = h.highest.height, u = et(this.chart.width - d, 0, this.maxWidth);
-    a = t.offset ? this.maxWidth / n : u / (n - 1), d + 6 > a && (a = u / (n - (t.offset ? 0.5 : 1)), l = this.maxHeight - Xt(t.grid) - e.padding - xn(t.title, this.chart.options.font), c = Math.sqrt(d * d + f * f), r = ki(Math.min(Math.asin(et((h.highest.height + 6) / a, -1, 1)), Math.asin(et(l / c, -1, 1)) - Math.asin(et(f / c, -1, 1)))), r = Math.max(s, Math.min(o, r))), this.labelRotation = r;
+    a = t.offset ? this.maxWidth / n : u / (n - 1), d + 6 > a && (a = u / (n - (t.offset ? 0.5 : 1)), l = this.maxHeight - $t(t.grid) - e.padding - xn(t.title, this.chart.options.font), c = Math.sqrt(d * d + f * f), r = ki(Math.min(Math.asin(et((h.highest.height + 6) / a, -1, 1)), Math.asin(et(l / c, -1, 1)) - Math.asin(et(f / c, -1, 1)))), r = Math.max(s, Math.min(o, r))), this.labelRotation = r;
   }
   afterCalculateLabelRotation() {
     j(this.options.afterCalculateLabelRotation, [
@@ -4127,7 +4127,7 @@ class zt extends Pt {
     }, { chart: e, options: { ticks: n, title: s, grid: o } } = this, r = this._isVisible(), a = this.isHorizontal();
     if (r) {
       const l = xn(s, e.options.font);
-      if (a ? (t.width = this.maxWidth, t.height = Xt(o) + l) : (t.height = this.maxHeight, t.width = Xt(o) + l), n.display && this.ticks.length) {
+      if (a ? (t.width = this.maxWidth, t.height = $t(o) + l) : (t.height = this.maxHeight, t.width = $t(o) + l), n.display && this.ticks.length) {
         const { first: c, last: h, widest: d, highest: f } = this._getLabelSizes(), u = n.padding * 2, g = at(this.labelRotation), m = Math.cos(g), p = Math.sin(g);
         if (a) {
           const b = n.mirror ? 0 : p * d.width + m * f.height;
@@ -4243,9 +4243,9 @@ class zt extends Pt {
     const e = this.ticks || [];
     if (t >= 0 && t < e.length) {
       const n = e[t];
-      return n.$context || (n.$context = Za(this.getContext(), t, n));
+      return n.$context || (n.$context = Ga(this.getContext(), t, n));
     }
-    return this.$context || (this.$context = Ga(this.chart.getContext(), this));
+    return this.$context || (this.$context = Za(this.chart.getContext(), this));
   }
   _tickSize() {
     const t = this.options.ticks, e = at(this.labelRotation), n = Math.abs(Math.cos(e)), s = Math.abs(Math.sin(e)), o = this._getLabelSizes(), r = t.autoSkipPadding || 0, a = o ? o.widest.width + r : 0, l = o ? o.highest.height + r : 0;
@@ -4256,7 +4256,7 @@ class zt extends Pt {
     return t !== "auto" ? !!t : this.getMatchingVisibleMetas().length > 0;
   }
   _computeGridLineItems(t) {
-    const e = this.axis, n = this.chart, s = this.options, { grid: o, position: r, border: a } = s, l = o.offset, c = this.isHorizontal(), d = this.ticks.length + (l ? 1 : 0), f = Xt(o), u = [], g = a.setContext(this.getContext()), m = g.display ? g.width : 0, p = m / 2, b = function(D) {
+    const e = this.axis, n = this.chart, s = this.options, { grid: o, position: r, border: a } = s, l = o.offset, c = this.isHorizontal(), d = this.ticks.length + (l ? 1 : 0), f = $t(o), u = [], g = a.setContext(this.getContext()), m = g.display ? g.width : 0, p = m / 2, b = function(D) {
       return kt(n, D, m);
     };
     let x, w, v, y, S, M, k, C, O, A, T, Y;
@@ -4310,7 +4310,7 @@ class zt extends Pt {
     return this._ticksLength = d, this._borderValue = x, u;
   }
   _computeLabelItems(t) {
-    const e = this.axis, n = this.options, { position: s, ticks: o } = n, r = this.isHorizontal(), a = this.ticks, { align: l, crossAlign: c, padding: h, mirror: d } = o, f = Xt(n.grid), u = f + h, g = d ? -h : u, m = -at(this.labelRotation), p = [];
+    const e = this.axis, n = this.options, { position: s, ticks: o } = n, r = this.isHorizontal(), a = this.ticks, { align: l, crossAlign: c, padding: h, mirror: d } = o, f = $t(n.grid), u = f + h, g = d ? -h : u, m = -at(this.labelRotation), p = [];
     let b, x, w, v, y, S, M, k, C, O, A, T, Y = "middle";
     if (s === "top")
       S = this.bottom - g, M = this._getXAxisLabelAlignment();
@@ -4495,7 +4495,7 @@ class zt extends Pt {
     const { ctx: t, options: { position: e, title: n, reverse: s } } = this;
     if (!n.display)
       return;
-    const o = X(n.font), r = q(n.padding), a = n.align;
+    const o = $(n.font), r = q(n.padding), a = n.align;
     let l = o.lineHeight / 2;
     e === "bottom" || e === "center" || L(e) ? (l += r.bottom, N(n.text) && (l += o.lineHeight * (n.text.length - 1))) : l += r.top;
     const { titleX: c, titleY: h, maxWidth: d, rotation: f } = tl(this, l, e, a);
@@ -4555,7 +4555,7 @@ class zt extends Pt {
   }
   _resolveTickFontOptions(t) {
     const e = this.options.ticks.setContext(this.getContext(t));
-    return X(e.font);
+    return $(e.font);
   }
   _maxDigits() {
     const t = this._resolveTickFontOptions(0).lineHeight;
@@ -5722,7 +5722,7 @@ class An extends Pt {
       this.width = this.height = 0;
       return;
     }
-    const n = t.labels, s = X(n.font), o = s.size, r = this._computeTitleHeight(), { boxWidth: a, itemHeight: l } = Cn(n, o);
+    const n = t.labels, s = $(n.font), o = s.size, r = this._computeTitleHeight(), { boxWidth: a, itemHeight: l } = Cn(n, o);
     let c, h;
     e.font = s.string, this.isHorizontal() ? (c = this.maxWidth, h = this._fitRows(r, o, a, l) + 10) : (h = this.maxHeight, c = this._fitCols(r, s, a, l) + 10), this.width = Math.min(c, t.maxWidth || this.maxWidth), this.height = Math.min(h, t.maxHeight || this.maxHeight);
   }
@@ -5769,13 +5769,13 @@ class An extends Pt {
       return;
     const t = this._computeTitleHeight(), { legendHitBoxes: e, options: { align: n, labels: { padding: s }, rtl: o } } = this, r = jt(o, this.left, this.width);
     if (this.isHorizontal()) {
-      let a = 0, l = Z(n, this.left + s, this.right - this.lineWidths[a]);
+      let a = 0, l = G(n, this.left + s, this.right - this.lineWidths[a]);
       for (const c of e)
-        a !== c.row && (a = c.row, l = Z(n, this.left + s, this.right - this.lineWidths[a])), c.top += this.top + t + s, c.left = r.leftForLtr(r.x(l), c.width), l += c.width + s;
+        a !== c.row && (a = c.row, l = G(n, this.left + s, this.right - this.lineWidths[a])), c.top += this.top + t + s, c.left = r.leftForLtr(r.x(l), c.width), l += c.width + s;
     } else {
-      let a = 0, l = Z(n, this.top + t + s, this.bottom - this.columnSizes[a].height);
+      let a = 0, l = G(n, this.top + t + s, this.bottom - this.columnSizes[a].height);
       for (const c of e)
-        c.col !== a && (a = c.col, l = Z(n, this.top + t + s, this.bottom - this.columnSizes[a].height)), c.top = l, c.left += this.left + s, c.left = r.leftForLtr(r.x(c.left), c.width), l += c.height + s;
+        c.col !== a && (a = c.col, l = G(n, this.top + t + s, this.bottom - this.columnSizes[a].height)), c.top = l, c.left += this.left + s, c.left = r.leftForLtr(r.x(c.left), c.width), l += c.height + s;
     }
   }
   isHorizontal() {
@@ -5788,7 +5788,7 @@ class An extends Pt {
     }
   }
   _draw() {
-    const { options: t, columnSizes: e, lineWidths: n, ctx: s } = this, { align: o, labels: r } = t, a = V.color, l = jt(t.rtl, this.left, this.width), c = X(r.font), { padding: h } = r, d = c.size, f = d / 2;
+    const { options: t, columnSizes: e, lineWidths: n, ctx: s } = this, { align: o, labels: r } = t, a = V.color, l = jt(t.rtl, this.left, this.width), c = $(r.font), { padding: h } = r, d = c.size, f = d / 2;
     let u;
     this.drawTitle(), s.textAlign = l.textAlign("left"), s.textBaseline = "middle", s.lineWidth = 0.5, s.font = c.string;
     const { boxWidth: g, boxHeight: m, itemHeight: p } = Cn(r, d), b = function(S, M, k) {
@@ -5822,12 +5822,12 @@ class An extends Pt {
       });
     }, w = this.isHorizontal(), v = this._computeTitleHeight();
     w ? u = {
-      x: Z(o, this.left + h, this.right - n[0]),
+      x: G(o, this.left + h, this.right - n[0]),
       y: this.top + h + v,
       line: 0
     } : u = {
       x: this.left + h,
-      y: Z(o, this.top + v + h, this.bottom - e[0].height),
+      y: G(o, this.top + v + h, this.bottom - e[0].height),
       line: 0
     }, _s(this.ctx, t.textDirection);
     const y = p + h;
@@ -5835,7 +5835,7 @@ class An extends Pt {
       s.strokeStyle = S.fontColor, s.fillStyle = S.fontColor;
       const k = s.measureText(S.text).width, C = l.textAlign(S.textAlign || (S.textAlign = r.textAlign)), O = g + f + k;
       let A = u.x, T = u.y;
-      l.setWidth(this.width), w ? M > 0 && A + O + h > this.right && (T = u.y += y, u.line++, A = u.x = Z(o, this.left + h, this.right - n[u.line])) : M > 0 && T + y > this.bottom && (A = u.x = A + e[u.line].width + h, u.line++, T = u.y = Z(o, this.top + v + h, this.bottom - e[u.line].height));
+      l.setWidth(this.width), w ? M > 0 && A + O + h > this.right && (T = u.y += y, u.line++, A = u.x = G(o, this.left + h, this.right - n[u.line])) : M > 0 && T + y > this.bottom && (A = u.x = A + e[u.line].width + h, u.line++, T = u.y = G(o, this.top + v + h, this.bottom - e[u.line].height));
       const Y = l.x(A);
       if (b(Y, T, S), A = mr(C, A + g + f, w ? A + O : this.right, t.rtl), x(l.x(A), T, S), w)
         u.x += O + h;
@@ -5847,22 +5847,22 @@ class An extends Pt {
     }), ys(this.ctx, t.textDirection);
   }
   drawTitle() {
-    const t = this.options, e = t.title, n = X(e.font), s = q(e.padding);
+    const t = this.options, e = t.title, n = $(e.font), s = q(e.padding);
     if (!e.display)
       return;
     const o = jt(t.rtl, this.left, this.width), r = this.ctx, a = e.position, l = n.size / 2, c = s.top + l;
     let h, d = this.left, f = this.width;
     if (this.isHorizontal())
-      f = Math.max(...this.lineWidths), h = this.top + c, d = Z(t.align, d, this.right - f);
+      f = Math.max(...this.lineWidths), h = this.top + c, d = G(t.align, d, this.right - f);
     else {
       const g = this.columnSizes.reduce((m, p) => Math.max(m, p.height), 0);
-      h = c + Z(t.align, this.top, this.bottom - g - t.labels.padding - this._computeTitleHeight());
+      h = c + G(t.align, this.top, this.bottom - g - t.labels.padding - this._computeTitleHeight());
     }
-    const u = Z(a, d, d + f);
+    const u = G(a, d, d + f);
     r.textAlign = o.textAlign(cs(a)), r.textBaseline = "middle", r.strokeStyle = e.color, r.fillStyle = e.color, r.font = n.string, Et(r, e.text, u, h, n);
   }
   _computeTitleHeight() {
-    const t = this.options.title, e = X(t.font), n = q(t.padding);
+    const t = this.options.title, e = $(t.font), n = q(t.padding);
     return t.display ? e.lineHeight + n.height : 0;
   }
   _getLegendItemAt(t, e) {
@@ -6065,7 +6065,7 @@ function Dl(i, t) {
   };
 }
 function On(i, t) {
-  const e = i.chart.ctx, { body: n, footer: s, title: o } = i, { boxWidth: r, boxHeight: a } = t, l = X(t.bodyFont), c = X(t.titleFont), h = X(t.footerFont), d = o.length, f = s.length, u = n.length, g = q(t.padding);
+  const e = i.chart.ctx, { body: n, footer: s, title: o } = i, { boxWidth: r, boxHeight: a } = t, l = $(t.bodyFont), c = $(t.titleFont), h = $(t.footerFont), d = o.length, f = s.length, u = n.length, g = q(t.padding);
   let m = g.height, p = 0, b = n.reduce((v, y) => v + y.before.length + y.lines.length + y.after.length, 0);
   if (b += i.beforeBody.length + i.afterBody.length, d && (m += d * c.lineHeight + (d - 1) * t.titleSpacing + t.titleMarginBottom), b) {
     const v = t.displayColors ? Math.max(a, l.lineHeight) : l.lineHeight;
@@ -6297,12 +6297,12 @@ class ui extends Pt {
     let r, a, l;
     if (o) {
       const c = jt(n.rtl, this.x, this.width);
-      for (t.x = ke(this, n.titleAlign, n), e.textAlign = c.textAlign(n.titleAlign), e.textBaseline = "middle", r = X(n.titleFont), a = n.titleSpacing, e.fillStyle = n.titleColor, e.font = r.string, l = 0; l < o; ++l)
+      for (t.x = ke(this, n.titleAlign, n), e.textAlign = c.textAlign(n.titleAlign), e.textBaseline = "middle", r = $(n.titleFont), a = n.titleSpacing, e.fillStyle = n.titleColor, e.font = r.string, l = 0; l < o; ++l)
         e.fillText(s[l], c.x(t.x), t.y + r.lineHeight / 2), t.y += r.lineHeight + a, l + 1 === o && (t.y += n.titleMarginBottom - a);
     }
   }
   _drawColorBox(t, e, n, s, o) {
-    const r = this.labelColors[n], a = this.labelPointStyles[n], { boxHeight: l, boxWidth: c, boxPadding: h } = o, d = X(o.bodyFont), f = ke(this, "left", o), u = s.x(f), g = l < d.lineHeight ? (d.lineHeight - l) / 2 : 0, m = e.y + g;
+    const r = this.labelColors[n], a = this.labelPointStyles[n], { boxHeight: l, boxWidth: c, boxPadding: h } = o, d = $(o.bodyFont), f = ke(this, "left", o), u = s.x(f), g = l < d.lineHeight ? (d.lineHeight - l) / 2 : 0, m = e.y + g;
     if (o.usePointStyle) {
       const p = {
         radius: Math.min(c, l) / 2,
@@ -6331,7 +6331,7 @@ class ui extends Pt {
     t.fillStyle = this.labelTextColors[n];
   }
   drawBody(t, e, n) {
-    const { body: s } = this, { bodySpacing: o, bodyAlign: r, displayColors: a, boxHeight: l, boxWidth: c, boxPadding: h } = n, d = X(n.bodyFont);
+    const { body: s } = this, { bodySpacing: o, bodyAlign: r, displayColors: a, boxHeight: l, boxWidth: c, boxPadding: h } = n, d = $(n.bodyFont);
     let f = d.lineHeight, u = 0;
     const g = jt(n.rtl, this.x, this.width), m = function(k) {
       e.fillText(k, g.x(t.x + u), t.y + f / 2), t.y += f + o;
@@ -6349,7 +6349,7 @@ class ui extends Pt {
     let r, a;
     if (o) {
       const l = jt(n.rtl, this.x, this.width);
-      for (t.x = ke(this, n.footerAlign, n), t.y += n.footerMarginTop, e.textAlign = l.textAlign(n.footerAlign), e.textBaseline = "middle", r = X(n.footerFont), e.fillStyle = n.footerColor, e.font = r.string, a = 0; a < o; ++a)
+      for (t.x = ke(this, n.footerAlign, n), t.y += n.footerMarginTop, e.textAlign = l.textAlign(n.footerAlign), e.textBaseline = "middle", r = $(n.footerFont), e.fillStyle = n.footerColor, e.font = r.string, a = 0; a < o; ++a)
         e.fillText(s[a], l.x(t.x), t.y + r.lineHeight / 2), t.y += r.lineHeight + n.footerSpacing;
     }
   }
@@ -6634,13 +6634,13 @@ class Ye extends zt {
     this._startValue = e, this._endValue = n, this._valueRange = n - e;
   }
   getLabelForValue(t) {
-    return $e(t, this.chart.options.locale, this.options.ticks.format);
+    return Xe(t, this.chart.options.locale, this.options.ticks.format);
   }
 }
 class Fn extends Ye {
   determineDataLimits() {
     const { min: t, max: e } = this.getMinMax(!0);
-    this.min = $(t) ? t : 0, this.max = $(e) ? e : 1, this.handleTickRangeOptions();
+    this.min = X(t) ? t : 0, this.max = X(e) ? e : 1, this.handleTickRangeOptions();
   }
   computeTickLimit() {
     const t = this.isHorizontal(), e = t ? this.width : this.height, n = at(this.options.ticks.minRotation), s = (t ? Math.sin(n) : Math.cos(n)) || 1e-3, o = this._resolveTickFontOptions(0);
@@ -6655,7 +6655,7 @@ class Fn extends Ye {
 }
 P(Fn, "id", "linear"), P(Fn, "defaults", {
   ticks: {
-    callback: Xe.formatters.numeric
+    callback: $e.formatters.numeric
   }
 });
 const ce = (i) => Math.floor(xt(i)), St = (i, t) => Math.pow(10, ce(i) + t);
@@ -6707,11 +6707,11 @@ class En extends zt {
       this._zero = !0;
       return;
     }
-    return $(n) && n > 0 ? n : null;
+    return X(n) && n > 0 ? n : null;
   }
   determineDataLimits() {
     const { min: t, max: e } = this.getMinMax(!0);
-    this.min = $(t) ? Math.max(0, t) : null, this.max = $(e) ? Math.max(0, e) : null, this.options.beginAtZero && (this._zero = !0), this._zero && this.min !== this._suggestedMin && !$(this._userMin) && (this.min = t === St(this.min, 0) ? St(this.min, -1) : St(this.min, 0)), this.handleTickRangeOptions();
+    this.min = X(t) ? Math.max(0, t) : null, this.max = X(e) ? Math.max(0, e) : null, this.options.beginAtZero && (this._zero = !0), this._zero && this.min !== this._suggestedMin && !X(this._userMin) && (this.min = t === St(this.min, 0) ? St(this.min, -1) : St(this.min, 0)), this.handleTickRangeOptions();
   }
   handleTickRangeOptions() {
     const { minDefined: t, maxDefined: e } = this.getUserBounds();
@@ -6727,7 +6727,7 @@ class En extends zt {
     return t.bounds === "ticks" && ss(n, this, "value"), t.reverse ? (n.reverse(), this.start = this.max, this.end = this.min) : (this.start = this.min, this.end = this.max), n;
   }
   getLabelForValue(t) {
-    return t === void 0 ? "0" : $e(t, this.chart.options.locale, this.options.ticks.format);
+    return t === void 0 ? "0" : Xe(t, this.chart.options.locale, this.options.ticks.format);
   }
   configure() {
     const t = this.min;
@@ -6743,7 +6743,7 @@ class En extends zt {
 }
 P(En, "id", "logarithmic"), P(En, "defaults", {
   ticks: {
-    callback: Xe.formatters.logarithmic,
+    callback: $e.formatters.logarithmic,
     major: {
       enabled: !0
     }
@@ -6757,7 +6757,7 @@ function gi(i) {
   }
   return 0;
 }
-function $l(i, t, e) {
+function Xl(i, t, e) {
   return e = N(e) ? e : [
     e
   ], {
@@ -6777,7 +6777,7 @@ function Nn(i, t, e, n, s) {
     end: t + e
   };
 }
-function Xl(i) {
+function $l(i) {
   const t = {
     l: i.left + i._padding.left,
     r: i.right - i._padding.right,
@@ -6787,7 +6787,7 @@ function Xl(i) {
   for (let l = 0; l < o; l++) {
     const c = r.setContext(i.getPointLabelContext(l));
     s[l] = c.padding;
-    const h = i.getPointPosition(l, i.drawingArea + s[l], a), d = X(c.font), f = $l(i.ctx, d, i._pointLabels[l]);
+    const h = i.getPointPosition(l, i.drawingArea + s[l], a), d = $(c.font), f = Xl(i.ctx, d, i._pointLabels[l]);
     n[l] = f;
     const u = rt(i.getIndexAngle(l) + a), g = Math.round(ki(u)), m = Nn(g, h.x, f.w, 0, 180), p = Nn(g, h.y, f.h, 90, 270);
     Kl(e, t, u, m, p);
@@ -6802,7 +6802,7 @@ function Kl(i, t, e, n, s) {
 function ql(i, t, e) {
   const n = [], s = i._pointLabels.length, o = i.options, r = gi(o) / 2, a = i.drawingArea, l = o.pointLabels.centerPointLabels ? U / s : 0;
   for (let c = 0; c < s; c++) {
-    const h = i.getPointPosition(c, a + r + e[c], l), d = Math.round(ki(rt(h.angle + B))), f = t[c], u = Zl(h.y, f.h, d), g = Ql(d), m = Gl(h.x, f.w, g);
+    const h = i.getPointPosition(c, a + r + e[c], l), d = Math.round(ki(rt(h.angle + B))), f = t[c], u = Gl(h.y, f.h, d), g = Ql(d), m = Zl(h.x, f.w, g);
     n.push({
       x: h.x,
       y: u,
@@ -6818,16 +6818,16 @@ function ql(i, t, e) {
 function Ql(i) {
   return i === 0 || i === 180 ? "center" : i < 180 ? "left" : "right";
 }
-function Gl(i, t, e) {
+function Zl(i, t, e) {
   return e === "right" ? i -= t : e === "center" && (i -= t / 2), i;
 }
-function Zl(i, t, e) {
+function Gl(i, t, e) {
   return e === 90 || e === 270 ? i -= t / 2 : (e > 270 || e < 90) && (i -= t), i;
 }
 function Jl(i, t) {
   const { ctx: e, options: { pointLabels: n } } = i;
   for (let s = t - 1; s >= 0; s--) {
-    const o = n.setContext(i.getPointLabelContext(s)), r = X(o.font), { x: a, y: l, textAlign: c, left: h, top: d, right: f, bottom: u } = i._pointLabelItems[s], { backdropColor: g } = o;
+    const o = n.setContext(i.getPointLabelContext(s)), r = $(o.font), { x: a, y: l, textAlign: c, left: h, top: d, right: f, bottom: u } = i._pointLabelItems[s], { backdropColor: g } = o;
     if (!E(g)) {
       const m = Dt(o.borderRadius), p = q(o.backdropPadding);
       e.fillStyle = g;
@@ -6879,7 +6879,7 @@ class Me extends Ye {
   }
   determineDataLimits() {
     const { min: t, max: e } = this.getMinMax(!1);
-    this.min = $(t) && !isNaN(t) ? t : 0, this.max = $(e) && !isNaN(e) ? e : 0, this.handleTickRangeOptions();
+    this.min = X(t) && !isNaN(t) ? t : 0, this.max = X(e) && !isNaN(e) ? e : 0, this.handleTickRangeOptions();
   }
   computeTickLimit() {
     return Math.ceil(this.drawingArea / gi(this.options));
@@ -6895,7 +6895,7 @@ class Me extends Ye {
   }
   fit() {
     const t = this.options;
-    t.display && t.pointLabels.display ? Xl(this) : this.setCenterPoint(0, 0, 0, 0);
+    t.display && t.pointLabels.display ? $l(this) : this.setCenterPoint(0, 0, 0, 0);
   }
   setCenterPoint(t, e, n, s) {
     this.xCenter += Math.floor((t - e) / 2), this.yCenter += Math.floor((n - s) / 2), this.drawingArea -= Math.min(this.drawingArea / 2, Math.max(t, e, n, s));
@@ -6981,7 +6981,7 @@ class Me extends Ye {
     t.save(), t.translate(this.xCenter, this.yCenter), t.rotate(s), t.textAlign = "center", t.textBaseline = "middle", this.ticks.forEach((a, l) => {
       if (l === 0 && !e.reverse)
         return;
-      const c = n.setContext(this.getContext(l)), h = X(c.font);
+      const c = n.setContext(this.getContext(l)), h = $(c.font);
       if (o = this.getDistanceFromCenterForValue(this.ticks[l].value), c.showLabelBackdrop) {
         t.font = h.string, r = t.measureText(a.label).width, t.fillStyle = c.backdropColor;
         const d = q(c.backdropPadding);
@@ -7011,7 +7011,7 @@ P(Me, "id", "radialLinear"), P(Me, "defaults", {
   startAngle: 0,
   ticks: {
     showLabelBackdrop: !0,
-    callback: Xe.formatters.numeric
+    callback: $e.formatters.numeric
   },
   pointLabels: {
     backdropColor: void 0,
@@ -7080,7 +7080,7 @@ const Qe = {
     common: !0,
     size: 3154e7
   }
-}, G = /* @__PURE__ */ Object.keys(Qe);
+}, Z = /* @__PURE__ */ Object.keys(Qe);
 function ic(i, t) {
   return i - t;
 }
@@ -7089,29 +7089,29 @@ function zn(i, t) {
     return null;
   const e = i._adapter, { parser: n, round: s, isoWeekday: o } = i._parseOpts;
   let r = t;
-  return typeof n == "function" && (r = n(r)), $(r) || (r = typeof n == "string" ? e.parse(r, n) : e.parse(r)), r === null ? null : (s && (r = s === "week" && (je(o) || o === !0) ? e.startOf(r, "isoWeek", o) : e.startOf(r, s)), +r);
+  return typeof n == "function" && (r = n(r)), X(r) || (r = typeof n == "string" ? e.parse(r, n) : e.parse(r)), r === null ? null : (s && (r = s === "week" && (je(o) || o === !0) ? e.startOf(r, "isoWeek", o) : e.startOf(r, s)), +r);
 }
 function Bn(i, t, e, n) {
-  const s = G.length;
-  for (let o = G.indexOf(i); o < s - 1; ++o) {
-    const r = Qe[G[o]], a = r.steps ? r.steps : Number.MAX_SAFE_INTEGER;
+  const s = Z.length;
+  for (let o = Z.indexOf(i); o < s - 1; ++o) {
+    const r = Qe[Z[o]], a = r.steps ? r.steps : Number.MAX_SAFE_INTEGER;
     if (r.common && Math.ceil((e - t) / (a * r.size)) <= n)
-      return G[o];
+      return Z[o];
   }
-  return G[s - 1];
+  return Z[s - 1];
 }
 function nc(i, t, e, n, s) {
-  for (let o = G.length - 1; o >= G.indexOf(e); o--) {
-    const r = G[o];
+  for (let o = Z.length - 1; o >= Z.indexOf(e); o--) {
+    const r = Z[o];
     if (Qe[r].common && i._adapter.diff(s, n, r) >= t - 1)
       return r;
   }
-  return G[e ? G.indexOf(e) : 0];
+  return Z[e ? Z.indexOf(e) : 0];
 }
 function sc(i) {
-  for (let t = G.indexOf(i) + 1, e = G.length; t < e; ++t)
-    if (Qe[G[t]].common)
-      return G[t];
+  for (let t = Z.indexOf(i) + 1, e = Z.length; t < e; ++t)
+    if (Qe[Z[t]].common)
+      return Z[t];
 }
 function Wn(i, t, e) {
   if (!e)
@@ -7170,7 +7170,7 @@ class Ue extends zt {
     function l(c) {
       !r && !isNaN(c.min) && (s = Math.min(s, c.min)), !a && !isNaN(c.max) && (o = Math.max(o, c.max));
     }
-    (!r || !a) && (l(this._getLabelBounds()), (t.bounds !== "ticks" || t.ticks.source !== "labels") && l(this.getMinMax(!1))), s = $(s) && !isNaN(s) ? s : +e.startOf(Date.now(), n), o = $(o) && !isNaN(o) ? o : +e.endOf(Date.now(), n) + 1, this.min = Math.min(s, o - 1), this.max = Math.max(s + 1, o);
+    (!r || !a) && (l(this._getLabelBounds()), (t.bounds !== "ticks" || t.ticks.source !== "labels") && l(this.getMinMax(!1))), s = X(s) && !isNaN(s) ? s : +e.startOf(Date.now(), n), o = X(o) && !isNaN(o) ? o : +e.endOf(Date.now(), n) + 1, this.min = Math.min(s, o - 1), this.max = Math.max(s + 1, o);
   }
   _getLabelBounds() {
     const t = this.getLabelTimestamps();
@@ -7460,7 +7460,7 @@ const fc = ({ EventRSVP: i }) => {
   return /* @__PURE__ */ _.jsx("div", { className: "piechartcomponent", children: /* @__PURE__ */ _.jsx(dc, { data: t }) });
 }, Cc = () => {
   var v, y, S;
-  const i = $s(), { id: t } = Xs(), [e, n] = dt(), [s, o] = dt(!1), r = Un(), [a, l] = dt(!1), [c, h] = dt(), [d, f] = dt([]), [u, g] = dt(), [m, p] = dt();
+  const i = Xs(), { id: t } = $s(), [e, n] = dt(), [s, o] = dt(!1), r = Un(), [a, l] = dt(!1), [c, h] = dt(), [d, f] = dt([]), [u, g] = dt(), [m, p] = dt();
   let b = Te((M) => M.AdminMasjid), x = Te((M) => M.admin);
   ft(() => {
     t && i(to(t)).then((k) => {
@@ -7497,7 +7497,7 @@ const fc = ({ EventRSVP: i }) => {
       }
     ) }) }),
     /* @__PURE__ */ _.jsx("div", { className: "EventProfileBottomContaienr", children: s ? /* @__PURE__ */ _.jsx(
-      Gs,
+      Zs,
       {
         ComponentPurpose: "Update",
         EventDetails: e,
@@ -7525,15 +7525,15 @@ const fc = ({ EventRSVP: i }) => {
               Kn,
               {
                 url: (d == null ? void 0 : d.length) > 0 ? (v = d[0]) == null ? void 0 : v.url : "www.connectMazjid.com",
-                children: /* @__PURE__ */ _.jsx(Xn, { size: 32, round: !0 })
+                children: /* @__PURE__ */ _.jsx($n, { size: 32, round: !0 })
               }
             ) }),
             /* @__PURE__ */ _.jsx("div", { className: "FacebookSharingButton", children: /* @__PURE__ */ _.jsx(
-              Zn,
+              Gn,
               {
                 url: (d == null ? void 0 : d.length) > 0 ? (y = d[0]) == null ? void 0 : y.url : "www.connectMazjid.com",
                 title: `${e == null ? void 0 : e.eventName} will be happening at ${b.masjidName}`,
-                children: /* @__PURE__ */ _.jsx(Gn, { size: 32, round: !0 })
+                children: /* @__PURE__ */ _.jsx(Zn, { size: 32, round: !0 })
               }
             ) }),
             /* @__PURE__ */ _.jsx("div", { className: "FacebookSharingButton", children: /* @__PURE__ */ _.jsx(

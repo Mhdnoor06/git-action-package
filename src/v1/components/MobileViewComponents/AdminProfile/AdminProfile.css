@@ -81,7 +81,20 @@ small {
     display: flex;
     justify-content: center;
   }
-  .deleteCard .css-k008qs {
+  .deleteCard {
     width: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Middlecontainer {
+    width: 40%;
+  }
+
+  .Btncontainer button {
+    width: 25vw;
+  }
+  .deleteCard {
+    width: 30%;
   }
 }

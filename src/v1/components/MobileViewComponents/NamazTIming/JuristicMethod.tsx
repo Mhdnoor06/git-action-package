@@ -135,6 +135,7 @@ const JuristicMethod: React.FC<JuristicMethodProps> = ({
             </CardContent>
             <Box display="flex" justifyContent="space-around" mt={2}>
               <CustomBtn
+                size={window.innerWidth >= 1024 ? "5vw" : "10vw"}
                 eventHandler={handleCancelClick}
                 label={"Cancel"}
                 borderClr={"2px solid red"}
@@ -143,6 +144,7 @@ const JuristicMethod: React.FC<JuristicMethodProps> = ({
                 showIcon={false}
               />
               <CustomBtn
+                size={window.innerWidth >= 1024 ? "5vw" : "10vw"}
                 eventHandler={handleSaveClick}
                 label={"Save"}
                 showIcon={false}
@@ -190,7 +192,7 @@ const CardStyle = {
   justifyContent: "space-between",
   height: "300px",
   padding: "15px 15px 30px 15px",
-  width: "85%",
+  width: window.innerWidth >= 1024 ? "40%" : "85%",
   borderRadius: "16px",
 };
 const nonSelectionCardStyle = {

@@ -32,7 +32,7 @@ export interface NearbyMasjidsState {
   nearbyMasjids: any[]; // Adjust the type based on your actual masjid data structure
 }
 
-const initialNearbyMasjidsState: NearbyMasjidsState = {
+export const initialNearbyMasjidsState: NearbyMasjidsState = {
   nearbyMasjids: [],
 };
 

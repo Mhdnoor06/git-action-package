@@ -163,9 +163,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .Butoon-Azan {
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   /* flex-direction: column-reverse; */
   align-items: center;
+  justify-content: center;
+  gap: 40px;
   /* width: 100vw;
     height: 10vh; */
 }
@@ -354,12 +356,23 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   align-items: center;
   height: 55px;
   margin: auto 15px;
-  background: #ffff;
+  /* background: #ffff;
   border-radius: 20px;
-  box-shadow: 1px 2px 28px 0px #00000040;
+  box-shadow: 1px 2px 28px 0px #00000040; */
   /* margin-bottom: 20px;
   margin-top: 30px; */
 }
+
+.selectedDateRange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  background: #ffff;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
 .selected-date-box img {
   width: 20px;
   margin-right: 10px;
@@ -495,6 +508,10 @@ button:before {
     margin-top: 5px;
     padding-bottom: 20px;
   }
+  .mainNamazTablePreview {
+    margin-top: 50px;
+    /* justify-content: center; */
+  }
 
   /* .plus-minus-container .plus-minus-box {
     background-color: #a8a8a8;
@@ -538,5 +555,72 @@ button:before {
   }
   .selected-date-with-backbtn .backBtn {
     display: block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-timing-card {
+    justify-content: initial;
+  }
+
+  .prayer-type-dropdown-container {
+    width: 12vw;
+    left: 30px;
+  }
+
+  .namazConatinerMain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .namazConatiner {
+    width: 75%;
+  }
+
+  .tab-prayer-timing-card .tablet-timing-card .my-custom-btn {
+    padding: 0px 10px !important;
+  }
+
+  .Azan-solar-timings label {
+    width: 10vw;
+    margin: 0 10px;
+  }
+
+  .plus-minus-container {
+    width: 8vw;
+  }
+
+  .selected-date-with-backbtn .selected-date-box {
+    width: 30%;
+  }
+  .selected-date-with-backbtn .selected-date-box {
+    /* width: 70%; */
+    flex: 1 1 0%;
+    text-align: center;
+    margin-right: 70px;
+  }
+
+  .selectedDateRange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    background: #ffff;
+    border-radius: 20px;
+  }
+
+  .time-preview {
+    width: 50%;
+    margin-top: 20px;
+    margin: auto auto;
+  }
+}
+
+@media (min-width: 1424px) {
+  .prayer-type-dropdown-container {
+    width: 10vw;
+    left: 30px;
   }
 }

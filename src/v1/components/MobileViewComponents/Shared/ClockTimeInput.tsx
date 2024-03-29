@@ -4,6 +4,7 @@ import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
+import { MobileTimePicker } from "@mui/x-date-pickers";
 
 interface ClockTimeInputProps {
   setTime: Dispatch<SetStateAction<string>>;
@@ -45,7 +46,8 @@ const ClockTimeInput: React.FC<ClockTimeInputProps> = ({
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="clock">
         <label htmlFor={id}>{label}</label>
-        <TimePicker
+        <MobileTimePicker
+          openTo="hours"
           className="clock-input"
           value={selectedTime}
           onChange={handleTimeChange}

@@ -25,24 +25,44 @@ export const tmFormatter = (tm: number | undefined, tZone: string) => {
   else return "---:---";
 };
 
-export const dateFormatter = (date: string) => {
-  if (!date || isNaN(new Date(date).getTime())) {
+export const dateFormatter = (date: Date | string) => {
+  let dateObj: Date;
+
+  // Convert string to Date object if date is a string
+  if (typeof date === "string") {
+    dateObj = new Date(date);
+  } else {
+    dateObj = date;
+  }
+
+  // Check if the date is valid
+  if (!dateObj || isNaN(dateObj.getTime())) {
     return "";
   }
 
-  const dateObj = new Date(date);
-  const formattedDate = new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  }).formatToParts(dateObj);
+  // Format the date using Moment.js, specifying UTC timezone
+  const formattedDate = moment.utc(dateObj).format("DD-MMM-YYYY");
+  return formattedDate;
+};
 
-  const day = formattedDate.find((part) => part.type === "day")?.value;
-  const month = formattedDate.find((part) => part.type === "month")?.value;
-  const year = formattedDate.find((part) => part.type === "year")?.value;
+export const formatConvertDate = (date: Date | string) => {
+  let dateObj: Date;
 
-  // Assemble the date parts with dashes
-  return `${day}-${month}-${year}`;
+  // Convert string to Date object if date is a string
+  if (typeof date === "string") {
+    dateObj = new Date(date);
+  } else {
+    dateObj = date;
+  }
+
+  // Check if the date is valid
+  if (!dateObj || isNaN(dateObj.getTime())) {
+    return "";
+  }
+
+  // Format the date using Moment.js
+  const formattedDate = moment(dateObj).format("YYYY-MM-DD");
+  return formattedDate;
 };
 
 export const UTCTimeConverter = (time: string, date: string, tZone: string) => {

@@ -225,22 +225,6 @@ function RequestUserForm() {
             >
               <BackButton handleBackBtn={handleBackBtn} />
             </div>
-            <div className="header-logo" style={success ? { margin: "0" } : {}}>
-              <img src={CmIcon} alt="Logo" style={{ width: "129px" }} />
-              <div className="LoginLogoBottomContainer">
-                <span className="SiteName">
-                  <p style={{ fontSize: "18px" }}>
-                    {language.BANER.INPUT_PLACEHOLDER_FIRST_NAME}
-                  </p>
-                </span>
-                <span className="SiteNameEnd" style={{ marginLeft: "3px" }}>
-                  <p style={{ fontSize: "18px" }}>
-                    {language.BANER.INPUT_PLACEHOLDER_SECOND_NAME}
-                  </p>
-                </span>
-              </div>
-            </div>
-            <div></div> {/* You can add more content to the header if needed */}
           </div>
           {/* <div
             style={
@@ -291,23 +275,45 @@ function RequestUserForm() {
           </div> */}
         </div>
 
-        {!success ? (
-          <div className="formsubmit">
-            <Link to="/login">
-              <CloseIcon fontSize="150px" />
-            </Link>
-            <img src={successTick} alt="" />
-            <b>Thank you !</b>
-            <p>
-              Your Request has been received. Our Team will be in touch and
-              contact you soon.
-            </p>
+        {success ? (
+          <div className="SuccessCard">
+            <div className="formsubmit">
+              <Link to="/login">
+                <CloseIcon fontSize="150px" />
+              </Link>
+              <img src={successTick} alt="" />
+              <b>Thank you !</b>
+              <p>
+                Your Request has been received. Our Team will be in touch and
+                contact you soon.
+              </p>
+            </div>
           </div>
         ) : (
           <>
             <div className="rqstForm">
               <form onSubmit={handleSubmit} className="my-form">
-                <h3 style={{ color: "#1D785A" }}>Welcome On Board</h3>
+                <div
+                  className="header-logo"
+                  style={success ? { margin: "0" } : {}}
+                >
+                  <img src={CmIcon} alt="Logo" style={{ width: "129px" }} />
+                  <div className="LoginLogoBottomContainer">
+                    <span className="SiteName">
+                      <p style={{ fontSize: "18px" }}>
+                        {language.BANER.INPUT_PLACEHOLDER_FIRST_NAME}
+                      </p>
+                    </span>
+                    <span className="SiteNameEnd" style={{ marginLeft: "3px" }}>
+                      <p style={{ fontSize: "18px" }}>
+                        {language.BANER.INPUT_PLACEHOLDER_SECOND_NAME}
+                      </p>
+                    </span>
+                  </div>
+                </div>
+                <h3 style={{ color: "#1D785A", margin: "0" }}>
+                  Welcome On Board
+                </h3>
 
                 <div className="formFields">
                   <Box sx={{ width: "90% !important" }}>

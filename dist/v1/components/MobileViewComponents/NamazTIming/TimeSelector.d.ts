@@ -8,7 +8,7 @@ type propsType = {
     nonHanafyAsr: string;
     prayerName: string;
     solarHanafyAsr: string;
-    prayerTimeType: string;
+    prayerTimeType?: string;
 };
 declare const TimeSelector: ({ setEnteredData, enteredData, label, nonHanafyAsr, solarHanafyAsr, prayerName, prayerTimeType, }: propsType) => JSX.Element;
 export default TimeSelector;

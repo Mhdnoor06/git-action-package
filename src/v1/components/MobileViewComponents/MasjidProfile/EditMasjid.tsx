@@ -54,6 +54,7 @@ const EditMasjid: FC<EditMasjidProps> = ({
   const [address, setAddress] = useState<string>("");
   const [masjidPhotos, setMasjidPhotos] = useState<string[]>([]);
   const [masjidProfilePhoto, setMasjidProfilePhoto] = useState<string>("");
+
   const dispatch = useAppThunkDispatch();
 
   useEffect(() => {
@@ -196,7 +197,11 @@ const EditMasjid: FC<EditMasjidProps> = ({
             <Slider {...settings}>
               {masjidPhotos.map((img: any) => (
                 <div key={img._id} className="masjid-img">
-                  <img src={img.url} alt="masjid-img" />
+                  <img
+                    src={img.url}
+                    alt="masjid-img"
+                    className="masjid-img-1"
+                  />
                   <div className="camera-and-delete">
                     <div style={{ marginBottom: "5px" }}>
                       <img

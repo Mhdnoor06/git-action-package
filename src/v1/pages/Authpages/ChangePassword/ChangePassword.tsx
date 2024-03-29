@@ -181,6 +181,9 @@ function ChangePassword() {
               loading={isFetching}
               variant="contained"
               type="submit"
+              sx={{
+                textTransform: "none",
+              }}
             >
               <span>Reset</span>
             </LoadingButton>

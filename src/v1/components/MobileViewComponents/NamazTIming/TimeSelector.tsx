@@ -8,6 +8,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { EnteredData } from "./NamazTImings";
+import { MobileTimePicker } from "@mui/x-date-pickers/MobileTimePicker";
 
 type propsType = {
   setEnteredData: Dispatch<SetStateAction<EnteredData>>;
@@ -17,7 +18,7 @@ type propsType = {
   nonHanafyAsr: string;
   prayerName: string;
   solarHanafyAsr: string;
-  prayerTimeType: string;
+  prayerTimeType?: string;
 };
 const TimeSelector = ({
   setEnteredData,
@@ -29,6 +30,7 @@ const TimeSelector = ({
   prayerTimeType,
 }: propsType) => {
   const [prayerStatus, setPrayerStatus] = useState(prayerTimeType);
+  console.log(prayerTimeType);
 
   const statusHandler = (status: string) => {
     const { TimesByAzaan, TimesByJamaat, ...rest } = enteredData[prayerName];
@@ -116,13 +118,11 @@ const TimeSelector = ({
         [prayerName]: {
           ...rest,
           ExtendedAzaanMinutes:
-            label === "Azan"
-              ? Math.max(0, ExtendedAzaanMinutes - 1)
-              : ExtendedAzaanMinutes,
+            label === "Azan" ? ExtendedAzaanMinutes - 1 : ExtendedAzaanMinutes,
           ExtendedJamaatMinutes:
             label === "Azan"
               ? ExtendedJamaatMinutes
-              : Math.max(0, ExtendedJamaatMinutes - 1),
+              : ExtendedJamaatMinutes - 1,
         },
       };
 
@@ -141,11 +141,19 @@ const TimeSelector = ({
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <label style={{ marginTop: "-4.5vh", color: "#9F9E9E" }}>
             {label} Timing
-            <TimePicker
+            {/* <TimePicker
               readOnly={prayerStatus !== "manual"}
               value={timeValue ? dayjs(timeValue, "HH:mm") : null}
               onChange={handleTimeChange}
               slotProps={{ textField: { variant: "outlined" } }}
+            /> */}
+            <MobileTimePicker
+              openTo="minutes"
+              readOnly={prayerStatus !== "manual"}
+              value={timeValue ? dayjs(timeValue, "HH:mm") : null}
+              onChange={handleTimeChange}
+              slotProps={{ textField: { variant: "outlined" } }}
+              sx={{ width: "100px" }}
             />
           </label>
         </LocalizationProvider>
@@ -169,7 +177,13 @@ const TimeSelector = ({
             marginRight="auto"
             fontSize={"11px"}
           >
-            +{" "}
+            {label === "Azan"
+              ? enteredData[prayerName]?.ExtendedAzaanMinutes >= 0
+                ? "+"
+                : ""
+              : enteredData[prayerName]?.ExtendedJamaatMinutes >= 0
+              ? "+"
+              : ""}
             {label === "Azan"
               ? enteredData[prayerName]?.ExtendedAzaanMinutes
               : enteredData[prayerName]?.ExtendedJamaatMinutes}{" "}

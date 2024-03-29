@@ -8,5 +8,6 @@ export declare const locationReducer: (state: LocationState | undefined, action:
 export interface NearbyMasjidsState {
     nearbyMasjids: any[];
 }
+export declare const initialNearbyMasjidsState: NearbyMasjidsState;
 export declare const nearbyMasjidsReducer: (state: NearbyMasjidsState | undefined, action: Action) => NearbyMasjidsState;
 //# sourceMappingURL=FetchingNearByMasjids.d.ts.map

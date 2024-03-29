@@ -128,7 +128,7 @@
     width: 100%;
   }
   .profile-card .profile-card-title {
-    width: 235px;
+    width: 340px;
     margin-top: 10px;
     margin-left: 4px;
   }
@@ -181,5 +181,9 @@
 
   .masjid-preview-img img {
     height: 40vh;
+  }
+
+  .bottom-button .my-custom-btn {
+    padding: 0px 6vw !important;
   }
 }

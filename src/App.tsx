@@ -8,6 +8,8 @@ import "./App.css";
 import Login from "./v1/pages/Authpages/Login/Login";
 import ForgotPassword from "./v1/pages/Authpages/ForgotPassword/ForgotPassword";
 // import SetPassword from "./v1/pages/Authpages/ResetPassword/SetPassword";
+import SetPassword from "./v1/pages/Authpages/ResetPassword/SetPassword/Setpassword";
+
 import DeleteAccount from "./v1/components/MobileViewComponents/AdminProfile/DeleteAccount";
 import ChangePassword from "./v1/pages/Authpages/ChangePassword/ChangePassword";
 import RequestUserForm from "./v1/components/MobileViewComponents/RequestForm/RequestUserForm";
@@ -19,7 +21,7 @@ import Common_App from "./v1/Common/Common_App";
 const Dashboard = lazy(() => import("./v1/pages/DashboardPage/Dashboard"));
 const Widgets = lazy(() => import("./v1/components/Widgets/Widgets"));
 
-export function App() {
+function App() {
   const elementHandler = (component: React.ReactNode, route: string) => {
     return admin ? (
       admin.isVerified ? (
@@ -49,16 +51,16 @@ export function App() {
       element: elementHandler(<ForgotPassword />, "/feed/0"),
       protected: false,
     },
-    // {
-    //   path: "/setpassword/:token",
-    //   element: elementHandler(<SetPassword />, "/"),
-    //   protected: false,
-    // },
-    // {
-    //   path: "/account/initial",
-    //   element: elementHandler(<SetPassword />, "/"),
-    //   protected: false,
-    // },
+    {
+      path: "/setpassword/:token",
+      element: elementHandler(<SetPassword />, "/"),
+      protected: false,
+    },
+    {
+      path: "/account/initial",
+      element: elementHandler(<SetPassword />, "/"),
+      protected: false,
+    },
     {
       path: "/",
       element: <Navigate to="/feed/0" />,

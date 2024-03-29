@@ -1,5 +1,14 @@
 import React from "react";
-import { Card } from "@mui/material";
+import {
+  Card,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import moment from "moment";
 import FajrIcon from "../../../../photos/prayerIcon/Group 1216.png";
 import DhurIcon from "../../../../photos/prayerIcon/Group 1217.png";
@@ -9,8 +18,7 @@ import IshaIcon from "../../../../photos/prayerIcon/Group 1220.png";
 import noPrayer from "../../../../photos/prayerIcon/noPrayer.png";
 import "./PrayerBox.css";
 import { NamajTiming } from "../../../../redux/Types";
-import { confirmation } from "../../../../helpers/HelperFunction";
-import * as api from "../../../../api-calls/index";
+import "../../../Widgets/PrayerTimgeWidgets.css";
 
 export const icons: { [key: string]: string } = {
   Fajr: FajrIcon,
@@ -48,62 +56,128 @@ const PrayerBox = ({ tZone, prayer, children, reloader, date }: propsType) => {
   // console.log(date);
 
   return (
-    <Card className="prayer-box-card-container">
-      {children}
-      <>
-        <style>{normalStyle}</style>
-        <div className="PrayerTimings-box">
-          {prayer?.length ? (
-            <table>
-              <thead>
-                <tr className="Prayer-card-header">
-                  <th>Prayer</th>
-                  <th>Adhan</th>
-                  <th>Iqama</th>
-                </tr>
-              </thead>
-              <tbody>
-                {prayer?.map((timing, index: number) => (
-                  <tr className="Prayer-card-Tr" key={index}>
-                    <td style={{ display: "flex", alignItems: "center" }}>
-                      <img
-                        style={{ marginRight: "5px" }}
-                        src={icons[timing?.namazName]}
-                        alt="Prayer icon"
-                      />
-                      {/* timing.namazName.length > 4
-                        ? timing.namazName.slice(0, 4) + "...."
-                        :  */}
-                      {timing.namazName}
-                    </td>
-                    <td className="gray-time">
-                      {timeZoneHandler(timing.azaanTime)}{" "}
-                      {timing.ExtendedAzaanMinutes
-                        ? ` +${timing.ExtendedAzaanMinutes}m`
-                        : null}
-                    </td>
-                    <td className="gray-time">
-                      {timeZoneHandler(timing.jamaatTime)}{" "}
-                      {timing.TimesByJamaat !== "manual" &&
-                      timing.ExtendedJamaatMinutes
-                        ? ` +${timing.ExtendedJamaatMinutes}m`
-                        : null}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <>
-              <div className="no-prayer">
-                <img src={noPrayer} alt="NO Prayer" />
-                <p>No Prayer Timings</p>
-              </div>
-            </>
-          )}
-        </div>
-      </>
-    </Card>
+    <div className="prayerTable">
+      <TableContainer
+        component={Paper}
+        style={{ width: "100%", boxShadow: "none", borderRadius: "20px" }}
+      >
+        {children}
+        <Table
+          aria-label="prayer timings table"
+          sx={{ borderCollapse: "collapse" }}
+        >
+          <TableHead>
+            <TableRow sx={{ border: "none" }}>
+              <TableCell
+                align="center"
+                style={{
+                  fontWeight: 700,
+                  color: "#A5A5A5",
+                  padding: " 12px",
+                }}
+              >
+                Prayer
+              </TableCell>
+              <TableCell
+                align="center"
+                style={{
+                  fontWeight: 700,
+                  color: "#A5A5A5",
+                  padding: " 12px",
+                }}
+              >
+                Azan
+              </TableCell>
+              <TableCell
+                align="center"
+                style={{
+                  fontWeight: 700,
+                  color: "#A5A5A5",
+                  padding: " 12px",
+                }}
+              >
+                Iqama
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {prayer?.length !== 0 ? (
+              prayer?.map((row, index) => (
+                <TableRow
+                  key={index}
+                  sx={{
+                    border: "none",
+                    fontWeight: "700",
+                    fontFamily: "Inter sans-serif",
+                  }}
+                >
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    sx={
+                      window.innerWidth <= 320
+                        ? {
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            padding: "8px",
+                          }
+                        : {
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            padding: "10px",
+                          }
+                    }
+                  >
+                    <img
+                      src={icons[row.namazName]}
+                      alt=""
+                      style={{ width: "25px", height: "25px" }}
+                    />
+                    {row.namazName}
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    sx={
+                      window.innerWidth <= 320
+                        ? { padding: " 7px" }
+                        : { padding: "10px" }
+                    }
+                  >
+                    {timeZoneHandler(row.azaanTime)}
+                    {row.ExtendedAzaanMinutes
+                      ? row.ExtendedAzaanMinutes >= 0
+                        ? `(+${row.ExtendedAzaanMinutes}m)`
+                        : `(${row.ExtendedAzaanMinutes}m)`
+                      : null}
+                  </TableCell>
+                  <TableCell align="center" sx={{ padding: " 3px" }}>
+                    {row.jamaatTime ? timeZoneHandler(row.jamaatTime) : ""}
+                    {row.TimesByJamaat !== "manual" && row.ExtendedJamaatMinutes
+                      ? row.ExtendedJamaatMinutes >= 0
+                        ? ` (+${row.ExtendedJamaatMinutes}m)`
+                        : `( ${row.ExtendedJamaatMinutes}m)`
+                      : null}
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={3} align="center">
+                  <div className="notavailable">
+                    <div>
+                      <img src={noPrayer} alt="" />
+                      <p>"Prayer timings are not updated"</p>
+                    </div>
+                  </div>
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 

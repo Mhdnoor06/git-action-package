@@ -1,12 +1,9 @@
 import React from "react";
-import moment from "moment";
+// import moment from "moment";
 type propsType = {
   time: any;
-
 };
-const FormattedTimeTd = ({ time}: propsType) => {
-
-
+const FormattedTimeTd = ({ time }: propsType) => {
   return <td>{time}</td>;
 };
 

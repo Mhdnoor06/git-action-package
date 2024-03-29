@@ -76,6 +76,7 @@ const TermAndConditions = ({ tmConOpener, setTmConOpener }: propsType) => {
           showIcon={false}
           eventHandler={handleClose}
           label={"Accept"}
+          size={window.innerWidth >= 2000 ? "7vw" : "12vw"}
         />
       </DialogActions>
     </Dialog>

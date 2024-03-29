@@ -40,13 +40,13 @@ const PrayerTable = ({ timings, tZone }: { timings: any; tZone: string }) => {
                 <td className="gray-time">
                   {timeZoneHandler(timing.azaanTime)}{" "}
                   {timing.ExtendedAzaanMinutes
-                    ? ` +${timing.ExtendedAzaanMinutes}m`
+                    ? ` ${timing.ExtendedAzaanMinutes}m`
                     : null}
                 </td>
                 <td className="gray-time">
                   {timeZoneHandler(timing.jamaatTime)}{" "}
                   {timing.ExtendedJamaatMinutes
-                    ? ` +${timing.ExtendedJamaatMinutes}m`
+                    ? ` ${timing.ExtendedJamaatMinutes}m`
                     : null}
                 </td>
               </tr>

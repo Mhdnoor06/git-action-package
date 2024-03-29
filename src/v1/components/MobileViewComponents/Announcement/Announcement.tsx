@@ -10,6 +10,7 @@ import { FetchingAnnouncementNotificationByDate } from "../../../redux/actions/A
 import { handleSnackbar } from "../../../helpers/SnackbarHelper/SnackbarHelper";
 import { dateReverter } from "../../../helpers/HelperFunction";
 import moment from "moment";
+import { CircularProgress } from "@mui/material";
 
 type announcement = {
   id: string | undefined;
@@ -25,6 +26,7 @@ function Announcement() {
   const dispatch = useAppDispatch();
   const [Announcements, setAnnouncements] = useState([]);
   const [fetchAnnouncementData, setFetchAnnouncementData] = useState(false);
+  const [isInitialLoaded, setIsInitialLoaded] = useState(false);
   let tZone = localStorage.getItem("MasjidtZone");
   useEffect(() => {
     const announcements = dispatch(FetchingAnnouncementNotificationByDate());
@@ -111,6 +113,12 @@ function Announcement() {
                   ))}
                 </div>
               ) : (
+                // {isInitialLoaded && !Announcements.length && (
+                //   <div className="loader">
+                //     {" "}
+                //     <CircularProgress color="success" className="loader" />
+                //   </div>
+                // )}
                 <div className="noannouncement">
                   <img src={NoAnnouncment} alt="" />
                   <p>No Annoucements Found</p>

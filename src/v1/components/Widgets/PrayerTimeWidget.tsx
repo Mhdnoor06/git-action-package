@@ -24,6 +24,14 @@ import moment from "moment-timezone";
 import noPrayer from "../../photos/prayerIcon/noPrayer.svg";
 import SunCalc from "suncalc";
 import styles from "./Widgets.module.css";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from "react-share";
 
 const icons: { [key: string]: string } = {
   Fajr: FajarIcon,
@@ -53,6 +61,10 @@ const PrayerTimeWidget: React.FC<PrayerTimeWidgetProps> = ({
 }) => {
   const [hijiriDate, setHijjiriDate] = useState("");
   const [sunriseTime, setSunriseTime] = useState<number>();
+
+  const shareUrl =
+    "https://app.connectmazjid.com/share?type=masjid&key=642c790eb291d4c6300aa4ee&date=2024-03-12T11%3A30%3A55.289627Z&utm_source=cm&utm_content=home_share";
+  const title = `Assalamualaikum! Stay Connected With The East Plano Islamic Center (EPIC Masjid) for the latest prayer timings and upcoming events. Never Miss A Prayer Or Event With Connect Mazjid!`;
 
   const apiUrl = (date: Date, address: string) =>
     `https://api.aladhan.com/v1/timingsByAddress/${date}?address=${address}`;
@@ -113,8 +125,53 @@ const PrayerTimeWidget: React.FC<PrayerTimeWidgetProps> = ({
     updatedWidgetData.splice(fajrIndex + 1, 0, ishraqPrayer);
   }
 
+  const handleShare = async () => {
+    // Constructing the prayer timings part of the message
+    // let prayerTimingsMessage = "Prayer Timings For 12 Mar 2024:\n";
+    // if (widgetData && widgetData.length > 0) {
+    //   widgetData.forEach((prayer) => {
+    //     const azanTime = timeZoneHandler(prayer.azaanTime);
+    //     const iqamaTime = prayer.jamaatTime
+    //       ? timeZoneHandler(prayer.jamaatTime)
+    //       : "---";
+    //     prayerTimingsMessage += `${prayer.namazName} (Azan: ${azanTime}, Iqama: ${iqamaTime})\n`;
+    //   });
+    // }
+
+    const shareData = {
+      title: "EPIC Masjid Prayer Timings",
+      text: `Assalamualaikum!\n\nStay Connected With The East Plano Islamic Center (EPIC Masjid) Located At 4700 14th St, Plano, TX 75074, USA For The Latest Prayer Timings And Upcoming Events.\n\n${prayerTimingsMessage}\nTo Access These Updates And More, Use This Link: https://app.connectmazjid.com/share?type=masjid&key=642c790eb291d4c6300aa4ee&date=2024-03-12T11%3A30%3A55.289627Z&utm_source=cm&utm_content=home_share\n\nNever Miss A Prayer Or Event With Connect Mazjid! Stay Informed And Connected With Your Community.`,
+      url: "https://app.connectmazjid.com/share?type=masjid&key=642c790eb291d4c6300aa4ee", // Your sharing link
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback for browsers that do not support the Web Share API
+        console.log(
+          "Web Share API not supported. Displaying custom share options."
+        );
+        // Implement your custom sharing logic here
+      }
+    } catch (err) {
+      console.error("Error sharing:", err);
+    }
+  };
+
   return (
     <div className="scr">
+      {/* <div>
+        <FacebookShareButton url={shareUrl} quote={title}>
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+        <TwitterShareButton url={shareUrl} title={title}>
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+        <WhatsappShareButton url={shareUrl} title={title}>
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+      </div> */}
       <div className="PrayerBox">
         <div className="IslamicDate">
           {/* <div className="left">

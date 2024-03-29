@@ -20,19 +20,21 @@ import {
   UtcDateConverter,
   dateFormatter,
   dateReverter,
+  formatConvertDate,
 } from "../../../helpers/HelperFunction";
 import BackButton from "../Shared/BackButton";
 import SpecialPrayerCard from "./SpecialPrayerCard";
-import { Backdrop, Card } from "@mui/material";
+import { Backdrop, Card, CircularProgress } from "@mui/material";
 import CustomBtn from "../Shared/CustomBtn";
 import ClockTimeInput from "../Shared/ClockTimeInput";
 import CustomCalender from "../Shared/calendar/CustomCalender";
 import calender from "../../../photos/Newuiphotos/Icons/calender.svg";
+import { parseISO } from "date-fns";
 
 interface FormData {
   name: string;
-  azaanTime: number; // Assuming azaanTiming is a string, adjust the type accordingly
-  jamaatTime: number; // Assuming jamaatTiming is a string, adjust the type accordingly
+  azaanTime: number;
+  jamaatTime: number;
   startDate: string;
   endDate: string;
 }
@@ -74,10 +76,15 @@ function SpecialPrayersComponent() {
     setIsCalendarVisible(!isCalendarVisible);
     setCalendarDateType(dateType);
 
-    if (dateType === "start") {
-      setValue(new Date(startDate));
+    if (dateType === "start" && (startDate || endDate)) {
+      console.log(startDate);
+
+      const parsedStartDate = parseISO(startDate);
+      setValue(parsedStartDate);
+      console.log(Boolean(startDate));
     } else {
-      setValue(new Date(endDate));
+      const parsedEndDate = parseISO(endDate);
+      setValue(parsedEndDate);
     }
   };
 
@@ -103,44 +110,16 @@ function SpecialPrayersComponent() {
     e.stopPropagation();
   };
 
-  function formatDate(date: Date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  }
-
-  // const dateFormatter = (date: string) => {
-  //   if (!date || isNaN(new Date(date).getTime())) {
-  //     return "";
-  //   }
-
-  //   const dateObj = new Date(date);
-  //   const formattedDate = new Intl.DateTimeFormat("en-GB", {
-  //     day: "2-digit",
-  //     month: "short",
-  //     year: "numeric",
-  //   }).formatToParts(dateObj);
-
-  //   const day = formattedDate.find((part) => part.type === "day")?.value;
-  //   const month = formattedDate.find((part) => part.type === "month")?.value;
-  //   const year = formattedDate.find((part) => part.type === "year")?.value;
-
-  //   // Assemble the date parts with dashes
-  //   return `${day}-${month}-${year}`;
-  // };
-
   const handleDateSelect = (selectedDate: Date) => {
-    const newDate = formatDate(selectedDate);
+    const newDate = formatConvertDate(selectedDate);
+
     if (calendarDateType === "start") {
       setStartDate(newDate);
     } else {
       setEndDate(newDate);
     }
 
-    // Move the validation logic to a separate function and call it directly
     handleDateValidation(calendarDateType, newDate);
-    setIsCalendarVisible(false);
 
     setTimeout(() => {
       setIsCalendarVisible(false);
@@ -192,7 +171,6 @@ function SpecialPrayersComponent() {
     //   toast.error(`Azaan timing is grater then Jamaat timing`);
     //   return;
     // }
-
     setPreview(true);
     setFormData({
       name: prayerName,
@@ -280,6 +258,8 @@ function SpecialPrayersComponent() {
       return;
     }
   };
+
+  console.log(isInitialLoaded);
 
   const handleUpdatePrayer = () => {
     setIsLoading(true);
@@ -561,13 +541,17 @@ function SpecialPrayersComponent() {
                 ))}
                 {!prayers.length ? (
                   <>
-                    <div
-                      className="noprayer"
-                      style={{ margin: "60px", textAlign: "center" }}
-                    >
-                      <img src={noPrayer} alt="" />
-                      <p>No other prayer found</p>
-                    </div>
+                    {isInitialLoaded ? (
+                      <CircularProgress color="success" className="loader" />
+                    ) : (
+                      <div
+                        className="noprayer"
+                        style={{ margin: "60px", textAlign: "center" }}
+                      >
+                        <img src={noPrayer} alt="" />
+                        <p>No other prayer found</p>
+                      </div>
+                    )}
                   </>
                 ) : null}
               </>

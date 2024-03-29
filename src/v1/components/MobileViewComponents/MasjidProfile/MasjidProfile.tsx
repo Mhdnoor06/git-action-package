@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MyButton } from "msa-vite-project";
+
 import swal from "sweetalert";
 import { IExternalLinks, PrayerTimings } from "../../../redux/Types";
 import proflePlaceholer from "../../../photos/Newuiphotos/home icon/profile_placeholder.png";
@@ -26,7 +26,7 @@ import { authLogout } from "../../../redux/actions/AuthActions/LogoutAction";
 import { FetchingTimingsByDateRange } from "../../../redux/actions/TimingsActions/FetchingTimingsByDateRangeAction";
 import Slider from "react-slick";
 import EditMasjid from "./EditMasjid";
-// import { Button } from "remoteApp/Button";
+import MagnifierComponent from "../Shared/Magnifier/MagnifierComponent";
 
 const MasjidProfile = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -244,6 +244,7 @@ const MasjidProfile = () => {
               <img src={proflePlaceholer} alt="masjid-preview-img" />
             )}
           </div>
+
           <div className="profile-bottom-part">
             <div className="profile-card">
               <div className="profile-top-container">
@@ -278,15 +279,7 @@ const MasjidProfile = () => {
                 <div>
                   <h5>Description</h5>
                   <MoreBtn tsx={masjid?.description} txLength={250} />
-
-                  <div>
-                    {/* <Button /> */}
-                    <MyButton
-                      label="Click Me"
-                      onClick={() => alert("Clicked!")}
-                    />
-                  </div>
-
+                  {/* <MagnifierComponent /> */}
                   <div className="icon-box-group">
                     <div className="icon-box-container">
                       <div className="icon-box">

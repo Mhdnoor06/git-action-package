@@ -1,6 +1,7 @@
 import React from "react";
 import "./PrayerBox.css";
 import { NamajTiming } from "../../../../redux/Types";
+import "../../../Widgets/PrayerTimgeWidgets.css";
 export declare const icons: {
     [key: string]: string;
 };

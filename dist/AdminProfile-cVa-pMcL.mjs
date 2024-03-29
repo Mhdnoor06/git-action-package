@@ -1,13 +1,13 @@
-import { aC as f, aU as v, aD as D, a6 as C, t as e, ah as g, bG as E, aj as M, ar as y, ap as R, ao as A, bH as _, a7 as h, bE as b } from "./index-bQQXQLco.mjs";
+import { ao as f, aJ as v, ap as D, X as C, y as e, a9 as g, bw as E, ab as M, ag as y, ae as R, ad as A, bx as _, Y as h, bu as b } from "./index-XkptO5g9.mjs";
 import { useState as o, useRef as Y, useEffect as N } from "react";
-import { M as F, a as K } from "./index.esm-51C85EO5.mjs";
-import { f as T } from "./Dashboard-UG3V2pVr.mjs";
+import { M as F, a as K } from "./index.esm-dKdnsyf6.mjs";
+import { f as T } from "./Dashboard-wU64Oe5M.mjs";
 import "react-dom";
-import "./swiper-bundle-TtAczPya.mjs";
+import "./swiper-bundle-HqgJZv8V.mjs";
 const V = () => {
   let s = f((a) => a.admin);
-  const j = v(), i = b.en, n = f((a) => a.AdminMasjid[0]), [m, W] = o(!1), [d, c] = o(!1);
-  let x = Y();
+  const x = v(), i = b.en, n = f((a) => a.AdminMasjid[0]), [m, W] = o(!1), [d, c] = o(!1);
+  let j = Y();
   const [l, I] = o(""), t = D();
   N(() => {
     let a = s.masjids[0];
@@ -23,7 +23,7 @@ const V = () => {
     });
   }, [l]);
   const p = () => {
-    j("/feed");
+    x("/feed");
   }, P = () => {
     c(!d);
   }, u = () => {
@@ -43,7 +43,7 @@ const V = () => {
               {
                 autoFocus: !0,
                 margin: "dense",
-                inputRef: x,
+                inputRef: j,
                 sx: { width: "20rem" },
                 label: "Edit Name",
                 type: "text",

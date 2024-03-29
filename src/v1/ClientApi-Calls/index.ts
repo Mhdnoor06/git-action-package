@@ -4,14 +4,14 @@ import { rootURL } from "../api-calls";
 import { getAccessToken, getRefreshToken } from "../helpers/HelperFunction";
 
 // const APIBaseUrl = "https://api.connectmazjid.com/api/v2"; //prod
-const APIBaseUrl = "https://dev-api.connectmazjid.com/api/v2"; //test
+// const APIBaseUrl = "https://dev-api.connectmazjid.com/api/v2"; //test
 // const APIBaseUrl = import.meta.env.VITE_CLIENT_BASE_URL;
 // console.log(import.meta.env.VITE_CLIENT_BASE_URL);
 
-// const APIBaseUrl =
-//   window.location.hostname === "musali-admin.netlify.app"
-//     ? "https://dev-api.connectmazjid.com/api/v2"
-//     : import.meta.env.VITE_CLIENT_BASE_URL;
+const APIBaseUrl =
+  window.location.hostname === "musali-admin.netlify.app"
+    ? "https://dev-api.connectmazjid.com/api/v2"
+    : import.meta.env.VITE_CLIENT_BASE_URL;
 
 console.log("API Base URL:", window.location.hostname);
 

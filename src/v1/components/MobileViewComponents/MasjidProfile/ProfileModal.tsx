@@ -32,6 +32,7 @@ const ProfileModal: React.FC<CustomModalProps> = ({
   const [uploadedImage, setUploadedImage] = useState<string | Blob | null>(
     null
   );
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [loading, setLoading] = useState(false);
   const dispatch = useAppThunkDispatch();
   const handleUploadProfile = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +41,21 @@ const ProfileModal: React.FC<CustomModalProps> = ({
       setUploadedImage(file);
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log(windowWidth);
+
   const handleUploadImgAPIRequest = async () => {
     setLoading(true);
     const formData = new FormData();
@@ -82,7 +98,7 @@ const ProfileModal: React.FC<CustomModalProps> = ({
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "85%",
+          width: windowWidth >= 768 ? "30%" : "85%",
           height: 197,
           display: "flex",
           justifyContent: "center",
@@ -99,7 +115,7 @@ const ProfileModal: React.FC<CustomModalProps> = ({
           sx={{ position: "absolute", top: 10, right: 10, fontSize: 20 }}
           onClick={onClose}
         >
-          <CloseIcon sx={{ fontSize: 30 ,color:"#9F9E9E"}} />
+          <CloseIcon sx={{ fontSize: 30, color: "#9F9E9E" }} />
         </Button>
 
         {uploadedImage ? (

@@ -11,7 +11,7 @@ import { useAppThunkDispatch } from "../../../redux/hooks";
 import { authLogout } from "../../../redux/actions/AuthActions/LogoutAction";
 import { fetchAdminDetails } from "../../../redux/actions/AuthActions/fetchAdminDetails";
 import { AdminInterFace } from "../../../redux/Types";
-import { Backdrop, Box, Button, CircularProgress, Grow } from "@mui/material";
+import { Button } from "@mui/material";
 import DeleteProfileIcon from "../../../photos/Newuiphotos/Profile/material-symbols_account-circle-off.svg";
 import { useNavigate } from "react-router";
 import { deleteUserAction } from "../../../redux/actions/AuthActions/DeleteUserAction";

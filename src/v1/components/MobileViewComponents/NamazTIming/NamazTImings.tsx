@@ -606,195 +606,236 @@ propsType) {
     : "prayer-d-block ";
 
   return (
-    <div>
-      <div className="namaz-top-box">
-        <BackButton handleBackBtn={handleBackBtn} />
-        <h3 className="page-title">Prayer Timing</h3>
-      </div>
-
-      {(!showTimings && step < prayerSteps.length) || showTimings ? (
-        <div className="Azan-Container-timings ">
-          <div className={prayerBoxConditionalCls}>
-            <PrayerBox tZone={tZone} prayer={inputtedTimings}>
-              <TimeZone tZone={tZone} />
-            </PrayerBox>
+    <>
+      {showTimings && (
+        <div className="selected-date-box">
+          <div className="selectedDateRange">
+            <img src={calenderICon} alt="" />
+            <p>
+              {moment(selectedDat[0]).format("MMMM D")}
+              {selectedDat[1]
+                ? " - " + moment(selectedDat[1]).format("MMMM D")
+                : null}
+            </p>
           </div>
+        </div>
+      )}
+      <div className="mainNamazTablePreview">
+        <div className="namaz-top-box">
+          <BackButton handleBackBtn={handleBackBtn} />
+          <h3 className="page-title">Prayer Timing</h3>
+        </div>
 
-          <div className={sliderConditionalCls}>
-            <div className="selected-date-with-backbtn">
-              <BackButton handleBackBtn={handleBackBtn} />
-
-              <div className="selected-date-box">
-                <img src={calenderICon} alt="" />
-                <p>
-                  {moment(selectedDat[0]).format("MMMM D")}
-                  {selectedDat[1]
-                    ? " - " + moment(selectedDat[1]).format("MMMM D")
-                    : null}
-                </p>
-              </div>
+        {(!showTimings && step < prayerSteps.length) || showTimings ? (
+          <div className="Azan-Container-timings ">
+            <div className={prayerBoxConditionalCls}>
+              <PrayerBox tZone={tZone} prayer={inputtedTimings}>
+                <TimeZone tZone={tZone} />
+              </PrayerBox>
             </div>
 
-            <JuristicMethod
-              selectedMethod={selectedMethod}
-              setSelectedMethod={setSelectedMethod}
-            />
+            <div className={sliderConditionalCls}>
+              <div className="selected-date-with-backbtn">
+                <BackButton handleBackBtn={handleBackBtn} />
 
-            <PrayerTimingSlider
-              setCurrentSliderIdx={setCurrentSliderIdx}
-              setIsMobileHandler={setIsMobile}
-            >
-              {carouselSteps.map((carouselStep) =>
-                isMobile ? (
-                  <div
-                    key={carouselStep}
-                    style={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <Card className={`namaz-card ${condCls}`}>
-                      <div className="Azan-Btn-Div">
-                        <p className="prayer-icn-title">
-                          <img
-                            src={icons[prayerSteps[carouselStep].name]}
-                            alt=""
-                          />
-                          {showTimings ? "" : prayerSteps[carouselStep].name}
-                        </p>
-                      </div>
-
-                      <div style={{ padding: "0px 9px 9px 9px" }}>
-                        {" "}
-                        <TimeSelector
-                          enteredData={enteredData}
-                          setEnteredData={setEnteredData}
-                          timeSetter={setAzanTim}
-                          prayerName={prayerSteps[carouselStep].name}
-                          label="Azan"
-                          prayerTimeType="solar"
-                          nonHanafyAsr={
-                            selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
-                          }
-                          solarHanafyAsr={
-                            selectedMethod === "Hanafi" ? solarHanafyAsr : ""
-                          }
-                        />
-                        <TimeSelector
-                          enteredData={enteredData}
-                          setEnteredData={setEnteredData}
-                          prayerName={prayerSteps[carouselStep].name}
-                          timeSetter={setIqamaTim}
-                          label="Iqama"
-                          prayerTimeType={
-                            prayerSteps[carouselStep].name === "Maghrib"
-                              ? "solar"
-                              : "manual"
-                          }
-                          nonHanafyAsr={
-                            selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
-                          }
-                          solarHanafyAsr={
-                            selectedMethod === "Hanafi" ? solarHanafyAsr : ""
-                          }
-                        />
-                      </div>
-                    </Card>
-                  </div>
-                ) : (
-                  <div key={carouselStep} className="tablet-timing-card">
-                    <p className="prayer-icn-title">
-                      <img src={icons[prayerSteps[carouselStep].name]} alt="" />
-                      {showTimings ? "" : prayerSteps[carouselStep].name}
+                <div className="selected-date-box">
+                  <div className="selectedDateRange">
+                    <img src={calenderICon} alt="" />
+                    <p>
+                      {moment(selectedDat[0]).format("MMMM D")}
+                      {selectedDat[1]
+                        ? " - " + moment(selectedDat[1]).format("MMMM D")
+                        : null}
                     </p>
-                    <TimeSelector
-                      enteredData={enteredData}
-                      setEnteredData={setEnteredData}
-                      timeSetter={setAzanTim}
-                      prayerName={prayerSteps[carouselStep].name}
-                      label="Azan"
-                      nonHanafyAsr={
-                        selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
-                      }
-                      solarHanafyAsr={
-                        selectedMethod === "Hanafi" ? solarHanafyAsr : ""
-                      }
-                    />
-                    <TimeSelector
-                      enteredData={enteredData}
-                      setEnteredData={setEnteredData}
-                      prayerName={prayerSteps[carouselStep].name}
-                      timeSetter={setIqamaTim}
-                      label="Iqama"
-                      nonHanafyAsr={
-                        selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
-                      }
-                      solarHanafyAsr={
-                        selectedMethod === "Hanafi" ? solarHanafyAsr : ""
-                      }
-                    />
                   </div>
-                )
-              )}
-              {!isMobile && (
+                </div>
+              </div>
+
+              <div className="namazConatinerMain">
+                <div className="namazConatiner">
+                  <JuristicMethod
+                    selectedMethod={selectedMethod}
+                    setSelectedMethod={setSelectedMethod}
+                  />
+                  <PrayerTimingSlider
+                    setCurrentSliderIdx={setCurrentSliderIdx}
+                    setIsMobileHandler={setIsMobile}
+                  >
+                    {carouselSteps.map((carouselStep) =>
+                      isMobile ? (
+                        <div
+                          key={carouselStep}
+                          style={{ display: "flex", justifyContent: "center" }}
+                        >
+                          <Card className={`namaz-card ${condCls}`}>
+                            <div className="Azan-Btn-Div">
+                              <p className="prayer-icn-title">
+                                <img
+                                  src={icons[prayerSteps[carouselStep].name]}
+                                  alt=""
+                                />
+                                {showTimings
+                                  ? ""
+                                  : prayerSteps[carouselStep].name}
+                              </p>
+                            </div>
+
+                            <div style={{ padding: "0px 9px 9px 9px" }}>
+                              {" "}
+                              <TimeSelector
+                                enteredData={enteredData}
+                                setEnteredData={setEnteredData}
+                                timeSetter={setAzanTim}
+                                prayerName={prayerSteps[carouselStep].name}
+                                label="Azan"
+                                prayerTimeType="solar"
+                                nonHanafyAsr={
+                                  selectedMethod !== "Hanafi"
+                                    ? nonHanafyAsr
+                                    : ""
+                                }
+                                solarHanafyAsr={
+                                  selectedMethod === "Hanafi"
+                                    ? solarHanafyAsr
+                                    : ""
+                                }
+                              />
+                              <TimeSelector
+                                enteredData={enteredData}
+                                setEnteredData={setEnteredData}
+                                prayerName={prayerSteps[carouselStep].name}
+                                timeSetter={setIqamaTim}
+                                label="Iqama"
+                                prayerTimeType={
+                                  prayerSteps[carouselStep].name === "Maghrib"
+                                    ? "solar"
+                                    : "manual"
+                                }
+                                nonHanafyAsr={
+                                  selectedMethod !== "Hanafi"
+                                    ? nonHanafyAsr
+                                    : ""
+                                }
+                                solarHanafyAsr={
+                                  selectedMethod === "Hanafi"
+                                    ? solarHanafyAsr
+                                    : ""
+                                }
+                              />
+                            </div>
+                          </Card>
+                        </div>
+                      ) : (
+                        <div key={carouselStep} className="tablet-timing-card">
+                          <p className="prayer-icn-title">
+                            <img
+                              src={icons[prayerSteps[carouselStep].name]}
+                              alt=""
+                            />
+                            {showTimings ? "" : prayerSteps[carouselStep].name}
+                          </p>
+                          <TimeSelector
+                            enteredData={enteredData}
+                            setEnteredData={setEnteredData}
+                            timeSetter={setAzanTim}
+                            prayerName={prayerSteps[carouselStep].name}
+                            label="Azan"
+                            nonHanafyAsr={
+                              selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
+                            }
+                            solarHanafyAsr={
+                              selectedMethod === "Hanafi" ? solarHanafyAsr : ""
+                            }
+                          />
+                          <TimeSelector
+                            enteredData={enteredData}
+                            setEnteredData={setEnteredData}
+                            prayerName={prayerSteps[carouselStep].name}
+                            prayerTimeType={
+                              prayerSteps[carouselStep].name === "Maghrib"
+                                ? "solar"
+                                : "manual"
+                            }
+                            timeSetter={setIqamaTim}
+                            label="Iqama"
+                            nonHanafyAsr={
+                              selectedMethod !== "Hanafi" ? nonHanafyAsr : ""
+                            }
+                            solarHanafyAsr={
+                              selectedMethod === "Hanafi" ? solarHanafyAsr : ""
+                            }
+                          />
+                        </div>
+                      )
+                    )}
+                    {!isMobile && (
+                      <div className="done-btn-container">
+                        <CustomBtn
+                          size={"10vw"}
+                          eventHandler={showTimingHandler}
+                          label={"Done"}
+                          showIcon={false}
+                        />
+                      </div>
+                    )}
+                  </PrayerTimingSlider>
+                </div>
+              </div>
+
+              {currentSliderIdx === 4 && isMobile ? (
                 <div className="done-btn-container">
                   <CustomBtn
-                    size={"10vw"}
+                    size={"15vw"}
                     eventHandler={showTimingHandler}
                     label={"Done"}
                     showIcon={false}
                   />
                 </div>
-              )}
-            </PrayerTimingSlider>
-
-            {currentSliderIdx === 4 && isMobile ? (
-              <div className="done-btn-container">
-                <CustomBtn
-                  size={"15vw"}
-                  eventHandler={showTimingHandler}
-                  label={"Done"}
-                  showIcon={false}
-                />
-              </div>
-            ) : null}
+              ) : null}
+            </div>
           </div>
-        </div>
-      ) : (
-        <PrayerTable timings={inputtedTimings} tZone={tZone} />
-      )}
-      {/* show back and add btn if show timing clicked */}
-      {showTimings && (
-        <div className="Butoon-Azan">
-          <CustomBtn
-            showIcon={false}
-            bgColor={"#FF7272"}
-            eventHandler={handleBottomBackBtn}
-            label={"Cancel"}
-          />
+        ) : (
+          <PrayerTable timings={inputtedTimings} tZone={tZone} />
+        )}
+        {/* show back and add btn if show timing clicked */}
+        {showTimings && (
+          <div className="Butoon-Azan">
+            <CustomBtn
+              showIcon={false}
+              bgColor={"#FF7272"}
+              eventHandler={handleBottomBackBtn}
+              label={"Cancel"}
+              size={window.innerWidth >= 1024 ? "8vw" : "10vw"}
+            />
 
-          {selectedDat[1] ? (
-            <CustomBtn
-              showIcon={false}
-              eventHandler={handleAddRangeTimings}
-              label={"Confirm"}
-              isLoading={isLoading}
-            />
-          ) : matchedItm?._id ? (
-            <CustomBtn
-              showIcon={false}
-              eventHandler={updateNamazTimings}
-              label={"Update Timings"}
-              isLoading={isLoading}
-            />
-          ) : (
-            <CustomBtn
-              showIcon={false}
-              eventHandler={handleAddNamazTimings}
-              label={"Confirm"}
-              isLoading={isLoading}
-            />
-          )}
-        </div>
-      )}
-    </div>
+            {selectedDat[1] ? (
+              <CustomBtn
+                showIcon={false}
+                eventHandler={handleAddRangeTimings}
+                label={"Confirm"}
+                isLoading={isLoading}
+                size={window.innerWidth >= 1024 ? "8vw" : "10vw"}
+              />
+            ) : matchedItm?._id ? (
+              <CustomBtn
+                size={window.innerWidth >= 1024 ? "8vw" : "10vw"}
+                showIcon={false}
+                eventHandler={updateNamazTimings}
+                label={"Update Timings"}
+                isLoading={isLoading}
+              />
+            ) : (
+              <CustomBtn
+                showIcon={false}
+                eventHandler={handleAddNamazTimings}
+                label={"Confirm"}
+                isLoading={isLoading}
+              />
+            )}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
