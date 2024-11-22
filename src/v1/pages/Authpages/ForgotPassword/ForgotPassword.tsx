@@ -1,28 +1,25 @@
 import React, { useRef, useContext, useState } from "react";
-import "./ForgotPassword.css";
 import { Link } from "react-router-dom";
+import "./ForgotPassword.css";
 import { CircularProgress } from "@material-ui/core";
 import { resources } from "../../../resources/resources";
 import LogoMain from "../../../photos/Newuiphotos/CM Logo/cmlogofor.svg";
 import { forgotPassword } from "../../../redux/actions/AuthActions/ForgotPasswordAction";
 import { ChangeSnackbar } from "../../../redux/actions/SnackbarActions/ChangeSnackbarAction";
 import ForgotPasswordNew from "../../../photos/Newuiphotos/Icons/forgotpass.svg";
-import EmailSend from "../../../photos/Newuiphotos/Icons/EmailSent.svg";
 import { useAppThunkDispatch } from "../../../redux/hooks";
 import CloseIcon from "@mui/icons-material/Close";
 import ResetPassword from "../ResetPassword/ResetPassword/ResetPassword";
 
 const ForgotPassword = () => {
-  // const email = useRef<HTMLInputElement>(null);
-
   const [email, setEmail] = useState<string>("");
   const dispatch = useAppThunkDispatch();
-  const [isFetching, setisFetching] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const language = resources["en"];
-  const [PopupForEmail, setPopupForEmail] = useState(false);
+  const [isEmailSentPopupVisible, setIsEmailSentPopupVisible] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    setisFetching(true);
+    setIsSubmitting(true);
     e.preventDefault();
     const res = dispatch(forgotPassword({ email: email ?? "" }));
     res.then((result) => {
@@ -33,16 +30,16 @@ const ForgotPassword = () => {
           snackbarMessage: `Email Sent SuccessFully`,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        setPopupForEmail(true);
-        setisFetching(false);
+        setIsEmailSentPopupVisible(true);
+        setIsSubmitting(false);
       } else if (!result.success) {
         const snackbarDetails = {
           snackbarOpen: true,
           snackbarType: "error",
-          snackbarMessage: `Failed To Reset Password `,
+          snackbarMessage: `Failed To Reset Password`,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        setisFetching(false);
+        setIsSubmitting(false);
       }
     });
   };
@@ -64,7 +61,7 @@ const ForgotPassword = () => {
             </span>
           </div>
         </div>
-        {PopupForEmail ? (
+        {isEmailSentPopupVisible ? (
           <ResetPassword email={email} />
         ) : (
           <div className="ForgotPassowordHeadContainer">
@@ -122,10 +119,10 @@ const ForgotPassword = () => {
                 <button
                   className="ForgotPasswordBtnn"
                   type="submit"
-                  disabled={isFetching}
+                  disabled={isSubmitting}
                   style={{ padding: "0", borderRadius: "25px  " }}
                 >
-                  {isFetching ? (
+                  {isSubmitting ? (
                     <CircularProgress size="20px" color="inherit" />
                   ) : (
                     <>{language.FORGOT_PASSWORD.BUTTON_SUBMIT}</>

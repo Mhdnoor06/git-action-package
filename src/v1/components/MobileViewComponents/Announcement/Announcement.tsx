@@ -3,14 +3,19 @@ import "./Announcement.css";
 import CustomBtn from "../Shared/CustomBtn";
 import AnnouncementIcon from "../../../photos/Newuiphotos/nav bar/navicons/navactiveicons/Announcementactive.svg";
 import NoAnnouncment from "../../../photos/Newuiphotos/Icons/noAnnouncemetn.svg";
-import AnnouncementForm from "./AnnouncementForm";
-import AnnouncementCard from "./AnnouncementCard";
+import AnnouncementForm from "./Form/AnnouncementForm";
+import AnnouncementCard from "./Card/AnnouncementCard";
 import { useAppDispatch } from "../../../redux/hooks";
 import { FetchingAnnouncementNotificationByDate } from "../../../redux/actions/AnnouncementActions/FetchingAnnouncementByDateAction";
 import { handleSnackbar } from "../../../helpers/SnackbarHelper/SnackbarHelper";
-import { dateReverter } from "../../../helpers/HelperFunction";
+import {
+  customNavigatorTo,
+  dateReverter,
+} from "../../../helpers/HelperFunction";
 import moment from "moment";
-import { CircularProgress } from "@mui/material";
+import ProgressLoader from "../Shared/Loader/Loader";
+import BackButton from "../Shared/BackButton";
+import { useNavigationprop } from "../../../../MyProvider";
 
 type announcement = {
   id: string | undefined;
@@ -18,19 +23,32 @@ type announcement = {
   body: string | undefined;
   createdAt: string | undefined;
 };
-function Announcement() {
-  const [announcementForm, setAnnouncementForm] = useState(false);
-  const [announcementCardview, setAnnouncementCardView] = useState(false);
+
+type AnnouncementProps = {
+  consumerMasjidId?: string;
+};
+
+function Announcement({
+  consumerMasjidId = "6418878accb079ecb57173b2",
+}: AnnouncementProps) {
+  const navigation = useNavigationprop();
+  const [isAnnouncementFormOpen, setIsAnnouncementFormOpen] = useState(false);
+  const [isAnnouncementCardViewOpen, setIsAnnouncementCardViewOpen] =
+    useState(false);
   const [selectedAnnouncement, setSelectedAnnouncement] =
     useState<announcement>();
   const dispatch = useAppDispatch();
-  const [Announcements, setAnnouncements] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
   const [fetchAnnouncementData, setFetchAnnouncementData] = useState(false);
-  const [isInitialLoaded, setIsInitialLoaded] = useState(false);
+  const [isLoadingInitial, setIsLoadingInitial] = useState(false);
   let tZone = localStorage.getItem("MasjidtZone");
+
   useEffect(() => {
-    const announcements = dispatch(FetchingAnnouncementNotificationByDate());
-    announcements.then((result: any) => {
+    setIsLoadingInitial(true);
+    const fetchAnnouncements = dispatch(
+      FetchingAnnouncementNotificationByDate()
+    );
+    fetchAnnouncements.then((result: any) => {
       if (result.data.message !== "Success") {
         handleSnackbar(
           true,
@@ -40,34 +58,39 @@ function Announcement() {
         );
       } else {
         setAnnouncements(result.data.data);
+        setIsLoadingInitial(false);
       }
     });
   }, [fetchAnnouncementData]);
 
-  const handleAnnouncement = () => {
-    setAnnouncementForm((prev) => !prev);
+  const toggleAnnouncementForm = () => {
+    setIsAnnouncementFormOpen((prev) => !prev);
   };
 
   return (
     <>
-      {announcementCardview ? (
+      {isAnnouncementCardViewOpen ? (
         <AnnouncementCard
-          handleAnnouncement={() => setAnnouncementCardView((prev) => !prev)}
+          handleBack={() => setIsAnnouncementCardViewOpen((prev) => !prev)}
           announcementData={selectedAnnouncement}
         />
       ) : (
         <div>
-          {!announcementForm ? (
+          {!isAnnouncementFormOpen ? (
             <div className="announcebody">
               <div
                 className="announcement"
                 style={
-                  announcementForm ? {} : { justifyContent: "center", gap: "0" }
+                  isAnnouncementFormOpen
+                    ? {}
+                    : { justifyContent: "center", gap: "0" }
                 }
               >
-                {/* {announcementForm && (
-                  <BackButton handleBackBtn={handleAnnouncement} />
-                )} */}
+                <div className="goback">
+                  <BackButton
+                    handleBackBtn={navigation ? navigation : customNavigatorTo}
+                  />
+                </div>
                 <h3 className="page-title" style={{ color: "#3D5347" }}>
                   Announcements
                 </h3>
@@ -77,11 +100,14 @@ function Announcement() {
                 label="Make Announcement"
                 icon={AnnouncementIcon}
                 size="16vw"
-                eventHandler={handleAnnouncement}
+                eventHandler={toggleAnnouncementForm}
               />
-              {Announcements.length > 0 ? (
-                <div className="announcementCards">
-                  {Announcements.map((item, index) => (
+              {announcements.length > 0 ? (
+                <div
+                  className="announcementCards"
+                  data-testid="announcementCards"
+                >
+                  {announcements.map((item, index) => (
                     <div
                       className="announceCards"
                       style={{ width: "100%" }}
@@ -90,7 +116,7 @@ function Announcement() {
                       <div
                         className="announcecard"
                         onClick={() => {
-                          setAnnouncementCardView((prev) => !prev);
+                          setIsAnnouncementCardViewOpen((prev) => !prev);
                           setSelectedAnnouncement(item);
                         }}
                       >
@@ -112,13 +138,9 @@ function Announcement() {
                     </div>
                   ))}
                 </div>
+              ) : isLoadingInitial && !announcements.length ? (
+                <ProgressLoader />
               ) : (
-                // {isInitialLoaded && !Announcements.length && (
-                //   <div className="loader">
-                //     {" "}
-                //     <CircularProgress color="success" className="loader" />
-                //   </div>
-                // )}
                 <div className="noannouncement">
                   <img src={NoAnnouncment} alt="" />
                   <p>No Annoucements Found</p>
@@ -127,7 +149,8 @@ function Announcement() {
             </div>
           ) : (
             <AnnouncementForm
-              handleAnnouncement={handleAnnouncement}
+              masjidId={consumerMasjidId}
+              toggleAnnouncementForm={toggleAnnouncementForm}
               setFetchAnnouncementData={setFetchAnnouncementData}
             />
           )}

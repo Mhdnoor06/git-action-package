@@ -1,0 +1,85 @@
+.calender_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qr-container {
+  position: relative;
+  width: 180px; /* Adjust based on your QR size */
+  height: 180px; /* Adjust based on your QR size */
+  background-image: url("../../../../photos/Newuiphotos/QR/qrrr.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  padding: 10px;
+}
+@media print {
+  .printable-area {
+    display: block !important;
+    width: 100% !important; /* Full width of an A4 page */
+    height: 100% !important; /* Full height of an A4 page */
+    box-sizing: border-box;
+  }
+
+  .printable-area h1,
+  .printable-area p {
+    font-size: 16px !important; /* Increase font size for print clarity */
+  }
+
+  /* Adjust table, margins, etc. */
+  .printable-area table {
+    width: 100% !important;
+    font-size: 13px !important; /* Adjust for better readability in print */
+    border-collapse: collapse !important; /* Ensure table borders are merged */
+  }
+
+  /* Ensure that each cell has enough padding and a larger font size */
+  .printable-area th,
+  .printable-area td {
+    font-size: 10px !important; /* Larger font for table headers and cells */
+    padding: 5px !important; /* Increase cell padding for better readability */
+    text-align: center !important; /* Center align text in cells */
+  }
+
+  /* Increase Jummah font size */
+  .printable-area .jummahLabelStyle,
+  .printable-area .jummahTimingStyle {
+    width: 150px !important;
+    font-size: 12px !important; /* Increase font size for Jummah timings */
+  }
+
+  /* Increase footer font size */
+  .printable-area .footerItemStyle {
+    font-size: 12px !important; /* Increase font size for footer items */
+  }
+
+  .printable-area .footerItemStyle img {
+    width: 15px !important; /* Increase icon size in the footer */
+    margin-right: 5px !important;
+  }
+
+  .printable-area .qr {
+    width: 70px !important;
+  }
+
+  .iconButtonStyle {
+    font-size: 12px !important;
+  }
+
+  .heading h2 {
+    font-size: 12px !important;
+  }
+
+  .cmlogo img {
+    height: 50px !important;
+  }
+
+  /* Ensures that colors are printed as they appear */
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

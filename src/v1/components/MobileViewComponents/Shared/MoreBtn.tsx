@@ -14,6 +14,7 @@ const MoreBtn = ({ tsx, txLength, height }: propsType) => {
   .profile-des-text{
     height:${height ? height : "70px"};
     overflow-y: scroll;
+    margin:14px 0px;
 
 
   }

@@ -1,14 +1,14 @@
 import { toast } from "react-hot-toast";
 import * as api from "../../../api-calls/index";
-import { NamazTimings } from "../../Types";
+import { NamazTimingsType } from "../../Types";
 
 export const addTiming =
-  (formData: NamazTimings<number>, masjidId: string) => async () => {
+  (formData: NamazTimingsType<number>, masjidId: string) => async () => {
     const loading = toast.loading("Please wait...!");
     try {
       const { data } = await api.addTimings(formData, masjidId);
       // console.log(formData, "formData", data, "data");
-      if (data.success) {
+      if (data.success) { 
         toast.dismiss(loading);
         toast.success("Successfully added timing");
         return data;

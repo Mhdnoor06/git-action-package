@@ -1,0 +1,88 @@
+/* Donations */
+.ProgramContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 8px 0px 8px;
+  overflow: hidden !important;
+}
+.ProgramContainer .no-item-found {
+  height: inherit;
+  margin-top: 80px;
+}
+
+.reused-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+.program-sub-title {
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  color: #3d5347;
+}
+.no-active-prg {
+  font-weight: 500;
+  font-size: 17.92px;
+  text-transform: capitalize;
+  color: #3d5347;
+}
+
+.AddDonation {
+  cursor: pointer;
+  background-color: #1b8368;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+@media (min-width: 481px) {
+  .reused-table {
+    width: 65%;
+  }
+}
+@media (min-width: 768px) {
+  .reused-table {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .reused-table {
+    width: 33%;
+  }
+  /* .reused-table {
+        width: 40%;
+      } */
+}
+
+.green-dot {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: green;
+    border-radius: 50%;
+  }
+
+  &::after {
+    top: 2px;
+    right: 9px;
+  }
+}
+@media (min-width: 1700px) {
+  .calbtn .green-dot::after {
+    top: 2px;
+    right: 30px !important;
+    width: 10px;
+    height: 10px;
+  }
+}

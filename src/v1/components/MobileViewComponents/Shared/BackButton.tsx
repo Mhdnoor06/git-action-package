@@ -1,7 +1,7 @@
 import React from "react";
 
 import backbtn from "../../../photos/backbtn.png";
-const BackButton = ({ handleBackBtn }: { handleBackBtn: () => void }) => {
+const BackButton = ({ handleBackBtn }: any) => {
   const backBtn = {
     display: "flex",
     justifyContent: "center",
@@ -12,10 +12,11 @@ const BackButton = ({ handleBackBtn }: { handleBackBtn: () => void }) => {
   return (
     <div>
       <div
+        data-testid="backBtn"
         className="backBtn"
         style={backBtn}
         onClick={() => {
-          handleBackBtn();
+          handleBackBtn("/feed/0");
         }}
       >
         <img src={backbtn} style={{ width: "40%" }} alt="back btn" />

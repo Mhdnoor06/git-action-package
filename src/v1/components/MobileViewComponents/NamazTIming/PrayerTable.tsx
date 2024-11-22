@@ -7,7 +7,7 @@ type propsType = {
   jamaatTime: string;
 }[];
 const PrayerTable = ({ timings, tZone }: { timings: any; tZone: string }) => {
-  console.log(timings);
+
   const timeZoneHandler = (tm: number | string) => {
     if (typeof tm === "number")
       return moment.unix(tm)?.tz(tZone)?.format("hh:mm A");
@@ -18,7 +18,7 @@ const PrayerTable = ({ timings, tZone }: { timings: any; tZone: string }) => {
       <p style={{ marginBottom: "10px", textAlign: "center" }}>
         The Timings are according to the <strong>{tZone}</strong>
       </p>
-      <div className="PrayerTimings-Table">
+        <div className="PrayerTimings-Table" data-testid="prayer-preview-table">
         <table style={{ padding: "auto 10px" }}>
           <thead>
             <tr className="Prayer-Timings-header">
@@ -37,13 +37,13 @@ const PrayerTable = ({ timings, tZone }: { timings: any; tZone: string }) => {
                 key={index}
               >
                 <td>{timing.namazName}</td>
-                <td className="gray-time">
+                <td className="gray-time" data-testid="adhan">
                   {timeZoneHandler(timing.azaanTime)}{" "}
                   {timing.ExtendedAzaanMinutes
                     ? ` ${timing.ExtendedAzaanMinutes}m`
                     : null}
                 </td>
-                <td className="gray-time">
+                <td className="gray-time" data-testid="iqama">
                   {timeZoneHandler(timing.jamaatTime)}{" "}
                   {timing.ExtendedJamaatMinutes
                     ? ` ${timing.ExtendedJamaatMinutes}m`

@@ -12,7 +12,7 @@ export const DeletingAllTimingsByDateRange =
 
       if (data.message === "Timings deleted") {
         toast.dismiss(loading);
-        toast.success("Successfully deleted timing");
+        // toast.success("Successfully deleted timing");
         return data;
       }
       toast.dismiss(loading);

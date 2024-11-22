@@ -91,6 +91,21 @@ export const resources = {
       GUEST_NAME: "Guest",
       GUEST_DESCRIPTION: "Guest Description",
     },
+
+    EVENT_FORM: {
+      MASJID_NAME: "Masjid Name",
+      EVENT_DESCRIPTION: "Description",
+      EVENT_ADDRESS: "Address",
+      EVENT_START_DATE: "Event Start Date",
+      EVENT_START_TIME: "Event Start Time",
+      EVENT_END_TIME: "Event End Time",
+      EVENT_LAST_DATE: "Event Last Date",
+      EVENT_LATITUDE: "Event Latitude",
+      EVENT_LONGITUDE: "Event Longitude",
+      EVENT_TIMING_TITLE: "Event Timings :",
+      GUEST_NAME: "Guest",
+      GUEST_DESCRIPTION: "Guest Description",
+    },
   },
   hi: {
     LOGIN: {

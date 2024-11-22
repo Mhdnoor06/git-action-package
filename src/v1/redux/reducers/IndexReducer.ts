@@ -12,8 +12,9 @@ import {
   locationReducer,
   nearbyMasjidsReducer,
 } from "./MasjidReducers/FetchingNearByMasjids";
+import { tvReducer } from "./TvReducers/TvReducers";
 
-const indexReducer = combineReducers({
+const indexReducer = combineReducers({  
   admin: LoginReducer,
   selectedDate: TimingReducer,
   latestAdminEvents: FetchingLatestUpdatedEventsReducer,
@@ -24,6 +25,7 @@ const indexReducer = combineReducers({
   EventCompletion: CompletionEventReducer,
   locationReducer: locationReducer,
   nearbyMasjidsReducer: nearbyMasjidsReducer,
+  tvReducers: tvReducer,
 });
 
 export default indexReducer;

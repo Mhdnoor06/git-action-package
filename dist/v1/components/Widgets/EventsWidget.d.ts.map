@@ -1,1 +1,0 @@
-{"version":3,"file":"EventsWidget.d.ts","sourceRoot":"","sources":["../../../../src/v1/components/Widgets/EventsWidget.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAmB,MAAM,OAAO,CAAC;AAOxC,OAAO,oBAAoB,CAAC;AAU5B,UAAU,iBAAiB;IACzB,UAAU,EAAE,GAAG,CAAC;CACjB;AAED,QAAA,MAAM,YAAY,EAAE,KAAK,CAAC,EAAE,CAAC,iBAAiB,CAmS7C,CAAC;AAEF,eAAe,YAAY,CAAC"}

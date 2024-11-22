@@ -2,18 +2,13 @@ import axios from "axios";
 import { AddingEvent, AuthTokens } from "../redux/Types";
 import { rootURL } from "../api-calls";
 import { getAccessToken, getRefreshToken } from "../helpers/HelperFunction";
+import { getClientAPIRootDomain } from "../helpers/ApiSetter/ApiSetter";
 
 // const APIBaseUrl = "https://api.connectmazjid.com/api/v2"; //prod
-// const APIBaseUrl = "https://dev-api.connectmazjid.com/api/v2"; //test
+// const APIBaseUrl = "https://dev.api.connectmazjid.com/api/v2"; //test
 // const APIBaseUrl = import.meta.env.VITE_CLIENT_BASE_URL;
-// console.log(import.meta.env.VITE_CLIENT_BASE_URL);
 
-const APIBaseUrl =
-  window.location.hostname === "musali-admin.netlify.app"
-    ? "https://dev-api.connectmazjid.com/api/v2"
-    : import.meta.env.VITE_CLIENT_BASE_URL;
-
-console.log("API Base URL:", window.location.hostname);
+// const APIBaseUrl = "https://dev.api.connectmazjid.com/api/v2";
 
 const authTokensString = localStorage.getItem("authTokens");
 const token: AuthTokens | null = authTokensString
@@ -21,7 +16,7 @@ const token: AuthTokens | null = authTokensString
   : null;
 
 const API = axios.create({
-  baseURL: APIBaseUrl,
+  baseURL: getClientAPIRootDomain(),
 });
 
 const refreshToken = () => {
@@ -98,6 +93,7 @@ export const getTimingsByDate = (masjidId: string, date: string) =>
 
 export const fetchMasjidById = (masjidId: string) =>
   API.get(`/masjid/get-masjid-by-id/` + masjidId);
+
 export const fetchEventWithMasjidId = (masjidId: string) =>
   API.get(`/event/get-events-by-masjid-id/` + masjidId);
 
@@ -140,3 +136,16 @@ export const addEvent = (masjidId: string, formData: AddingEvent) =>
 //       endDate:`${new Date(endDate)}`,
 //   }
 // });
+
+export const getAllTv = () => API.get("/tv/get-all");
+
+export const pairingTv = (pairingCodeData: any) =>
+  API.post(`/tv/register-with-user`, pairingCodeData);
+
+export const assignPermissions = (permissionData: any) =>
+  API.post("/tv/assign-permissions", permissionData);
+
+export const unpair = (tvId: string) => API.delete(`/tv/unpair/${tvId}`);
+
+export const contactFormApi = (formData: any) =>
+  API.post("/app/email/send", formData);

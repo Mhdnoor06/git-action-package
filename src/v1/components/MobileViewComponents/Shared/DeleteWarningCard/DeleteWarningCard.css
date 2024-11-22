@@ -63,6 +63,10 @@
   padding: 15px 25px;
   border-bottom-right-radius: 15px;
 }
+.no a,
+.yes a {
+  color: white;
+}
 .update-yes {
   background-color: #1b8368;
   color: white;
@@ -80,5 +84,27 @@
 @media (min-width: 520px) {
   .deleteCard .css-wm8dfs {
     width: 400px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .delete h5 {
+    font-size: 25px;
+  }
+
+  .delete p {
+    font-size: 25px;
+  }
+
+  .deleteCard .css-wm8dfs {
+    width: 600px;
+  }
+
+  .deleteIcon {
+    padding: 25px;
+  }
+
+  .deleteIcon img {
+    width: 30px !important;
   }
 }

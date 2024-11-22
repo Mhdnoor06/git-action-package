@@ -1,9 +1,0 @@
-.AdminProfileContainer {
-  /* border: 1px solid red; */
-  height: 86vh;
-  width: 83vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 24px;
-}

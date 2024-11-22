@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./Login.css";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -12,12 +12,14 @@ import { resources } from "../../../resources/resources";
 import { authLogin } from "../../../redux/actions/AuthActions/LoginAction";
 import { VerifyingTwoFactorAuth } from "../../../redux/actions/AuthActions/VerifyingTwoFactorAuthAction";
 import { handleSnackbar } from "../../../helpers/SnackbarHelper/SnackbarHelper";
-
+import "./Login.css";
 import LogoMain from "../../../photos/Newuiphotos/CM Logo/CM Logo.svg";
 import ReCAPTCHA from "react-google-recaptcha";
 import PasswordInput from "../../Shared/PasswordInput/PasswordInput";
 import { useAppThunkDispatch } from "../../../redux/hooks";
-// import { Box, FormControlLabel, Grow, Slide, Switch } from "@mui/material";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { Box, Tooltip } from "@mui/material";
+import { getHcaptchaKey } from "../../../helpers/ApiSetter/GraphQlApiSetter";
 interface ResultType {
   success: boolean;
   TwoFAUser: boolean;
@@ -25,88 +27,230 @@ interface ResultType {
   message: string;
 }
 const Login = () => {
-  const [OpenModal, setOpenModal] = useState(false);
-  const [isFetching, setisFetching] = useState(false);
-  const recaptcha = useRef<ReCAPTCHA>(null);
-  const email = useRef<HTMLInputElement>(null);
-  const token = useRef<HTMLInputElement>(null);
-  const password = useRef<HTMLInputElement>(null);
+  const capchaKey = getHcaptchaKey();
+  const captchaRef = useRef<HCaptcha>(null); // Ref to handle manual trigger
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isTwoFactorModalOpen, setIsTwoFactorModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const tokenRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppThunkDispatch();
   const [adminId, setadminId] = useState("");
-  const [CaptchaValue, setCaptchaValue] = useState(false);
+  // const [CaptchaValue, setCaptchaValue] = useState(false);
   const [Captcha, setCaptcha] = useState("");
   const language = resources["en"];
-  const [showPas, setShowPas] = useState(false);
-  const [open, setOpen] = React.useState(true);
-  const [checked, setChecked] = React.useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const handleChange = () => {
-    setChecked((prev) => !prev);
+  const [isExecutingCaptcha, setIsExecutingCaptcha] = useState(false);
+  const handleCloseTwoFactorModal = () => {
+    setIsTwoFactorModalOpen(false);
+    setIsSubmitting(false);
   };
 
-  function onChange(value: string | null) {
-    if (value && !CaptchaValue) {
-      setCaptchaValue(true);
-    }
-    if (value) setCaptcha(value);
-  }
+  // const handleLoginSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   setIsSubmitting(true);
+  //   e.preventDefault();
+  //   if (emailRef.current?.value && passwordRef.current?.value) {
+  //     const res = dispatch(
+  //       authLogin(
+  //         {
+  //           email: emailRef.current.value,
+  //           password: passwordRef.current.value,
+  //         },
+  //         Captcha
+  //       )
+  //     );
+  //     res.then((result: ResultType) => {
+  //       if (result.success) {
+  //         if (result.TwoFAUser) {
+  //           setIsTwoFactorModalOpen(true);
+  //           setadminId(result?.adminId);
+  //         } else {
+  //           setadminId(result.adminId);
+  //           handleSnackbar(true, "success", "Logged In Successfully", dispatch);
+  //         }
+  //         setIsSubmitting(false);
+  //       } else {
+  //         handleSnackbar(
+  //           true,
+  //           "error",
+  //           `Failed to Login` + result.message,
+  //           dispatch
+  //         );
+  //         setIsSubmitting(false);
+  //       }
+  //     });
+  //   } else {
+  //     handleSnackbar(
+  //       true,
+  //       "warning",
+  //       "Please Provide the Credentials to login",
+  //       dispatch
+  //     );
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
-  const handleModalUpdate = () => {
-    setOpenModal(false);
-    setisFetching(false);
-  };
+  // const handleLoginSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+
+  //   // Ensure fields are filled before triggering captcha
+  //   if (emailRef.current?.value && passwordRef.current?.value) {
+  //     if (isExecutingCaptcha) {
+  //       captchaRef.current?.execute();
+  //       setIsSubmitting(true);
+  //     } else {
+  //       setIsSubmitting(true);
+  //       if (emailRef.current?.value && passwordRef.current?.value) {
+  //         const res = dispatch(
+  //           authLogin(
+  //             {
+  //               email: emailRef.current.value,
+  //               password: passwordRef.current.value,
+  //             },
+  //             "" // Send captcha token
+  //           )
+  //         );
+  //         res.then((result: ResultType) => {
+  //           if (result.success) {
+  //             if (result.TwoFAUser) {
+  //               setIsTwoFactorModalOpen(true);
+  //               setadminId(result?.adminId);
+  //             } else {
+  //               setadminId(result.adminId);
+  //               handleSnackbar(
+  //                 true,
+  //                 "success",
+  //                 "Logged in successfully",
+  //                 dispatch
+  //               );
+  //             }
+  //             setIsSubmitting(false);
+  //           } else {
+  //             setIsExecutingCaptcha(true);
+  //             handleSnackbar(
+  //               true,
+  //               "error",
+  //               `Failed to Login: ${result.message}`,
+  //               dispatch
+  //             );
+  //             setIsSubmitting(false);
+  //           }
+  //         });
+  //       }
+  //     }
+
+  //     // Trigger hCaptcha validation
+  //   } else {
+  //     handleSnackbar(
+  //       true,
+  //       "warning",
+  //       "Please provide the credentials to login",
+  //       dispatch
+  //     );
+  //   }
+  // };
 
   const handleLoginSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    setisFetching(true);
     e.preventDefault();
-    if (email.current?.value && password.current?.value) {
+
+    if (emailRef.current?.value && passwordRef.current?.value) {
+      // Check if the user has already failed login once
+      const failedLoginAttempt = sessionStorage.getItem("failedLogin");
+
+      if (isExecutingCaptcha || failedLoginAttempt) {
+        // Show captcha if failed login attempt exists or is executing captcha
+        captchaRef.current?.execute();
+        setIsSubmitting(true);
+      } else {
+        setIsSubmitting(true);
+        const res = dispatch(
+          authLogin(
+            {
+              email: emailRef.current.value,
+              password: passwordRef.current.value,
+            },
+            "" // Send captcha token
+          )
+        );
+
+        res.then((result: ResultType) => {
+          if (result.success) {
+            handleSnackbar(true, "success", "Logged in successfully", dispatch);
+          } else {
+            // Set sessionStorage if login fails
+            sessionStorage.setItem("failedLogin", "true");
+            setIsExecutingCaptcha(true);
+            handleSnackbar(
+              true,
+              "error",
+              `Failed to Login: ${result.message}`,
+              dispatch
+            );
+          }
+          setIsSubmitting(false);
+        });
+      }
+    } else {
+      handleSnackbar(
+        true,
+        "warning",
+        "Please provide the credentials to login",
+        dispatch
+      );
+    }
+  };
+
+  const handleCaptchaVerify = (token: string) => {
+    setCaptchaToken(token); // Save the token once captcha is successful
+
+    // Now, perform the login action with credentials and captcha token
+    if (emailRef.current?.value && passwordRef.current?.value) {
       const res = dispatch(
         authLogin(
-          { email: email.current.value, password: password.current.value },
-          Captcha
+          {
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+          },
+          token // Send captcha token
         )
       );
       res.then((result: ResultType) => {
         if (result.success) {
           if (result.TwoFAUser) {
-            setOpenModal(true);
+            setIsTwoFactorModalOpen(true);
             setadminId(result?.adminId);
           } else {
             setadminId(result.adminId);
-            handleSnackbar(true, "success", "Logged In Successfully", dispatch);
+            handleSnackbar(true, "success", "Logged in successfully", dispatch);
           }
-          setisFetching(false);
+          setIsSubmitting(false);
         } else {
           handleSnackbar(
             true,
             "error",
-            `Failed to Login` + result.message,
+            `Failed to Login: ${result.message}`,
             dispatch
           );
-          setisFetching(false);
+          setIsSubmitting(false);
         }
       });
-    } else {
-      handleSnackbar(
-        true,
-        "warning",
-        "Please Provide the Credentials to login",
-        dispatch
-      );
-      setisFetching(false);
     }
   };
 
-  const handleTwoFactorAuthCheck = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setisFetching(true);
+  const handleTwoFactorAuthSubmit = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    setIsSubmitting(true);
     e.preventDefault();
     let formData = {
       // token: token.current.value,
       // password: password.current.value,
       // userId: adminId,
       userId: adminId,
-      token: token.current?.value ?? "",
-      password: password.current?.value ?? "",
+      token: tokenRef.current?.value ?? "",
+      password: passwordRef.current?.value ?? "",
     };
 
     const res = dispatch(VerifyingTwoFactorAuth(formData)); //,navigate
@@ -114,8 +258,8 @@ const Login = () => {
       if (result.success) {
         // console.log(result.success)
         handleSnackbar(true, "success", "Logged In Successfully", dispatch);
-        setisFetching(false);
-        setOpenModal(false);
+        setIsSubmitting(false);
+        setIsTwoFactorModalOpen(false);
       } else {
         handleSnackbar(
           true,
@@ -123,7 +267,7 @@ const Login = () => {
           `Failed To LogIn :Invalid token`,
           dispatch
         );
-        setisFetching(false);
+        setIsSubmitting(false);
       }
     });
   };
@@ -133,7 +277,7 @@ const Login = () => {
       <div className="LoginHeadContainer">
         <div className="LoginLeftContainer">
           <div className="BannerPoppupMain">
-            <Dialog open={OpenModal}>
+            <Dialog open={isTwoFactorModalOpen}>
               <DialogTitle> {language.MODAL.MODAL_TITLE}</DialogTitle>
               <DialogContent>
                 <TextField
@@ -142,15 +286,18 @@ const Login = () => {
                   label="OTP"
                   sx={{ marginLeft: 10, marginTop: 2 }}
                   type="number"
-                  inputRef={token}
+                  inputRef={tokenRef}
                   variant="outlined"
                 />
               </DialogContent>
               <DialogActions>
-                <Button onClick={handleModalUpdate} style={{ color: "grey" }}>
+                <Button
+                  onClick={handleCloseTwoFactorModal}
+                  style={{ color: "grey" }}
+                >
                   {language.MODAL.MODAL_CANCEL}
                 </Button>
-                <Button onClick={handleTwoFactorAuthCheck}>
+                <Button onClick={handleTwoFactorAuthSubmit}>
                   {language.MODAL.MODAL_SUBMIT}{" "}
                 </Button>
               </DialogActions>
@@ -176,45 +323,75 @@ const Login = () => {
               </p>
             </span>
           </div>
-          {/* <div className="LoginLogoDescContainer">
-            <span className="siteNamebottom">
-              {" "}
-              {language.BANER.INPUT_PLACEHOLDER_DESCRIPTION}{" "}
-            </span>
-          </div> */}
         </div>
         <div className="LoginrightContainer">
           <form onSubmit={(e) => handleLoginSubmit(e)} className="loginBox">
             <input
               placeholder={language.LOGIN.INPUT_PLACEHOLDER_EMAIL}
               type="email"
-              ref={email}
+              ref={emailRef}
               required
               className="loginInput"
             />
 
-            <PasswordInput
-              reference={password}
-              pHolder={"Password"}
-              showPas={showPas}
-              setShowPas={setShowPas}
-              belowTx={false}
-            />
-            {/* <div className="RecapchaBtn">
-              <ReCAPTCHA
-                ref={recaptcha}
-                sitekey="6LfZT40kAAAAAACn61_xFm5Tp580i2RF9Jfmuesa"
-                onChange={onChange}
+            <div className="InputFields">
+              <input
+                placeholder={"Password"}
+                type={isPasswordVisible ? "text" : "password"}
+                ref={passwordRef}
+                required
+                className="ResetPasswordInput"
               />
-            </div> */}
+              {isPasswordVisible ? (
+                <AiFillEye
+                  onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                  className="ShowPasswordLogin"
+                  role="button"
+                  data-testid="show-password"
+                />
+              ) : (
+                <AiFillEyeInvisible
+                  onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                  className="ShowPasswordLogin"
+                  role="button"
+                  data-testid="hide-password"
+                />
+              )}
+            </div>
+            {/* <PasswordInput
+              reference={passwordRef}
+              pHolder={"Password"}
+              isPasswordVisible={isPasswordVisible}
+              setIsPasswordVisible={setIsPasswordVisible}
+            /> */}
 
-            <button className="loginButton" type="submit" disabled={isFetching}>
-              {isFetching ? (
+            <button
+              className="loginButton"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
                 <CircularProgress size="20px" style={{ color: "white" }} />
               ) : (
                 <>{language.LOGIN.BUTTON_SUBMIT}</>
               )}
             </button>
+            <Tooltip title="Solve the captcha to verify you are not a robot.">
+              <div>
+                <HCaptcha
+                  onClose={() => {
+                    setIsSubmitting(false);
+                  }}
+                  sitekey={capchaKey}
+                  ref={captchaRef}
+                  size="invisible"
+                  onVerify={handleCaptchaVerify}
+                  onError={() => {
+                    handleSnackbar(true, "error", "Captcha error", dispatch);
+                  }}
+                />
+              </div>
+            </Tooltip>
             <div className="links">
               <span className="loginForgot">
                 <Link to="/Request_new_user">
@@ -230,35 +407,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-
-      {/* <Box
-        sx={{
-          height: 280,
-          width: 300,
-          position: "absolute",
-          zIndex: 10,
-        }}
-      >
-        <FormControlLabel
-          control={<Switch checked={checked} onChange={handleChange} />}
-          label="Show"
-        />
-        <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
-          <Paper sx={{ m: 1, width: 100, height: 100 }} elevation={4}>
-            <svg>
-              <Box
-                component="polygon"
-                points="0,100 50,00, 100,100"
-                sx={{
-                  fill: (theme) => theme.palette.common.white,
-                  stroke: (theme) => theme.palette.divider,
-                  strokeWidth: 1,
-                }}
-              />
-            </svg>
-          </Paper>
-        </Slide>
-      </Box> */}
     </div>
   );
 };

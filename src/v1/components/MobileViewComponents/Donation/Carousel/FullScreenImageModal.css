@@ -1,0 +1,10 @@
+.react-transform-wrapper:focus-visible,
+.react-transform-component:focus-visible,
+.imageModalBox:focus-visible,
+.imageModalBox img {
+  outline: none !important;
+}
+.react-transform-wrapper,
+.react-transform-component {
+  outline: none !important;
+}

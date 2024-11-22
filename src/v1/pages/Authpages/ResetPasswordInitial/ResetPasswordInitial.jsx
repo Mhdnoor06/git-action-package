@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useState, useEffect } from "react";
-import "./ResetPasswordInitial.css";
-import { useNavigate, useParams } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 import { CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
 // import { resetPassword } from "../../../Redux/Actions/AuthActions/ResetPasswordAction.js";
@@ -29,25 +29,24 @@ import { VerifyingTwoFactorAuth } from "../../../redux/actions/AuthActions/Verif
 
 
 const ResetPasswordInitial = () => {
-  const navigate = useNavigate();
+
   const email = useRef();
   const password = useRef();
   const confirmPassword = useRef();
   const LoginCode = useRef();
   const dispatch = useDispatch();
-  const [isFetching, setisFetching] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
-  const [PasswordShow, setPasswordShow] = useState(true);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
   const [ConfirmPasswordType, setConfirmPasswordType] = useState("password");
-  const [ConfirmPasswordShow, setConfirmPasswordShow] = useState(true);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(true);
   const search = useLocation().search;
   const id = new URLSearchParams(search).get("token");
-  const [OpenModal, setOpenModal] = useState(false);
-  const [OpenQRModal, setOpenQRModal] = useState(false);
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
   const [AllowCancel, setAllowCancel] = useState(false);
   const [QRCode, setQRCode] = useState("");
   const [UserID, setUserId] = useState("");
-  const [UserEmail, setUserEmail] = useState("");
+  // const [UserEmail, setUserEmail] = useState("");
 
   console.log(QRCode);
 
@@ -59,25 +58,24 @@ const ResetPasswordInitial = () => {
         token: id,
       };
 
-      setisFetching(true);
+      setIsSubmitting(true);
       const res = dispatch(resetPasswordInitial(formData));
 
       res.then((result) => {
         if (result.success) {
           handleSnackbar(true,"success", ` Password Setup Successful`,dispatch);
 
-          setisFetching(false);
+          setIsSubmitting(false);
           
           const response = dispatch(ActivatingTwoFactorAuth());
           response.then(function (result) {
             if(result.success) {
               console.log(result.QR)
               setQRCode(result.QR);
-              setOpenQRModal(true);
+              setIsQRModalOpen(true);
               setUserId(result.data._id);
-              setisFetching(false);
-              setUserEmail(result.data.email)
-              setUserEmail(result.data.email)
+              setIsSubmitting(false);
+              // setUserEmail(result.data.email)
             } else {
               handleSnackbar(true,"error", result.message ? "Failed : " + result.message : "Failed : Internet or Server Issue ",dispatch);
             }
@@ -85,7 +83,7 @@ const ResetPasswordInitial = () => {
         } else {
 
           handleSnackbar(true,"error", `Failed To Setup the Password : ` + result.message,dispatch);
-          setisFetching(false);
+          setIsSubmitting(false);
         }
       });
     } else {
@@ -95,33 +93,12 @@ const ResetPasswordInitial = () => {
         snackbarMessage: `Password and Confirmed Password does not match`,
       };
       dispatch(ChangeSnackbar(snackbarDetails));
-      setisFetching(false);
+      setIsSubmitting(false);
     }
-    setisFetching(false);
+    setIsSubmitting(false);
 
   };
-
-  const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
-      setPasswordShow(true);
-      return;
-    }
-    setPasswordType("password");
-    setPasswordShow(false);
-  };
-
-  const ConfirmTogglePassword = () => {
-    if (ConfirmPasswordType === "password") {
-      setConfirmPasswordType("text");
-      setConfirmPasswordShow(true);
-      return;
-    }
-    setConfirmPasswordType("password");
-    setConfirmPasswordShow(false);
-  };
-
-  const handleQRClose = () => {
+  const handleQRModalClose = () => {
     let formData = {
       password: password.current.value,
       token: LoginCode.current.value,
@@ -138,8 +115,8 @@ const ResetPasswordInitial = () => {
         };
         dispatch(ChangeSnackbar(snackbarDetails));
        
-        setisFetching(false);
-        setOpenQRModal(false);
+        setIsSubmitting(false);
+        setIsQRModalOpen(false);
       } else {
         const snackbarDetails = {
           snackbarOpen: true,
@@ -147,16 +124,16 @@ const ResetPasswordInitial = () => {
           snackbarMessage: `Request Failed :Invalid token`,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        setisFetching(false);
+        setIsSubmitting(false);
       }
     });
   };
 
   const handleQRCloseButtonAction = () => {
-    setOpenQRModal(false);
+    setIsQRModalOpen(false);
   };
 
-  const handleChange = () => {
+  const handleCodeChange  = () => {
     if (LoginCode.current?.value?.length > 5) {
       setAllowCancel(true);
     } else if (LoginCode.current?.value?.length === 0) {
@@ -175,7 +152,7 @@ const ResetPasswordInitial = () => {
         </div>
         <div className="loginRight">
           <div className="ModalContainerTwoFactor">
-            <Dialog open={OpenQRModal} style={{ height:'10rem'}} >
+            <Dialog open={isQRModalOpen} style={{ height:'10rem'}} >
               <DialogTitle>
                 Scan this QR CODE with Google Authenticator App
               </DialogTitle>
@@ -192,7 +169,7 @@ const ResetPasswordInitial = () => {
                   label="TOTP"
                   sx={{ marginLeft: 15, marginTop: 2 }}
                   type="number"
-                  onChange={handleChange}
+                  onChange={handleCodeChange}
                   inputRef={LoginCode}
                   variant="outlined"
                 />
@@ -200,7 +177,7 @@ const ResetPasswordInitial = () => {
               <DialogActions>
                 <p>Enter the TOTP from Google Authenticator App to Submit </p>
                 {AllowCancel && (
-                  <Button onClick={handleQRClose} style={{ color: "grey" }}>
+                  <Button onClick={handleQRModalClose} style={{ color: "grey" }}>
                     Verify
                   </Button>
                 )}
@@ -226,14 +203,14 @@ const ResetPasswordInitial = () => {
                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                   className="ResetPasswordInput"
                 />
-                {PasswordShow ? (
+                {isPasswordVisible ? (
                   <AiFillEye
-                    onClick={togglePassword}
+                    onClick={()=>setIsPasswordVisible(!isPasswordVisible)}
                     className="ShowPasswordLogin"
                   />
                 ) : (
                   <AiFillEyeInvisible
-                    onClick={togglePassword}
+                    onClick={()=>setIsPasswordVisible(!isPasswordVisible)}
                     className="ShowPasswordLogin"
                   />
                 )}
@@ -247,14 +224,14 @@ const ResetPasswordInitial = () => {
                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                   className="ResetPasswordInput"
                 />
-                {ConfirmPasswordShow ? (
+                {isConfirmPasswordVisible ? (
                   <AiFillEye
-                    onClick={ConfirmTogglePassword}
+                    onClick={()=>setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}
                     className="ShowPasswordLogin"
                   />
                 ) : (
                   <AiFillEyeInvisible
-                    onClick={ConfirmTogglePassword}
+                    onClick={()=>setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}
                     className="ShowPasswordLogin"
                   />
                 )}
@@ -267,9 +244,9 @@ const ResetPasswordInitial = () => {
               <button
                 className="ForgotPasswordBtn"
                 type="submit"
-                disabled={isFetching}
+                disabled={isSubmitting}
               >
-                {isFetching ? (
+                {isSubmitting ? (
                   <CircularProgress color="white" size="20px" />
                 ) : (
                   "Reset Password"

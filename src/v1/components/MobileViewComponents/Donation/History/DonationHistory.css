@@ -1,0 +1,91 @@
+.donationTopbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.donationinvoicemain {
+  padding-bottom: 20px;
+}
+.donationinvoicemain .MuiPaper-root {
+  width: 100%;
+  overflow-x: hidden;
+}
+.donationTopbar .topbarflex {
+  display: flex;
+}
+.donationTopbar .topbarflex .page-title {
+  color: #3d5347;
+  margin: 22px 0px 8px;
+}
+.donationTopbar h5 {
+  margin-top: 0;
+  font-weight: 400;
+  font-family: "Lato";
+}
+.totalDonations {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px 15px;
+}
+.totalDonations .totalDonationItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.totalDonations .totalDonationItem h5 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 10px;
+  color: #3d5347;
+}
+.totalDonations .totalDonationItem h4 {
+  font-size: 13px;
+
+  margin: 0;
+  color: #3d5347;
+}
+.syncAltIcon {
+  transform: rotate(90deg) !important;
+  min-width: 0px !important;
+  color: black !important;
+}
+
+.buttonMinWidth {
+  min-width: 0px !important;
+  padding: 0px !important;
+}
+
+/* Donation Invoice details */
+
+.donationinvoicemain .invoice-field-normal {
+  font-size: 0.775rem;
+  font-family: "Lato";
+  font-weight: 500;
+}
+.donationinvoicemain .invoice-field-bold {
+  font-size: 0.9rem;
+  font-family: "Lato";
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .donationinvoicemain .MuiPaper-root {
+    width: 60%;
+  }
+  .totalDonations .totalDonationItem h5 {
+    font-size: 14px;
+  }
+
+  .donationinvoicemain .invoice-field-normal {
+    font-size: 0.775rem;
+    font-family: "Lato";
+    font-weight: 500;
+  }
+  .donationinvoicemain .invoice-field-bold {
+    font-size: 0.9rem;
+    font-family: "Lato";
+    font-weight: 600;
+  }
+}

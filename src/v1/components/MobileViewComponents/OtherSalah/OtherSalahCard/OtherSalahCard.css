@@ -1,0 +1,94 @@
+.other-salah-card-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.other-salah-card {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border-radius: 20px !important;
+}
+
+.other-salah-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.other-salah-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-salah-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  left: 1.4rem;
+  gap: 5px;
+}
+
+.icon {
+  margin-right: 0.7vw;
+  width: 1.5rem;
+}
+
+.title-text {
+  font-size: 0.85rem !important;
+}
+
+.table-header {
+  font-weight: bold;
+  color: #9f9e9e !important ;
+  font-size: 0.73rem !important;
+  text-align: center !important;
+  font-weight: 500 !important;
+}
+
+.table-cell {
+  font-size: 0.63rem !important;
+  text-wrap: nowrap;
+  text-align: center !important;
+  color: #3d5347 !important;
+  font-weight: 500 !important;
+  padding: 0.4rem !important;
+}
+
+.table-row {
+  border-top: 1px solid #ccc !important; /* Adjust the color and thickness as needed */
+}
+
+@media (min-width: 350px) {
+  .title-text {
+    font-size: 0.95rem !important;
+  }
+
+  .table-header {
+    font-size: 0.82rem !important;
+  }
+  .table-cell {
+    font-size: 0.72rem !important;
+    padding: 0.5rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .title-text {
+    font-size: 1rem !important;
+  }
+  .table-cell {
+    font-size: 0.82rem !important;
+  }
+  .table-header {
+    font-size: 0.92rem !important;
+  }
+}

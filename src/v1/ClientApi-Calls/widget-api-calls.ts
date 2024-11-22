@@ -7,7 +7,7 @@ import axios from "axios";
 
 const APIBaseUrl =
   window.location.hostname === "musali-admin.netlify.app"
-    ? "https://dev-api.connectmazjid.com/api/v2"
+    ? "https://dev.api.connectmazjid.com/api/v2"
     : import.meta.env.VITE_CLIENT_BASE_URL;
 
 const widgetAPI = axios.create({

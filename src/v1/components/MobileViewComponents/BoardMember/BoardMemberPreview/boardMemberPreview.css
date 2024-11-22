@@ -1,0 +1,54 @@
+.board-member-details {
+  padding: 0;
+}
+.board-member-details h5 {
+  margin: 15px 0 0 0;
+  font-size: 15px;
+}
+.board-member-details .title {
+  font-size: 20px;
+  padding: 15px 3px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.board-member-details p {
+  /* margin: 2px 10px 0 0; */
+  /* margin: 0px !important;
+    padding-top: 0px;
+    color: #888; */
+  font-size: 14px;
+}
+.board-member-details p:not(.profile-des-text) {
+  margin: 0px !important;
+  /* padding-top: 0px; */
+  /* color: #888; */
+}
+
+.board-member-drop-item h5 {
+  font-weight: 700;
+  font-size: 15px;
+  color: #2e382e;
+}
+.board-member-drop-item h5 {
+  font-weight: 700;
+  font-size: 15px;
+  color: #2e382e;
+}
+.board-member-drop-item p {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 15px;
+  color: #3d544e;
+  padding-top: 5px;
+}
+
+.board-preview-btn .confirm-btn,
+.board-preview-btn .share-btn {
+  margin-top: 15px;
+}
+.board-preview-btn .confirm-btn .my-custom-btn {
+  padding: 0px 38px 0px 64px !important;
+}
+.board-preview-btn .share-btn .my-custom-btn {
+  padding: 0px 10px 0px 34px !important;
+}

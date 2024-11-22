@@ -17,6 +17,9 @@ type PropsType = {
   isDisabled?: boolean;
   children?: React.ReactNode;
   icon?: any;
+  width?: string;
+  imgWidth?: string;
+  fontSize?: string;
 };
 
 const CustomBtn = ({
@@ -25,6 +28,7 @@ const CustomBtn = ({
   isLoading,
   bgColor = "",
   borderClr = "none",
+  fontSize = "13px",
   TxColor = "white",
   showIcon = true,
   isDisabled = isLoading ? true : false,
@@ -32,28 +36,32 @@ const CustomBtn = ({
   hightSize = "32px",
   children,
   icon,
+  width,
+  imgWidth = "12%",
 }: PropsType) => {
   const btnStyle = {
     // width: "100%",
-    padding: `${showIcon ? "0px 20vw 0px 24vw" : `0px ${size} 0px ${size}`}`,
+    padding: `${size ? `0px ${size} 0px ${size}` : "0px 20vw 0px 24vw"}`,
     height: hightSize,
     border: borderClr,
     cursor: "pointer",
     color: isDisabled ? "#054635" : TxColor,
-
+    width: width ? width : "",
     background: bgColor ? bgColor : !isDisabled ? "#1B8368" : "grey",
     // boxShadow:
     //   "0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2)",
     borderRadius: "30px",
     fontFamily: "Lato",
-    fontSize: "13px",
+    fontSize: fontSize,
     fontWeight: 600,
     textAligns: "center",
     display: "flex",
     alignItems: "center",
+    justifyContent: width ? "space-between" : "center",
   };
+
   let imgStyle = {
-    width: "12%",
+    width: imgWidth ? imgWidth : "12%",
     marginRight: "10px",
   };
   // .my-custom-btn {
@@ -62,6 +70,7 @@ const CustomBtn = ({
   return (
     <>
       <button
+        data-testid="my-custom-btn"
         className="my-custom-btn"
         onClick={eventHandler}
         style={btnStyle}

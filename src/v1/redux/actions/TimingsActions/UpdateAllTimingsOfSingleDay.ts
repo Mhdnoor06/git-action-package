@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
 import * as api from "../../../api-calls/index";
-import { NamazTimings } from "../../Types";
+import { NamazTimingsType } from "../../Types";
 
 export const UpdateAllTimingsOfSingleDay =
   (Data: any, MasjidId: string, TimingsId: string) => async () => {
@@ -22,10 +22,10 @@ export const UpdateAllTimingsOfSingleDay =
     } catch (error: any) {
       const message = error.response?.data?.message
         ? error.response?.data?.message
-        : "Failed To updated  Timings:SomeThing Went Wrong";
+        : "Failed To updated Timings:SomeThing Went Wrong";
       let result = {
         success: false,
-        message: message,
+        message: message
       };
       toast.dismiss(loading);
       toast.success(message);

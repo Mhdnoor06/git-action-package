@@ -1,0 +1,53 @@
+.prayer-type-dropdown-container .dropdown-card .my-custom-btn {
+  font-size: 11px !important;
+}
+.prayer-type-dropdown-container .dropdown-card .dropdown-option {
+  font-size: 11px !important;
+}
+
+.mobileTimePicker .MuiOutlinedInput-root {
+  font-size: 13px;
+}
+
+.plus-minus-container .offset-value {
+  font-size: 10px;
+}
+
+/* @media (max-width: 400px) {
+
+} */
+@media (min-width: 768px) {
+  .prayer-type-dropdown-container .dropdown-card .my-custom-btn {
+    font-size: 12px !important;
+  }
+  .prayer-type-dropdown-container .dropdown-card .dropdown-option {
+    font-size: 12px !important;
+  }
+  .mobileTimePicker .MuiOutlinedInput-root {
+    font-size: 13px;
+  }
+  .plus-minus-container .offset-value {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prayer-type-dropdown-container .dropdown-card .my-custom-btn {
+    font-size: 13px !important;
+  }
+  .prayer-type-dropdown-container .dropdown-card .dropdown-option {
+    font-size: 13px !important;
+  }
+  .mobileTimePicker .MuiOutlinedInput-root {
+    font-size: 14px;
+  }
+  .plus-minus-container .offset-value {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1424px) {
+}
+
+@media (min-width: 1700px) {
+}

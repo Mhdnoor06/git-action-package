@@ -64,21 +64,15 @@
   overflow-x: scroll;
 }
 .term-condition-tx {
-  /* Term & Conditions */
-
   position: sticky;
-  width: 156px;
+  text-align: center;
   height: 17px;
-  margin: 20px auto;
-
-  /* top: 83vh; */
-
+  /* margin: 20px auto; */
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
-
   text-decoration-line: underline;
   cursor: pointer;
   color: #33443b;
@@ -111,5 +105,25 @@
 @media (min-width: 1024px) {
   .bottom-navigation {
     margin: auto 210px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .nav-icon {
+    width: 40px;
+  }
+  .nav-icon-active {
+    width: 40px;
+  }
+
+  .nav-label {
+    font-size: 22px;
+  }
+  .nav-label-active {
+    font-size: 20px;
+  }
+
+  .term-condition-tx {
+    font-size: 25px;
   }
 }

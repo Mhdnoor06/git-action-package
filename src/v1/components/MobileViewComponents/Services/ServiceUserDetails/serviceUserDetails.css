@@ -1,0 +1,30 @@
+.user-details-top-heading {
+  text-align: center;
+  background: #d0f9e4;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 0px;
+  border-radius: 8px;
+  color: #2e382e;
+}
+.invoice-container div {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 10px;
+}
+.invoice-container {
+  padding-bottom: 10px;
+}
+.invoice-container div h3 {
+  font-weight: 700;
+  margin-bottom: 0px;
+  padding: 0px;
+  font-size: 17px;
+  color: #2e382e;
+}
+.invoice-container div h5 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #606060;
+}

@@ -54,7 +54,7 @@ const UpdateConfirmation: React.FC<UpdateConfirmationProps> = ({
                   <div className="no" onClick={handleReject}>
                     <a>No</a>
                   </div>
-                  <div className="update-yes" onClick={handleConfirm}>
+                  <div className="update-yes" data-testid="update-yes" onClick={handleConfirm}>
                     <a>Yes</a>
                   </div>
                 </div>

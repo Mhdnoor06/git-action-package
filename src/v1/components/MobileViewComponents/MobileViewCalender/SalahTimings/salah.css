@@ -1,0 +1,92 @@
+.salah_header {
+  display: flex;
+  align-items: center;
+}
+
+.salah_main_container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 50%; */
+}
+
+.salahcontainer {
+  margin: auto;
+  padding: 80px 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.salah-option {
+  display: flex;
+  align-items: center;
+  color: #1d785a;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 16.38px 0px #0000001a;
+}
+
+.salah_text {
+  text-align: start;
+  padding: 10px 0;
+}
+
+.salah_text p {
+  margin: 5px 0;
+}
+
+.salah_text p:first-child {
+  font-weight: 600;
+}
+
+.salah-option.selected {
+  background-color: #e6f4ea;
+  border: 2px solid #1d785a;
+}
+
+.salah-option .salah-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #333;
+  font-size: 16px;
+}
+
+.next-button {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .salahcontainer {
+    padding: 80px 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    /* min-width: 300px; */
+  }
+}

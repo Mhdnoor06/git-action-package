@@ -9,11 +9,11 @@ export const addingSpecialTimings =
 
       if (data.message === "Success") {
         toast.dismiss(loading);
-        toast.success("SpecialTimings added Successfully");
+        // toast.success("Other Salah added Successfully");
         return data;
       }
       toast.dismiss(loading);
-      toast.success("SpecialTimings added Successfully");
+      // toast.success("SpecialTimings added Successfully");
       return data;
     } catch (error: any) {
       const msg = error.response.data.data.error

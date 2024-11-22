@@ -8,8 +8,7 @@ type formDataType = {
   password: string;
 };
 export const authLogin =
-  (formData: formDataType, CaptchaValue: string) =>
-  async (dispatch: Dispatch<UserActionType>) => {
+  (formData: formDataType, CaptchaValue: string) => async (dispatch: Dispatch<UserActionType>) => {
     try {
       const response = await api.LoginAdmin(formData, CaptchaValue);
 
@@ -34,8 +33,9 @@ export const authLogin =
           );
 
           dispatch({ type: "AUTH_LOGIN", payload: response.data.data.user });
-
-         window.location.reload();
+          setTimeout (()=>{
+            window.location.reload();
+          },500)
           return isTwoFAUser;
         }
       }

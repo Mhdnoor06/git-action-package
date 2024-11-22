@@ -1,0 +1,21 @@
+.contact-main-form-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.contact-main-form-container .contact-support-form-card {
+  width: 80% !important;
+}
+@media (min-width: 628px) {
+  .contact-main-form-container .contact-support-form-card {
+    width: 40% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .donation-form-container .contact-support-form-card {
+    width: 38% !important;
+  }
+}

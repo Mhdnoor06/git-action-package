@@ -3,16 +3,17 @@ import "./DeleteAccount.css";
 import { resources } from "../../../resources/resources";
 import LogoMain from "../../../photos/LogoMain.png";
 import accountDeletedMsg from "../../../photos/Newuiphotos/Profile/AccountDeletedMsg.svg";
-import gmail from "../../../photos/Newuiphotos/Profile/logos_google-gmail.svg";
 import CloseIcon from "@mui/icons-material/Close";
-import { useNavigate } from "react-router";
+import { customNavigatorTo } from "../../../helpers/HelperFunction";
+import { useNavigationprop } from "../../../../MyProvider";
 
 function DeleteAccount() {
+  const navigation = useNavigationprop();
   const language = resources["en"];
-  const navigate = useNavigate();
 
   const handleClose = () => {
-    navigate("/login");
+    if (navigation) navigation("/login");
+    else customNavigatorTo("/login");
   };
 
   return (

@@ -50,7 +50,7 @@ small {
   font-size: small;
 }
 
-.Btncontainer button:nth-child(-n + 2) {
+.Btncontainer button:nth-child(-n + 3) {
   background-color: #1b8368;
   color: white;
   font-weight: 700;
@@ -96,5 +96,18 @@ small {
   }
   .deleteCard {
     width: 30%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .role h4 {
+    font-size: 25px;
+  }
+  .Details p {
+    font-size: 25px;
+  }
+
+  .Btncontainer button {
+    font-size: 25px;
   }
 }

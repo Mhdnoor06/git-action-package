@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import "./PieChart.css";
 
 type PieChartData = {
   name: string;
@@ -12,16 +13,11 @@ interface PieChartProps {
 }
 
 const PieChartComponent: React.FC<PieChartProps> = ({ pieData }) => {
+  const isAllZero = pieData.every((item) => item.value === 0);
+
   return (
-    <div
-      className="pieChart"
-      style={{
-        width: "100%",
-        height: 150,
-        borderBottom: "1px solid #dcdbdb",
-      }}
-    >
-      <div className="chart" style={{ width: "50%", height: 150 }}>
+    <div className="pieChart">
+      <div className="chart">
         <ResponsiveContainer>
           <PieChart>
             <Tooltip
@@ -30,24 +26,22 @@ const PieChartComponent: React.FC<PieChartProps> = ({ pieData }) => {
                 borderRadius: "5px",
               }}
             />
-            {pieData.some((item) => item.value !== 0) ? (
-              <Pie
-                data={pieData}
-                innerRadius={"40%"}
-                outerRadius={"80%"}
-                fill={
-                  pieData.some((item) => item.value !== 0)
-                    ? "#8884d8"
-                    : "#d8d8d8"
-                }
-                paddingAngle={5}
-                dataKey="value"
-              >
-                {pieData.map((item) => (
+            <Pie
+              data={isAllZero ? [{ name: "None", value: 1 }] : pieData}
+              innerRadius={"40%"}
+              outerRadius={"80%"}
+              fill="#8884d8"
+              paddingAngle={5}
+              dataKey="value"
+            >
+              {isAllZero ? (
+                <Cell key="None" fill="#d8d8d8" />
+              ) : (
+                pieData.map((item) => (
                   <Cell key={item.name} fill={item.color} />
-                ))}
-              </Pie>
-            ) : null}
+                ))
+              )}
+            </Pie>
           </PieChart>
         </ResponsiveContainer>
       </div>

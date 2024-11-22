@@ -1,0 +1,220 @@
+.form-container {
+  padding: 10px;
+}
+.service-main {
+  display: flex;
+  align-items: center;
+}
+
+.service-checkbox-group label {
+  margin-left: 8px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  border-color: red !important;
+}
+
+.radio-group .MuiFormControl-root {
+  width: 100%;
+}
+
+.timeGroup .form-group {
+  margin-bottom: 0;
+}
+
+.main-form {
+  margin: 10px;
+  padding: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3d544e;
+  outline: none;
+}
+
+.service-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px !important;
+}
+
+.service-checkbox-group input {
+  margin-left: 10px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input {
+  margin-right: 5px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  width: 100%;
+  padding: 10px;
+  background-color: #1b8368;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center; /* Ensure text is centered */
+}
+.service-next-btn {
+  margin-top: 25px;
+}
+.btn:disabled {
+  background-color: #9e9e9e; /* Color for disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+}
+
+.service-drop-item h5,
+.service-drop-item strong {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 14px;
+  color: #2e382e;
+}
+.service-drop-item .service-name-top {
+  margin-top: 0px !important;
+}
+.service-des-drop-item .service-des-top {
+  font-weight: 700;
+  margin-top: 0px !important;
+}
+
+.service-drop-item p {
+  padding-top: 8px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3d544e;
+}
+
+.btn-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.btn-text {
+  display: inline; /* Ensure text is inline with the icon */
+}
+.custom-qsn-cancel-btn {
+  position: absolute !important;
+  right: 30px;
+  top: 50%;
+
+  transform: translateY(-50%);
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+}
+.custom-selected-qsn-cancel-btn {
+  position: absolute !important;
+  right: 30px;
+  top: 10px;
+
+  transform: translateY(-50%);
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+}
+.custom-qsn-add-btn {
+  position: absolute !important;
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+}
+.custom-qsn-add-btn svg {
+  color: #1d785a;
+}
+.form-container .custom-qsn-cancel-btn svg,
+.form-container .custom-selected-qsn-cancel-btn svg,
+.form-container .custom-qsn-add-btn svg {
+  /* width: 50px !important; */
+  height: 15px;
+}
+
+.custom-select-container {
+  width: 100%;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  appearance: none; /* Removes default dropdown styling */
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%204%205"><path%20fill="none"%20stroke="black"%20stroke-width="1.5"%20d="M1,1%20l2,2%20l2,-2"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 10px;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #2e2e2e;
+}
+.serviceViewMainContainer{
+  
+}
+@media (min-width: 768px) {
+  .main-form {
+    max-width: 400px;
+    margin: 10px auto;
+  }
+}

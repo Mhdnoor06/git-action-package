@@ -7,9 +7,12 @@ interface DeleteWarningCardProps {
   onClose: () => void;
   onConfirm: () => void;
   wariningType: string;
-  warining: string;
+  warining?: string;
   icon?: any;
+  iconsize?: string;
+  color?: string;
   progress?: boolean;
+  children?: React.ReactNode;
 }
 
 const containerStyle = {
@@ -25,14 +28,16 @@ const DeleteWarningCard: React.FC<DeleteWarningCardProps> = ({
   wariningType,
   warining,
   icon,
+  iconsize,
   progress,
+  color,
+  children,
 }: DeleteWarningCardProps) => {
-  console.log(icon);
   return (
-    <Backdrop open={true} sx={{ zIndex: "1" }}>
+    <Backdrop open={true} sx={{ zIndex: "1001" }}>
       <>
         {progress ? (
-          <div style={containerStyle}>
+          <div style={containerStyle} data-testid="progressbar">
             <CircularProgress color="success" className="loader" />
           </div>
         ) : (
@@ -46,7 +51,9 @@ const DeleteWarningCard: React.FC<DeleteWarningCardProps> = ({
                         <img
                           src={icon ? icon : del}
                           alt=""
-                          style={icon ? { width: "60px" } : { width: "20px" }}
+                          style={
+                            iconsize ? { width: iconsize } : { width: "40px" }
+                          }
                         />
                       </div>
                     </div>
@@ -54,6 +61,7 @@ const DeleteWarningCard: React.FC<DeleteWarningCardProps> = ({
                       <h5>{wariningType}</h5>
                       <p>{warining}</p>
                     </div>
+                    {children}
                     <div className="btns">
                       <div className="no" onClick={onClose}>
                         <a>No</a>
@@ -61,7 +69,7 @@ const DeleteWarningCard: React.FC<DeleteWarningCardProps> = ({
                       <div
                         className="yes"
                         onClick={onConfirm}
-                        style={icon ? { background: "#1B8368" } : {}}
+                        style={color ? { background: color } : {}}
                       >
                         <a>Yes</a>
                       </div>

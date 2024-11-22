@@ -1,0 +1,22 @@
+/* styles.css */
+.condition-text::-webkit-scrollbar {
+  width: 6px; /* Width of the entire scrollbar */
+  /* border-radius: 20px; */
+}
+
+.condition-text::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+  border-radius: 20px;
+}
+
+.condition-text::-webkit-scrollbar-thumb {
+  background-color: #1b8368; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the thumb */
+  border: 1px solid #f1f1f1; /* Padding around thumb */
+}
+
+.condition-text::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the thumb when hovered */
+}
+
+/* Add more custom styles for different browsers if needed */

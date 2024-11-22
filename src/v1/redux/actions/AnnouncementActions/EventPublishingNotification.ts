@@ -10,7 +10,7 @@ export const EventPublishNotification =
         action,
         formData
       );
-
+      
       if (data.success) {
         return data;
       }

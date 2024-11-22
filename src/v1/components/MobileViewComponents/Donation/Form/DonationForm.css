@@ -1,0 +1,105 @@
+.donation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .donation-container .donation-top {
+  display: flex;
+
+  align-items: center;
+  color: #3d5347;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+} */
+.donation-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+/* Form */
+.donation-container form {
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 20px;
+}
+/* Label */
+.donation-container label {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Inter;
+  line-height: 17px;
+  letter-spacing: 0em;
+
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #3d5347;
+}
+
+/* select, textarea, input[type="text"] */
+.donation-container select,
+.donation-container textarea,
+.donation-container input[type="text"] {
+  border-radius: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #065f46;
+  font-size: 15px;
+}
+.defaultAmount {
+  width: 80px;
+  border: "none";
+}
+.defaultAmount:focus-visible {
+  border: none;
+  outline: none;
+}
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+.form-submit-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.form-submit-btn-container .my-custom-btn {
+  padding: 0px 100px 0px 95px !important;
+}
+@media (min-width: 628px) {
+  .donation-form-container .donation-form-card {
+    width: 60% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .donation-form-container .donation-form-card {
+    width: 38% !important;
+  }
+}
+@media (min-width: 1440px) {
+}
+@media (min-width: 1700px) {
+  .donation-container label {
+    font-size: 25px;
+  }
+  .donation-container select,
+  .donation-container textarea,
+  .donation-container input[type="text"] {
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+  .center-block .my-custom-btn,
+  .btn-container .my-custom-btn,
+  .submit-btn-container .my-custom-btn {
+    margin-top: 20px;
+    font-size: 25px !important;
+    padding: 20px 100px !important;
+  }
+}

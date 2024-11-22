@@ -449,4 +449,21 @@
   .LoginHeadContainer {
     width: 20%;
   }
+
+  .LoginLogoHeadContainer img {
+    width: 165px !important;
+  }
+
+  .SiteName p {
+    font-size: 25px !important;
+  }
+
+  .SiteNameEnd p {
+    font-size: 25px !important;
+  }
+
+  .loginInput {
+    height: 50px !important;
+    font-size: 25px !important;
+  }
 }

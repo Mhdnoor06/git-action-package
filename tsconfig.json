@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["node", "vite/client", "vite-plugin-svgr/client"],
+    "types": [
+      "node",
+      "vite/client",
+      "vite-plugin-svgr/client",
+      "vitest/importMeta"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +26,11 @@
     "declarationMap": true
     // "typeRoots": ["./dist/index.d.ts"]
   },
-  "include": ["src", "src/index.ts"],
+  "include": [
+    "src",
+    "src/index.ts",
+    "src/v1/components/MobileViewComponents/Events/EventsViewCalender"
+  ],
   "exclude": ["node_modules", "dist", "vite.config.ts"]
 }
 

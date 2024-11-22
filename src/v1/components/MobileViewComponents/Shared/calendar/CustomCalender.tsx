@@ -63,8 +63,8 @@ function CustomCalender({
   value,
   setValue,
   tileContent,
-  minDate,
   tileDisabled,
+  minDate,
 }: CustomCalenderProps) {
   const [activeStartDate, setActiveStartDate] = useState<Date>(
     getMonthStart(defaultValue)
@@ -79,9 +79,6 @@ function CustomCalender({
     action: string;
     activeStartDate: Date;
   }) {
-    console.log("Action:", action);
-    console.log("Next Active Start Date:", nextActiveStartDate);
-
     setActiveStartDate(nextActiveStartDate);
   }
   const handlers = useSwipeable({
@@ -111,22 +108,25 @@ function CustomCalender({
 
   function handleDateSelect(date: Date) {
     setValue(date);
-    // console.log(value);
+
     onDateSelect(date);
   }
 
   return (
-    <Calendar
-      {...handlersWithRefRenamed}
-      activeStartDate={activeStartDate}
-      onActiveStartDateChange={onActiveStartDateChange}
-      onChange={handleDateSelect}
-      value={value}
-      view={view}
-      onViewChange={onViewChange}
-      tileContent={tileContent}
-      tileDisabled={tileDisabled}
-    />
+    <div data-testid="custom-calendar">
+      <Calendar
+        {...handlersWithRefRenamed}
+        activeStartDate={activeStartDate}
+        onActiveStartDateChange={onActiveStartDateChange}
+        onChange={handleDateSelect}
+        value={value}
+        view={view}
+        minDate={minDate}
+        onViewChange={onViewChange}
+        tileContent={tileContent}
+        tileDisabled={tileDisabled}
+      />
+    </div>
   );
 }
 

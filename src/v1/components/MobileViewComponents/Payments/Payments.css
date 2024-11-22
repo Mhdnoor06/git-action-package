@@ -1,0 +1,97 @@
+/* .PaymentsContainer {
+  width: 100%;
+  min-height: 100vh;
+} */
+.PaymentsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.payments-main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payments-main-container .MuiPaper-root {
+  width: 90%;
+  box-sizing: border-box;
+}
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+}
+.iconContainer img {
+  /* width: 27px; */
+  padding: 15px 0px;
+  /* margin-right: 8px; */
+}
+
+.iconContainer .iconText {
+  color: #635bff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.payments-title {
+  margin: 5px auto 8px;
+  color: #3d5347;
+}
+
+.payment-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px 0px;
+  min-height: 80px;
+}
+
+.payment-content p {
+  margin: 0;
+  text-align: center;
+  color: #1d785a;
+  font-size: 13px;
+}
+
+.payment-content .otpinput {
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid green;
+  font-size: 14px;
+  padding: 3px 13px;
+  width: 90%;
+  display: block;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  margin-top: 14px;
+}
+.removeAccountlinkDiv a {
+  font-size: 11px;
+}
+@media (min-width: 768px) {
+  .payments-main-container .MuiPaper-root {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .payments-main-container .MuiPaper-root {
+    width: 30%;
+  }
+  .removeAccountlinkDiv a {
+    font-size: 12px;
+  }
+}
+/* @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+} */

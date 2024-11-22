@@ -1,0 +1,47 @@
+/* Container styling for centering the card */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Card styling */
+.container .card {
+  padding: 40px 24px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Title styling inside the card */
+.container .card .title {
+  margin-bottom: 25px;
+  color: #3d5347;
+  text-align: center;
+}
+
+/* Button styling for each salah type */
+.container .card .button {
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #1d785a;
+  border-color: #1d785a;
+  text-transform: none;
+  width: 100%;
+  padding: 14px 18px;
+}
+
+/* Icon styling within the button */
+.container .card .button .icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Dialog submit button styling */
+.dialogButton {
+  margin-top: 16px;
+}

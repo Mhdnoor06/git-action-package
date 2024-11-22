@@ -3,8 +3,7 @@ import * as api from "../../../api-calls/index";
 import { Masjid } from "../../Types";
 import { FETCH_ADMIN_MASJID } from "../../actiontype";
 
-export const updateAdminMasjid =
-  (id: string, formData: any) => async (dispatch: Dispatch) => {
+export const updateAdminMasjid = (id: string, formData: any) => async (dispatch: Dispatch) => {
     try {
       const { data } = await api.updateMasjid(id, formData);
 

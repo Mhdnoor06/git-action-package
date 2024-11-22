@@ -1,14 +1,13 @@
 import React, { useRef, useState } from "react";
 import LogoMain from "../../../../photos/Newuiphotos/CM Logo/cmlogofor.svg";
 import { resources } from "../../../../resources/resources";
-import "./SetPassword.css";
 import CloseIcon from "@mui/icons-material/Close";
 import ResetPassIcon from "../../../../photos/Newuiphotos/Icons/resetPass.svg";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 import { resetPasswordInitial } from "../../../../redux/actions/AuthActions/ResetPasswordInitial";
-import { ActivatingTwoFactorAuth } from "../../../../redux/actions/AuthActions/ActivatingTwoFactorAuth";
+// import { ActivatingTwoFactorAuth } from "../../../../redux/actions/AuthActions/ActivatingTwoFactorAuth";
 import { useAppThunkDispatch } from "../../../../redux/hooks";
 import { handleSnackbar } from "../../../../helpers/SnackbarHelper/SnackbarHelper";
 import { ChangeSnackbar } from "../../../../redux/actions/SnackbarActions/ChangeSnackbarAction";
@@ -16,7 +15,7 @@ import { CircularProgress } from "@material-ui/core";
 import jwt_decode from "jwt-decode";
 import { Link } from "react-router-dom";
 import { Backdrop, Box } from "@mui/material";
-import { VerifyingTwoFactorAuth } from "../../../../redux/actions/AuthActions/VerifyingTwoFactorAuthAction";
+// import { VerifyingTwoFactorAuth } from "../../../../redux/actions/AuthActions/VerifyingTwoFactorAuthAction";
 import resetSuccessIcon from "../../../../photos/Newuiphotos/Icons/successTick.svg";
 import { authLogin } from "../../../../redux/actions/AuthActions/LoginAction";
 import toast from "react-hot-toast";
@@ -32,63 +31,42 @@ const Setpassword = () => {
   const language = resources["en"];
   const [password, setpassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
-  const [passwordType, setPasswordType] = useState("password");
-  const [PasswordShow, setPasswordShow] = useState(false);
-  const [ConfirmPasswordType, setConfirmPasswordType] = useState("password");
-  const [ConfirmPasswordShow, setConfirmPasswordShow] = useState(false);
-  const [isFetching, setisFetching] = useState(false);
-  const [logingIn, setLoggingIn] = useState(false);
-  const [resetSuccess, setResetSuccess] = useState(false);
-  const [UserEmail, setUserEmail] = useState("");
-  const [UserID, setUserId] = useState("");
-  const [OpenQRModal, setOpenQRModal] = useState(false);
-  const [AllowCancel, setAllowCancel] = useState(false);
-  const [QRCode, setQRCode] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isResetSuccessful, setIsResetSuccessful] = useState(false);
+  // const [logingIn, setLoggingIn] = useState(false);
+  // const [UserEmail, setUserEmail] = useState("");
+  // const [UserID, setUserId] = useState("");
+  // const [OpenQRModal, setOpenQRModal] = useState(false);
+  // const [AllowCancel, setAllowCancel] = useState(false);
+  // const [QRCode, setQRCode] = useState("");
+  // const LoginCode = useRef<HTMLInputElement>(null);
+  
   const search = useLocation().search;
-  const id = new URLSearchParams(search).get("token");
-  const decodedToken: any = jwt_decode(id ?? "");
+  const token = new URLSearchParams(search).get("token");
+  const decodedToken: any = jwt_decode(token ?? "");
   const dispatch = useAppThunkDispatch();
-  const LoginCode = useRef<HTMLInputElement>(null);
-  const navigate = useNavigate();
+  
   const [Captcha, setCaptcha] = useState("");
-
-  const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
-      setPasswordShow(true);
-      return;
-    }
-    setPasswordType("password");
-    setPasswordShow(false);
-  };
-
-  const ConfirmTogglePassword = () => {
-    if (ConfirmPasswordType === "password") {
-      setConfirmPasswordType("text");
-      setConfirmPasswordShow(true);
-      return;
-    }
-    setConfirmPasswordType("password");
-    setConfirmPasswordShow(false);
-  };
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setisFetching(true);
+    setIsSubmitting(true);
     setTimeout(() => {
       if (password === confirmPassword) {
         const formData = {
           password: password ?? "",
-          token: id ?? "",
+          token: token ?? "",
         };
 
-        setisFetching(true);
+        setIsSubmitting(true);
         const res = dispatch(resetPasswordInitial(formData));
 
         res.then((result) => {
           if (result.success) {
-            setisFetching(false);
-            setResetSuccess(true);
+            setIsSubmitting(false);
+            setIsResetSuccessful(true);
             handleSnackbar(
               true,
               "success",
@@ -101,7 +79,7 @@ const Setpassword = () => {
             });
 
             if (decodedToken?.email && password) {
-              setLoggingIn(true);
+              // setLoggingIn(true);
               const res = dispatch(
                 authLogin(
                   {
@@ -126,7 +104,7 @@ const Setpassword = () => {
                       dispatch
                     );
                   }
-                  setisFetching(false);
+                  setIsSubmitting(false);
                 } else {
                   handleSnackbar(
                     true,
@@ -134,7 +112,7 @@ const Setpassword = () => {
                     `Failed to Login` + result.message,
                     dispatch
                   );
-                  setisFetching(false);
+                  setIsSubmitting(false);
                 }
               });
             } else {
@@ -144,7 +122,7 @@ const Setpassword = () => {
                 "Please Provide the Credentials to login",
                 dispatch
               );
-              setisFetching(false);
+              setIsSubmitting(false);
             }
 
             // const response = dispatch(ActivatingTwoFactorAuth());
@@ -175,7 +153,7 @@ const Setpassword = () => {
               `Failed To Setup the Password : ` + result.message,
               dispatch
             );
-            setisFetching(false);
+            setIsSubmitting(false);
           }
         });
       } else {
@@ -185,7 +163,7 @@ const Setpassword = () => {
           snackbarMessage: `Password and Confirmed Password does not match`,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        setisFetching(false);
+        setIsSubmitting(false);
       }
       //   setisFetching(false);
     }, 2000);
@@ -262,9 +240,9 @@ const Setpassword = () => {
             <CloseIcon />
           </Link>
         </span>
-        {!resetSuccess ? (
+        {!isResetSuccessful ? (
           <form className="setpasswordbox">
-            <Backdrop open={isFetching} sx={{ zIndex: "1" }}>
+            <Backdrop open={isSubmitting} sx={{ zIndex: "1" }}>
               <CircularProgress color="inherit" />
             </Backdrop>
             <div className="setpasswordlogo">
@@ -285,22 +263,25 @@ const Setpassword = () => {
                 placeholder={
                   language.RESET_PASSWORD.INPUT_PLACEHOLDER_NEW_PASSWORD
                 }
-                type={passwordType}
+                type={isPasswordVisible?"text":"password"}
                 value={password}
                 onChange={(e) => setpassword(e.target.value)}
                 required={true}
                 className="setPasswordInput"
                 //   style={{ marginBottom: "15px" }}
               />
-              {PasswordShow ? (
+              {isPasswordVisible ? (
                 <AiFillEye
-                  onClick={togglePassword}
+                  onClick={()=>{setIsPasswordVisible(!isPasswordVisible)}}
                   className="ShowPasswordLogin"
+                  data-testid="password-toggle-icon"
                 />
               ) : (
                 <AiFillEyeInvisible
-                  onClick={togglePassword}
+                  onClick={()=>{setIsPasswordVisible(!isPasswordVisible)}}
                   className="ShowPasswordLogin"
+                  data-testid="password-toggle-icon"
+                  
                 />
               )}
             </div>
@@ -309,22 +290,24 @@ const Setpassword = () => {
                 placeholder={
                   language.RESET_PASSWORD.INPUT_PLACEHOLDER_CONFIRM_PASSWORD
                 }
-                type={ConfirmPasswordType}
+                type={isConfirmPasswordVisible?"text":"password"}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required={true}
                 className="setPasswordInput"
                 //   style={{ marginBottom: "15px" }}
               />
-              {ConfirmPasswordShow ? (
+              {isConfirmPasswordVisible ? (
                 <AiFillEye
-                  onClick={ConfirmTogglePassword}
+                  onClick={()=>{setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}}
                   className="ShowPasswordLogin"
+                  data-testid="confirm-password-toggle-icon"
                 />
               ) : (
                 <AiFillEyeInvisible
-                  onClick={ConfirmTogglePassword}
+                  onClick={()=>{setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}}
                   className="ShowPasswordLogin"
+                  data-testid="confirm-password-toggle-icon"
                 />
               )}
             </div>
@@ -332,11 +315,11 @@ const Setpassword = () => {
             <button
               className="setPasswordBtnn"
               type="submit"
-              disabled={isFetching}
+              disabled={isSubmitting}
               onClick={handleSubmit}
               // style={{ padding: "0", borderRadius: "25px" }}
             >
-              {isFetching ? (
+              {isSubmitting ? (
                 <CircularProgress size="20px" />
               ) : (
                 <>Set password</>

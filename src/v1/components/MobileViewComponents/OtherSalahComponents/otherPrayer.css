@@ -1,0 +1,471 @@
+/* @media (min-width: 2024px) { */
+.otherPrayerForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-1 {
+  width: 90%;
+}
+
+.grid-2 {
+  width: 97%;
+}
+
+.grid-3 {
+  grid-column: 1 / span 2;
+}
+
+.grid-4 {
+  grid-column: 1 / span 2;
+}
+
+.special-main {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+  padding-top: 7px;
+}
+.special-main .special-card {
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 12px;
+}
+.special-main .special-top h2 {
+  font-family: Lato;
+  font-size: 20px;
+  color: #007050;
+  margin-top: 7px;
+  margin-bottom: 0px;
+  font-weight: 800;
+  line-height: 36px;
+}
+.special-main .special-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw;
+  margin-bottom: 5px;
+  border-bottom: 2px solid lightgray;
+}
+.special-main .special-container {
+  color: #007050;
+  font-family: "Lato";
+  font-size: 52px;
+  font-weight: 800;
+  padding: 15px;
+  width: 100vw;
+}
+.special-main .azan-iqama-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.special-main .azan-iqama-box > * {
+  width: 48%;
+}
+.special-main .btn-container {
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / span 2;
+
+  /* margin-top: 2vh;
+    margin-bottom: 2vh; */
+}
+
+.special-main .special-container label {
+  width: 35vw;
+  display: inline-block;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d5347;
+}
+.special-main .special-container input {
+  color: #9f9e9e;
+  border-radius: 10px;
+  border: 2px solid #9f9e9e;
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.special-main .special-Btn {
+  border: none;
+  /* width: 30vw; */
+  height: 5vh;
+  background: #054635;
+  padding: 5px 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  color: white;
+  font-family: "Lato";
+  font-size: 15px;
+  font-weight: 800;
+}
+.special-main .del-icon {
+  width: 6vw;
+  padding: 5px;
+  background-color: rgb(219, 216, 216);
+  border-radius: 50%;
+}
+
+.special-main .plus-icon {
+  border: none;
+  width: 5vw;
+}
+
+.Prayer-card-header {
+  background: white;
+}
+.Back-Button {
+  border: none;
+  width: 40vw;
+  height: 6vh;
+  background: linear-gradient(180deg, #006c4d 0%, #009268 48.75%, #006c4d 100%);
+  border-radius: 20px;
+  color: white;
+  font-family: "Lato";
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.special-table {
+  padding-bottom: 20px;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Style table header */
+.special-table thead {
+  background-color: #f2f2f2;
+}
+
+.special-table th {
+  padding: 16px;
+  text-align: left;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9f9e9e;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 25vw;
+  /* border-bottom: 2px solid #ddd; */
+}
+
+/* Style table rows */
+.special-table tbody {
+  background-color: #fff;
+}
+.special-table .special-date-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 4vw 12px 4vw;
+  border-top: 2px solid #eee9e9;
+  /* margin: 8px 25px; */
+  align-items: center;
+}
+.special-table .special-date-container p {
+  font-family: Inter;
+  font-size: 11px;
+  font-weight: 500;
+
+  margin-top: 4px;
+  margin-bottom: 4px;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #3d5347;
+}
+
+.special-table td {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  color: #3d5347;
+  /* width: 25vw; */
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  /* border-bottom: 1px solid #ddd; */
+}
+.special-table .date-text {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.special-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.special-table tbody .special-tr {
+  margin-bottom: 20px;
+}
+
+.special-tabletd:last-child {
+  text-align: center;
+}
+
+/* Hover effect for rows */
+.special-table.special-table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+.special-table .action-icon {
+  cursor: pointer;
+  font-size: 20px;
+  /* margin-left: -10px; */
+}
+
+.special-table .edit-icon {
+  background-color: rgb(219, 216, 216);
+  border-radius: 50%;
+  padding: 2px;
+
+  color: #007bff;
+}
+
+.special-table .special-delete-icon {
+  color: #ff0000;
+  background-color: rgb(219, 216, 216);
+  border-radius: 50%;
+  padding: 2px;
+}
+.special-table .action-container {
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-left: -15px; */
+}
+.special-table .action-container .edit-img {
+  margin-right: 7px;
+  margin-left: 2px;
+  width: 13px;
+}
+.nav-icon {
+  font-size: 24px;
+}
+.all-prayer-tx {
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin-top: 20px;
+  color: "#3D5347";
+}
+
+.otherprayercards {
+  display: flex;
+  flex-direction: column;
+}
+
+.special-table .MuiPaper-root {
+  width: 50%;
+}
+
+.special-main .MuiPaper-root {
+  width: 60%;
+}
+
+.showform .CalendarContainer {
+  width: 50%;
+}
+.date-picker-container input[type="date"] {
+  width: 93% !important;
+}
+
+.center-block .my-custom-btn,
+.btn-container .my-custom-btn,
+.submit-btn-container .my-custom-btn {
+  padding: 0px 66px 0px 76px !important;
+}
+
+.clock .clock-input input[type="text"] {
+  margin-bottom: 0;
+  box-sizing: content-box;
+}
+
+.clock-input .css-60amat-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-right: 0;
+}
+
+.clock .MuiInputBase-root {
+  border-radius: 20px;
+}
+/* } */
+
+.special-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* gap: 90px; */
+  /* margin-left: -30px; */
+}
+
+.backbtn {
+  position: relative;
+  left: -40px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  width: 20px !important;
+  height: 15px !important;
+}
+
+.azan-iqama-box input[type="time"] {
+  width: 85% !important;
+}
+.action-container {
+  height: 45px;
+}
+
+.del-img {
+  width: 10 px;
+}
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  border-top: 1px solid #cfcccc;
+}
+
+.spltimbtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.spltimbtn button {
+  width: 130px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.showform {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+@media (max-width: 520px) {
+  /* .my-custom-btn {
+    padding: 0px 20vw 0px 17vw !important;
+  } */
+  .grid-1 {
+    width: 97%;
+  }
+
+  .grid-2 {
+    /* width: 88%; */
+  }
+
+  .special-table {
+    padding-bottom: 20px;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .azan-iqama-box .clock:nth-child(2) {
+    padding-top: 15px;
+  }
+
+  .special-table .MuiPaper-root {
+    width: initial;
+  }
+  .special-main .MuiPaper-root {
+    width: initial;
+  }
+
+  .showform .CalendarContainer {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .special-main .MuiPaper-root {
+    width: 30%;
+  }
+
+  .showform .CalendarContainer {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .center-block .my-custom-btn {
+    font-size: 25px !important;
+    padding: 30px 10vw !important;
+  }
+
+  .special-table th {
+    font-size: 25px;
+    padding: 35px;
+  }
+
+  .special-table td {
+    font-size: 25px;
+    padding: 25px;
+  }
+
+  .special-table .special-date-container p {
+    font-size: 20px;
+  }
+
+  .special-table .action-container .edit-img {
+    width: 20px;
+  }
+
+  .del-img {
+    width: 20px;
+  }
+  .confirmation p {
+    width: 100% !important;
+    font-size: 25px;
+  }
+
+  .spltimbtn button {
+    font-size: 25px;
+    padding: 10px 40px;
+  }
+}

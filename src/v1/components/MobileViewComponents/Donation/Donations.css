@@ -1,0 +1,56 @@
+/* Donations */
+.DonationsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60vh;
+}
+
+
+.nodonations {
+  width: 100%;
+  height: 75vh;
+  /* margin: 120px; */
+}
+
+.nodonations img {
+  height: 122px;
+}
+.nodonations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddDonation {
+  cursor: pointer;
+  background-color: #1b8368;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.adddonationcontainer {
+  position: fixed;
+  right: 27px;
+  bottom: 55px;
+}
+.donations-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .donations-table {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .donations-table {
+    width: 35%;
+  }
+}

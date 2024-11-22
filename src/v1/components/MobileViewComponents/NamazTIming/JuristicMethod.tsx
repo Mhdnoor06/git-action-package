@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Modal, Card, CardContent, Typography, Box } from "@material-ui/core";
-import editImg from "../../../photos/Vector.png";
 import checkImg from "../../../photos/checkmark.png";
 import CustomBtn from "../Shared/CustomBtn";
 import ConfirmationModal from "./ConfirmationModal";
@@ -9,7 +8,7 @@ interface JuristicMethodProps {
   setSelectedMethod: Dispatch<SetStateAction<string>>;
   selectedMethod: string;
 }
-// function JuristicMethod({ selectedMethod, setSelectedMethod }: JuristicMethodProps) {
+
 const JuristicMethod: React.FC<JuristicMethodProps> = ({
   selectedMethod,
   setSelectedMethod,
@@ -17,43 +16,50 @@ const JuristicMethod: React.FC<JuristicMethodProps> = ({
   const [isModalOpen, setModalOpen] = useState(false);
   const [isConModalOpen, setConModalOpen] = useState(false);
   const [showFullText, setShowFullText] = useState(false);
-  useEffect(() => {
-    const savedMethod = localStorage.getItem("JuristicMethod");
+  const [isSaveButtonVisible, setIsSaveButtonVisible] = useState(false);
+  const [initialSelectedMethod, setInitialSelectedMethod] =
+    useState<string>("Hanafi");
 
+  // const savedMethod = localStorage.getItem("JuristicMethod");
+  const savedMethod = selectedMethod;
+
+  useEffect(() => {
     setSelectedMethod(savedMethod ?? "Hanafi");
-  }, []);
+    setInitialSelectedMethod(savedMethod ?? "Hanafi");
+  }, [isModalOpen]);
+
   const handleEditClick = () => {
     setModalOpen(true);
   };
 
   const handleCancelClick = () => {
     setModalOpen(false);
+    setSelectedMethod(savedMethod ?? "Hanafi");
   };
 
   const handleSaveClick = () => {
     setConModalOpen(true);
-    // Implement logic to save the selected method
-    // setModalOpen(false);
   };
+
+  useEffect(() => {
+    if (selectedMethod !== initialSelectedMethod) {
+      setIsSaveButtonVisible(true);
+    } else setIsSaveButtonVisible(false);
+  }, [selectedMethod, isModalOpen]);
+
   const selectedStyle = { ...nonSelectionCardStyle, ...selectedCard };
   const isHanafy = selectedMethod === "Hanafi" ? true : false;
-  const displayText = showFullText
-    ? selectedMethod
-    : selectedMethod.length > 10
-    ? selectedMethod.substring(0, 10) + "..."
-    : selectedMethod;
 
   return (
     <>
-      <div className="juristic-main-container">
-        <div className="juristic-container">
+      <div className="juristic-main-container" style={juristicConainer}>
+        {/* <div className="juristic-container">
           <Typography style={juristicTxStyle}>
             {" "}
             Al-Asr Juristic Method
           </Typography>
           <div className="JuristicEdit" onClick={handleEditClick}>
             <Typography
-              // onClick={() => setShowFullText(!showFullText)}
               style={{
                 cursor: "pointer",
                 margin: "auto 10px",
@@ -65,9 +71,9 @@ const JuristicMethod: React.FC<JuristicMethodProps> = ({
             </Typography>
             <img src={editImg} alt="Icon img" />
           </div>
-        </div>
+        </div> */}
 
-        <Box
+        {/* <Box
           style={{
             display: "flex",
             justifyContent: "center",
@@ -79,79 +85,79 @@ const JuristicMethod: React.FC<JuristicMethodProps> = ({
             <span style={{ color: "#1B8368" }}>(+/-)</span> of minutes will also
             be affected for each day
           </Typography>
-        </Box>
+        </Box> */}
 
-        <Modal
+        {/* <Modal
           open={isModalOpen}
           onClose={handleCancelClick}
           style={modalCenterStyle}
-        >
-          <Card style={CardStyle}>
-            <CardContent>
-              <Typography
-                variant="h6"
-                align="center"
-                style={{ marginBottom: "15px" }}
-              >
-                Al-Asr Juristic Method
-              </Typography>
+        > */}
+        <Card style={CardStyle}>
+          <CardContent style={{ padding: "10px 0" }}>
+            <Typography align="center" style={{ marginBottom: "15px" }}>
+              Al-Asr Juristic Method
+            </Typography>
 
-              <Card
-                style={isHanafy ? selectedStyle : nonSelectionCardStyle}
-                onClick={() => setSelectedMethod("Hanafi")}
-              >
-                <Typography style={isHanafy ? juristicTxStyle : undefined}>
-                  Hanafi
-                </Typography>
-                <img
-                  src={checkImg}
-                  alt="Check Img"
-                  style={{
-                    width: "20px",
-                    height: "20px",
-                    cursor: "pointer",
-                    display: !isHanafy ? "none" : "block",
-                  }}
-                />
-              </Card>
-              <Card
-                style={!isHanafy ? selectedStyle : nonSelectionCardStyle}
-                onClick={() => setSelectedMethod("Shafi/Maliki/Hanbali")}
-              >
-                <Typography style={!isHanafy ? juristicTxStyle : undefined}>
-                  Shafi/Maliki/Hanbali
-                </Typography>
-                <img
-                  src={checkImg}
-                  alt="Check Img"
-                  style={{
-                    width: "20px",
-                    height: "20px",
-                    cursor: "pointer",
-                    display: isHanafy ? "none" : "block",
-                  }}
-                />
-              </Card>
-            </CardContent>
-            <Box display="flex" justifyContent="space-around" mt={2}>
-              <CustomBtn
-                size={window.innerWidth >= 1024 ? "5vw" : "10vw"}
-                eventHandler={handleCancelClick}
-                label={"Cancel"}
-                borderClr={"2px solid red"}
-                TxColor={"red"}
-                bgColor={"#ffff"}
-                showIcon={false}
+            <Card
+              style={isHanafy ? selectedStyle : nonSelectionCardStyle}
+              onClick={() => setSelectedMethod("Hanafi")}
+              data-testid="asr-jurisdiction-hanafi"
+            >
+              <Typography style={isHanafy ? juristicTxStyle : undefined}>
+                Hanafi
+              </Typography>
+              <img
+                src={checkImg}
+                alt="Check Img"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  cursor: "pointer",
+                  display: !isHanafy ? "none" : "block",
+                }}
               />
+            </Card>
+            <Card
+              style={!isHanafy ? selectedStyle : nonSelectionCardStyle}
+              onClick={() => setSelectedMethod("Maliki/Shafi'i/Hanbali")}
+              data-testid="asr-jurisdiction-shafi"
+            >
+              <Typography style={!isHanafy ? juristicTxStyle : undefined}>
+                Maliki/Shafi'i/Hanbali
+              </Typography>
+              <img
+                src={checkImg}
+                alt="Check Img"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  cursor: "pointer",
+                  display: isHanafy ? "none" : "block",
+                }}
+              />
+            </Card>
+          </CardContent>
+          {/* <Box display="flex" justifyContent="space-around" mt={2}>
+            <CustomBtn
+              size={window.innerWidth >= 1024 ? "5vw" : "10vw"}
+              eventHandler={handleCancelClick}
+              label={"Cancel"}
+              borderClr={"2px solid red"}
+              TxColor={"red"}
+              bgColor={"#ffff"}
+              showIcon={false}
+            />
+            {isSaveButtonVisible && (
               <CustomBtn
                 size={window.innerWidth >= 1024 ? "5vw" : "10vw"}
                 eventHandler={handleSaveClick}
                 label={"Save"}
                 showIcon={false}
               />
-            </Box>
-          </Card>
-        </Modal>
+            )}
+          </Box> */}
+        </Card>
+        {/* </Modal> */}
         {isConModalOpen ? (
           <ConfirmationModal
             isModalOpen={isConModalOpen}
@@ -170,7 +176,7 @@ const juristicTxStyle = {
   color: "#1B8368",
   fontWeight: 600,
   fontSize: "12px",
-  textAlign: "center",
+  textAlign: "center" as "center",
 };
 const autoTxStyle = {
   fontFamily: "Inter",
@@ -190,17 +196,18 @@ const CardStyle = {
   display: "flex",
   flexDirection: "column" as "column",
   justifyContent: "space-between",
-  height: "300px",
-  padding: "15px 15px 30px 15px",
+  // height: "300px",
+  // padding: "15px 15px 30px 15px",
   width: window.innerWidth >= 1024 ? "40%" : "85%",
   borderRadius: "16px",
+  boxShadow: "none",
 };
 const nonSelectionCardStyle = {
   padding: "10px",
   height: " 30px",
   display: "flex",
   alignItems: "center",
-  margin: "25px 20px 0px 20px",
+  margin: "10px 0",
   borderRadius: "16px",
   justifyContent: "space-between",
   boxShadow: "0px 0px 25px 0px #0000000D",
@@ -208,4 +215,10 @@ const nonSelectionCardStyle = {
 const selectedCard = {
   border: "2px solid green",
 };
+
+const juristicConainer = {
+  display: "flex",
+  justifyContent: "center",
+};
+
 export default JuristicMethod;

@@ -32,15 +32,44 @@
   flex: 1;
   text-align: center;
 }
+.page-sub-title {
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
 
-body {
+  color: #054635;
+  flex: 1;
+}
+.no-item-found {
+  width: 100%;
+  height: 75vh;
+  /* margin: 120px; */
+}
+
+.no-item-found img {
+  height: 122px;
+}
+.no-item-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-item-container {
+  position: fixed;
+  right: 27px;
+  bottom: 55px;
+}
+
+.app-main-body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d0f9e4;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +84,7 @@ code {
 }
 
 @media (max-width: 1024px) {
-  body {
+  .app-main-body {
     background-image: url("./v1/photos/Newuiphotos/BG/BG.png");
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -67,7 +96,7 @@ code {
 }
 
 @media (min-width: 768px) {
-  body {
+  .app-main-body {
     background-image: url("./v1/photos/Newuiphotos/BG/mainBG.svg");
     background-position: bottom center;
     background-repeat: no-repeat;

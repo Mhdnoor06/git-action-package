@@ -2,29 +2,28 @@ import { Backdrop, Box, CircularProgress, Grow, Modal } from "@mui/material";
 import React, { Dispatch, SetStateAction } from "react";
 import DeleteProfileIcon from "../../../../photos/Newuiphotos/Icons/delete.svg";
 interface DeleteConfirmationProps {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  progress: boolean;
-  texts: { main: string; sub?: string };
+  isDeleteDialogOpen: boolean;
+  setDeleteDialogOpen: Dispatch<SetStateAction<boolean>>;
+  isDeleteInProgress: boolean;
+  warningTexts: { main: string; sub?: string };
   handleReject: () => void;
   handleDelete: () => void;
 }
 const DeleteConfirmation: React.FC<DeleteConfirmationProps> = ({
-  open,
-  setOpen,
-  progress,
-  texts,
+  isDeleteDialogOpen,
+  setDeleteDialogOpen,
+  isDeleteInProgress,
+  warningTexts,
   handleReject,
   handleDelete,
 }) => {
   const onClose = () => {
-    console.log("onClose function trigered");
-    setOpen(!open);
+    setDeleteDialogOpen(!open);
   };
   return (
-    <Modal open={open} onClose={onClose}>
+    <Modal open={isDeleteDialogOpen} onClose={onClose}>
       {/* <Backdrop open={open} sx={{ zIndex: "1" }}> */}
-      {progress ? (
+      {isDeleteInProgress ? (
         <div style={containerStyle}>
           <CircularProgress color="success" className="loader" />
         </div>
@@ -47,8 +46,8 @@ const DeleteConfirmation: React.FC<DeleteConfirmationProps> = ({
                     </div>
                   </div>
                   <div className="content">
-                    <h5 style={{ margin: "auto 30px" }}>{texts.main}</h5>
-                    <p>{texts.sub}</p>
+                    <h5 style={{ margin: "auto 30px" }}>{warningTexts.main}</h5>
+                    <p>{warningTexts.sub}</p>
                   </div>
                   <div className="btns">
                     <div className="no" onClick={handleReject}>

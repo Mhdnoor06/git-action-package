@@ -15,11 +15,11 @@ export const UpdateEventById =
 
       if (response) {
         toast.dismiss(loading);
-        toast.success("Event  Updated Successfully");
+        // toast.success("Event  Updated Successfully");
         return response.data;
       }
       toast.dismiss(loading);
-      toast.success("Event  Updated Successfully");
+      // toast.success("Event  Updated Successfully");
       return response;
     } catch (error: any) {
       let result = {

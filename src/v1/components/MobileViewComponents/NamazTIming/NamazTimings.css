@@ -1,3 +1,15 @@
+.swiper-pagination {
+  bottom: -30px !important; /* Adjust the bottom spacing as needed */
+}
+
+.swiper-pagination-bullet {
+  background-color: #000 !important; /* Change this to your desired color */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #145b48 !important; /* Change this to your desired active color */
+}
+
 /* Add more styling as needed */
 .Logo-azan-timings {
   /* border: 1px solid black; */
@@ -127,8 +139,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   border-bottom: 2px solid#E7E7E7;
   display: flex;
   flex-direction: row;
-  margin: auto 30px;
-  margin-bottom: 3vh;
+  /* margin: auto 30px; */
+  /* margin-bottom: 5vh; */
   justify-content: space-around;
   align-items: center;
 }
@@ -217,17 +229,19 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .Azan-solar-timings {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 15px;
+  margin-top: 13px;
+  gap: 5px;
+  /* align-items: end; */
+  min-height: 70px;
+  /* margin-bottom: 32px; */
 }
 .Azan-solar-timings label {
   display: flex;
   flex-direction: column;
-  height: 12vh;
-  width: 35vw;
-
-  justify-content: space-evenly;
+  height: 100%;
+  width: 30vw;
+  /* gap: 10px; */
+  justify-content: space-between;
   align-items: center;
   font-family: "Lato";
   font-size: 13.5px;
@@ -236,13 +250,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .Azan-solar-timings label input {
   width: 22vw;
-  height: 1vh;
-  border-radius: 32px;
-
-  border: 2px solid #3d5347;
+  height: 0.45vh;
+  /* border-radius: 32px;
+  border: 2px solid #3d5347; */
   padding: 10px 0px 10px 10px;
 }
 
+.offset-container {
+  width: 29vw;
+}
+.offset-container .plus-minus-container {
+  width: 95px;
+}
 .Plus-Minutes-hide {
   visibility: hidden;
 }
@@ -321,7 +340,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   width: 95%;
   margin: auto auto;
   transition: transform 0.5s ease, opacity 0.5s ease !important;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2) !important;
 }
 .namaz-card.next-step {
   transform: translateX(100%);
@@ -355,7 +373,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   justify-content: center;
   align-items: center;
   height: 55px;
-  margin: auto 15px;
+  margin: 10px;
   /* background: #ffff;
   border-radius: 20px;
   box-shadow: 1px 2px 28px 0px #00000040; */
@@ -370,7 +388,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   width: 95%;
   background: #ffff;
   border-radius: 20px;
-  margin-top: 20px;
+  /* margin: 20px 0; */
 }
 
 .selected-date-box img {
@@ -378,10 +396,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin-right: 10px;
 }
 .time-preview {
+  background: white;
+  border-radius: 20px;
   width: 96%;
   margin-top: 20px;
   margin: auto auto;
 }
+.time-preview-range {
+  background: white;
+  border-radius: 20px;
+  width: 96%;
+  margin-top: 20px;
+  margin: auto auto;
+}
+
 .namaz-top-box {
   display: flex;
 
@@ -417,28 +445,46 @@ button:before {
   opacity: 1;
 }
 .prayer-type-dropdown-container {
-  width: 34vw;
+  width: 26vw;
   position: relative;
+  display: flex;
+  align-items: end;
+}
+.prayer-type-dropdown-container .dropdown-card {
+  /* width: 110px; */
+  /* width: 120px; */
+  width: 84px;
+}
+.prayer-type-dropdown-container .dropdown-card .my-custom-btn {
+  justify-content: space-between;
+  width: 100%;
 }
 .plus-minus-container {
-  width: 26vw;
+  width: 95px;
 }
 .juristic-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 45px;
+  height: 55px;
   margin: auto 15px;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 1px 2px 28px 0px #00000040;
   margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 10px 20px;
+  /* margin-top: 20px; */
+  padding: 10px 10px;
 }
+.prayer-cal-method .juristic-container {
+  margin-bottom: 0px;
+}
+.prayer-cal-method .juristic-container p {
+  font-size: 11px;
+}
+
 .JuristicEdit {
-  display: flex;
-  align-items: center;
+  position: relative;
+  top: -15px;
 }
 
 .selected-date-with-backbtn .backBtn {
@@ -459,14 +505,99 @@ button:before {
   position: absolute;
 }
 
+.dateSelection {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 0;
+  justify-content: space-around;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.dateSelection input {
+  width: 95px;
+  border-radius: 5px;
+  border: 1px solid #3d544e;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.dateSelection label {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
 .namaz-top-box .page-title {
   margin-right: 72px;
 }
 
+.salahdates {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  color: #154f30;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.salahdates-range {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  color: #154f30;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Custom styles for the pagination bullets */
+
+@media (max-width: 400px) {
+  .prayer-cal-method .juristic-container p {
+    font-size: 10px;
+  }
+
+  .namazConatiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+  }
+}
+
+@media (min-width: 380px) {
+  .prayer-type-dropdown-container .dropdown-card {
+    width: 110px;
+  }
+}
+
+/* @media (min-width: 568px) and (max-width: 767px) {
+  .namaz-card {
+    width: 65%;
+  }
+} */
+
 @media (min-width: 768px) {
+  .CalendarContainer-1 {
+    width: 50% !important;
+  }
+
+  .dateSelection {
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+  }
   .prayer-type-dropdown-container {
     width: 14vw;
   }
+
   .Azan-solar-timings label {
     width: 10vw;
     margin: auto 15px;
@@ -474,15 +605,20 @@ button:before {
   .Azan-solar-timings label input {
     width: 10vw;
   }
+  .offset-container {
+    width: 10vw;
+    margin-left: 15px;
+  }
   .tablet-timing-card {
     display: flex;
-    justify-content: space-between;
+    gap: 40px;
+    /* justify-content: space-between; */
   }
   .tablet-timing-card {
-    align-items: center;
+    align-items: end;
   }
   .tablet-timing-card .prayer-icn-title {
-    margin-top: -7px;
+    margin: 10px 0;
     width: 50px;
     /* margin-left: 5px; */
   }
@@ -493,8 +629,8 @@ button:before {
   .tab-prayer-timing-card {
     background: #ffffff;
     border-radius: 0px 0px 20px 20px;
-    padding: 30px 30px 0px 30px;
-    margin: 0px 10px 10px 10px;
+    padding: 0 30px 0px 30px;
+    /* margin: 0px 10px 10px 10px; */
   }
   .tab-prayer-timing-card .tablet-timing-card .my-custom-btn {
     padding: 0px 1.5vw !important;
@@ -505,25 +641,18 @@ button:before {
   }
 
   .done-btn-container {
-    margin-top: 5px;
+    margin-top: 30px;
     padding-bottom: 20px;
   }
-  .mainNamazTablePreview {
-    margin-top: 50px;
-    /* justify-content: center; */
-  }
-
-  /* .plus-minus-container .plus-minus-box {
-    background-color: #a8a8a8;
-  } */
 
   .juristic-container {
     box-shadow: none;
-    justify-content: center;
+    /* justify-content: center; */
+    align-items: center;
     border-radius: 0px;
     height: 38px;
-    border-bottom: 2px solid #7878787b;
     background: #ffffff;
+    width: 100%;
   }
 
   .juristic-container .MuiTypography-root {
@@ -533,14 +662,17 @@ button:before {
     font-size: 15px !important;
   }
 
+  .JuristicEdit {
+    position: static;
+  }
+
   .Autofilldsc {
     font-size: 14px !important;
   }
 
   .juristic-main-container {
     margin: auto 10px;
-    border-radius: 20px 20px 0px 0px;
-    background: #ffffff;
+    margin-bottom: 20px;
   }
   .namaz-top-box {
     display: none;
@@ -556,6 +688,10 @@ button:before {
   .selected-date-with-backbtn .backBtn {
     display: block !important;
   }
+  .time-preview-range {
+    margin-top: 20px;
+    /* margin: auto auto; */
+  }
 }
 
 @media (min-width: 1024px) {
@@ -565,19 +701,19 @@ button:before {
 
   .prayer-type-dropdown-container {
     width: 12vw;
-    left: 30px;
+    /* left: 30px; */
   }
 
   .namazConatinerMain {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .namazConatiner {
+  /* .namazConatiner {
     width: 75%;
-  }
+  } */
 
   .tab-prayer-timing-card .tablet-timing-card .my-custom-btn {
     padding: 0px 10px !important;
@@ -587,7 +723,9 @@ button:before {
     width: 10vw;
     margin: 0 10px;
   }
-
+  .offset-container {
+    margin: 0 10px;
+  }
   .plus-minus-container {
     width: 8vw;
   }
@@ -613,14 +751,55 @@ button:before {
 
   .time-preview {
     width: 50%;
-    margin-top: 20px;
     margin: auto auto;
+  }
+  .time-preview-range {
+    width: 50%;
+    /* margin: auto auto; */
   }
 }
 
 @media (min-width: 1424px) {
+  .CalendarContainer-1 {
+    width: 30% !important;
+  }
+
   .prayer-type-dropdown-container {
     width: 10vw;
     left: 30px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .selected-date-with-backbtn {
+    margin: 10px;
+  }
+
+  .Autofilldsc {
+    font-size: 25px !important;
+  }
+
+  .selectedDateRange {
+    font-size: 25px;
+  }
+
+  .selected-date-box img {
+    width: 30px;
+  }
+
+  .juristic-container .MuiTypography-root {
+    font-size: 25px !important;
+  }
+
+  .Azan-solar-timings label {
+    font-size: 24px;
+  }
+
+  .Butoon-Azan .my-custom-btn {
+    font-size: 25px !important;
+  }
+
+  .page-title {
+    font-size: 35px !important;
   }
 }

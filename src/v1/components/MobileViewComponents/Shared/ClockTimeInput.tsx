@@ -11,17 +11,13 @@ interface ClockTimeInputProps {
   tim: string;
   label: string;
   id?: string;
-  formDataSetter?: (val: string, val2: string) => void;
-  error?: string | null;
 }
 
 const ClockTimeInput: React.FC<ClockTimeInputProps> = ({
   setTime,
   tim,
   label,
-  id,
-  formDataSetter,
-  error,
+  id
 }) => {
   const [selectedTime, setSelectedTime] = React.useState<Dayjs | null>(
     tim ? dayjs(tim, "HH:mm") : null
@@ -34,32 +30,33 @@ const ClockTimeInput: React.FC<ClockTimeInputProps> = ({
 
   const handleTimeChange = (newTime: Dayjs | null) => {
     const formattedTime = newTime ? newTime.format("HH:mm") : "";
-    if (id) {
-      formDataSetter?.(id, formattedTime);
-    } else {
-      setTime(formattedTime);
-    }
+    setTime(formattedTime);
     setSelectedTime(newTime);
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div className="clock">
+      <div className="clock" data-testid="clock">
         <label htmlFor={id}>{label}</label>
         <MobileTimePicker
+          slotProps={{
+            textField: {
+              id: id
+            }
+          }}
           openTo="hours"
           className="clock-input"
           value={selectedTime}
           onChange={handleTimeChange}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              padding: "0px",
+            },
+          }}
         />
       </div>
     </LocalizationProvider>
   );
-};
-
-ClockTimeInput.defaultProps = {
-  formDataSetter: undefined,
-  error: null,
 };
 
 export default ClockTimeInput;

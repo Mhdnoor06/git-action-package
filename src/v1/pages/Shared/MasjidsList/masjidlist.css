@@ -1,0 +1,9 @@
+.event-masjids-list{
+    width: 95%;
+}
+.event-masjids-list input[type="text"]{
+    border: none !important;
+        /* border-left: none !important;
+        border-right: none !important; */
+
+}

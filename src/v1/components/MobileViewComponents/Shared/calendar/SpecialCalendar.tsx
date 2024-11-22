@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, useEffect, useRef } from "react";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import {
@@ -20,22 +20,23 @@ import Calendar, {
 } from "react-calendar";
 import "./Calendar.css";
 import { Value } from "react-multi-date-picker";
+import { LocationBasedToday } from "../../../../helpers/HelperFunction";
 
 type RangeType = "century" | "decade" | "year" | "month";
-// tileContent={tileContent}
-//         tileDisabled={tileDisabled}
-//         tileClassName={tileClassName}
+
 interface CustomCalenderProps {
+  tZone: string;
   onDateChange: (
     value: Value,
     event: MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
-  value: Date;
+  value: Date | null; // Allow null value
   handleSingleDateClick: OnClickFunc;
   tileContent: TileContentFunc;
   tileDisabled: TileDisabledFunc;
   tileClassName: TileClassNameFunc;
-  setValue: React.Dispatch<React.SetStateAction<Date>>;
+  setValue: React.Dispatch<React.SetStateAction<Date | null>>;
+  minDate: Date;
 }
 
 function getBeginPrevious(rangeType: RangeType, date: Date): Date {
@@ -68,9 +69,8 @@ function getBeginNext(rangeType: RangeType, date: Date): Date {
   }
 }
 
-const defaultValue = new Date();
-
 function SpecialCalendar({
+  tZone,
   onDateChange,
   value,
   setValue,
@@ -78,12 +78,31 @@ function SpecialCalendar({
   tileDisabled,
   tileClassName,
   handleSingleDateClick,
+  minDate,
 }: CustomCalenderProps) {
-  const [activeStartDate, setActiveStartDate] = useState<Date>(
-    getMonthStart(defaultValue)
-  );
-  // const [value, setValue] = useState<Date>(defaultValue);
+  const defaultValue = LocationBasedToday(tZone);
+
+  // Handle null value by providing a default
+  const initialStartDate = value
+    ? getMonthStart(value)
+    : getMonthStart(defaultValue);
+  const [activeStartDate, setActiveStartDate] =
+    useState<Date>(initialStartDate);
   const [view, setView] = useState<RangeType>("month");
+
+  // Ref to track if the activeStartDate is being set programmatically
+  const isProgrammaticUpdate = useRef(false);
+
+  useEffect(() => {
+    if (value && !isProgrammaticUpdate.current) {
+      const selectedMonthStart = getMonthStart(value);
+      if (selectedMonthStart.getTime() !== activeStartDate.getTime()) {
+        setActiveStartDate(selectedMonthStart);
+      }
+    }
+    // Reset the flag after sync
+    isProgrammaticUpdate.current = false;
+  }, [value, activeStartDate]);
 
   function onActiveStartDateChange({
     action,
@@ -92,10 +111,14 @@ function SpecialCalendar({
     action: string;
     activeStartDate: Date;
   }) {
+    // Set the flag to true before updating state
+    isProgrammaticUpdate.current = true;
     setActiveStartDate(nextActiveStartDate);
   }
+
   const handlers = useSwipeable({
     onSwiped: ({ dir }: { dir: string }) => {
+      isProgrammaticUpdate.current = true;
       switch (dir) {
         case "Left":
           setActiveStartDate(getBeginNext(view, activeStartDate));
@@ -125,15 +148,14 @@ function SpecialCalendar({
         {...handlersWithRefRenamed}
         activeStartDate={activeStartDate}
         onActiveStartDateChange={onActiveStartDateChange}
-        onChange={onDateChange}
-        value={value}
-        onClickDay={handleSingleDateClick}
+        onChange={handleSingleDateClick}
+        value={value || defaultValue} // Provide a fallback value
         view={view}
-        selectRange={true}
         tileContent={tileContent}
         tileDisabled={tileDisabled}
         tileClassName={tileClassName}
         onViewChange={onViewChange}
+        minDate={minDate}
       />
     </div>
   );

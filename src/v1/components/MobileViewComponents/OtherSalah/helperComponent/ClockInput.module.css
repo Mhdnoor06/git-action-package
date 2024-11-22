@@ -1,0 +1,60 @@
+.clock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-size: 0.9em;
+  color: #3d5347;
+  font-weight: bold;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #838383;
+  border-radius: 20px;
+  cursor: pointer;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.inputWrapper:hover {
+  border: 1px solid #1f674f;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timeInput {
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #333;
+  background-color: transparent;
+}
+
+.icon {
+  position: absolute;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.fullWidth {
+  width: 100%;
+} 
+
+@media (min-width: 350px) {
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .timeInput {
+    font-size: 0.85rem !important;
+  }
+}

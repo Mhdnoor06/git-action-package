@@ -59,15 +59,7 @@ export type CommonActionType = {
   payload: any;
 };
 export type User = {
-  autoPrefillingTiming: boolean;
-  email: string;
-  isVerified: boolean;
-  masjids: any[];
-  name: string;
-  role: string;
-  _id: string;
-  updatedAt?: string;
-  createdAt?: string;
+  masjids: string[];
 };
 
 export type UserActionType = {
@@ -132,6 +124,10 @@ export interface Timing {
 
 export interface EventType {
   address: string;
+  availableSeats: any;
+  category: string;
+  cost: string | number;
+  capacity: number;
   date?: any;
   description: string;
   eventName: string;
@@ -153,6 +149,7 @@ export interface EventType {
   metaData: MetaData;
   timings: Timing[];
   _id: string;
+  isRegistrationRequired: boolean;
 }
 
 export type AddingEvent = Pick<
@@ -212,10 +209,11 @@ export type AdminInterFace = {
   createdAt?: string;
 };
 export type AuthDataType = {
+  userId: string;
   password: string;
   token: string;
-  email: string;
-  type: string;
+  email?: string;
+  type?: string;
 };
 
 export type NamajTiming<T extends string | number> = {
@@ -238,17 +236,19 @@ export type SpecialPrayer<T extends string | number> = {
   endDate: string;
   _id?: string;
 };
+
 export interface PrayerTimings<T extends string | number> {
   _id: string;
   date: string;
   prayerType?: string;
   timings: NamajTiming<T>[];
+  prayerMethod: string;
 }
 
 export type optionalTimings<T extends string | number> = Partial<
   NamajTiming<T>
 >;
-export type NamazTimings<T extends string | number> = {
+export type NamazTimingsType<T extends string | number> = {
   date: string;
   timings: NamajTiming<T>[];
 };
@@ -282,3 +282,21 @@ export type PresetTimings = Record<
     Sunset: string;
   }
 >;
+
+export interface PrayerMethod {
+  id: number;
+  name: string;
+  params: any;
+  location: any;
+}
+
+export interface BoardMember {
+  about: string;
+  email: string;
+  name: string;
+  phone: string;
+  position: string;
+  image: any;
+  isSubBtnClicked?: boolean;
+  _id?: string;
+}

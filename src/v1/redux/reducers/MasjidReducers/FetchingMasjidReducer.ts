@@ -1,7 +1,6 @@
 import { Action, Masjid } from "../../Types";
 import { FETCH_ADMIN_MASJID, FETCH_ALL_MASJID } from "../../actiontype";
-type initialRecordedMasjid = Record<string, Masjid>;
-const initialState: initialRecordedMasjid = {};
+const initialState: Masjid[] = [];
 const FetchMasjidsByAdminReducer = (
   state = initialState,
   // AdminMasjid: any,

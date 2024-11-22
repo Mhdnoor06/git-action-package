@@ -3,13 +3,31 @@
   margin: auto auto;
   width: 90%;
 }
+.swiper-download-btn-conatiner {
+  background: white;
+  border-radius: 20px;
+}
+.MobileView .my-custom-btn,
+.btn-container .my-custom-btn,
+.submit-btn-container .my-custom-btn {
+  padding: 0px 30px 0px 30px !important;
+  margin: 10px auto;
+}
+
+.MobileView .MobileViewContainer {
+  display: none !important;
+}
 
 @media (min-width: 768px) {
+  .MobileView .MobileViewContainer {
+    display: flex !important;
+  }
   .mainprayerconatiner {
     height: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 85vh;
   }
 
   .mainprayerconatiner .MobileViewContainer {
@@ -34,6 +52,7 @@
     align-items: center;
     margin-bottom: 10px;
   }
+
   .MobileView .customly-added-btn div {
     width: 60%;
   }
@@ -86,7 +105,7 @@
 
 @media (min-width: 1024px) {
   .MobileView-main-container {
-    width: 70%;
+    width: 75%;
     padding-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
@@ -99,5 +118,30 @@
 
   .prayer-right-calender .time-zone {
     margin: 0;
+  }
+}
+
+@media (min-width: 1700px) {
+  .react-calendar__month-view__days button {
+    height: 75px !important;
+  }
+
+  .CalendarContainer .react-calendar {
+    font-size: 25px;
+  }
+
+  .customly-added-btn div {
+    height: 50px !important;
+  }
+
+  .time-zone {
+    font-size: 30px;
+  }
+
+  .CalendarContainer .react-calendar .green-dot::after {
+    width: 10px !important;
+    height: 10px !important;
+
+    right: 22px;
   }
 }

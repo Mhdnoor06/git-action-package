@@ -10,6 +10,14 @@ const Theme = createTheme({
       xl: 1920,
     },
   },
+  palette: {
+    common: {
+      white: "#ffffff",
+    },
+    grey: {
+      500: "#9e9e9e", // Define grey color
+    },
+  },
 });
 
 export default Theme;

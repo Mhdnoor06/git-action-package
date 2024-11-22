@@ -1,0 +1,102 @@
+/* CSS for ProgramCard Component */
+.program-card {
+  position: relative;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: #ffff;
+  margin-bottom: 10px;
+  width: 90%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+.program-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.program-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-card-image img {
+  border-radius: 16px;
+  width: 75px; /* Adjust this value if needed */
+  height: 85px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.program-card h3 {
+  margin: 0;
+  color: #2e382e;
+  font-size: 14px;
+}
+
+.program-card-details {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 16px;
+  background-color: #e2e2e2;
+  color: #2e382e;
+  display: inline-block;
+  margin: 8px auto;
+}
+
+.program-card .masjid-name-field {
+  padding-top: 2px;
+  margin: 0px;
+  font-weight: 400;
+  font-size: 12.046px;
+  color: #a3a3a3;
+}
+.program-card .program-icon-with-date {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.program-card .program-title {
+  font-size: 13.1411px;
+  text-transform: capitalize;
+  color: #2e382e;
+}
+
+.program-card-details strong {
+  color: black;
+}
+
+.program-card-next {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the icon if needed */
+}
+
+@media (min-width: 768px) {
+  .program-card-image {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .program-card h3 {
+    font-size: 21px;
+  }
+
+  .program-card-details {
+    font-size: 16px;
+  }
+}

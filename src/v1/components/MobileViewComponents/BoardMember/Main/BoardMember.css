@@ -1,0 +1,76 @@
+.board-member-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  /* Group 37685 */
+}
+.board-member-title p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  text-transform: capitalize;
+
+  color: #2e382e;
+
+  /* Group 37685 */
+}
+.board-member-title span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #1d785a;
+}
+.board-member-title img {
+  width: 12px;
+}
+.del-edit-box {
+  /* display: flex; */
+
+  justify-content: center;
+  align-items: center;
+}
+.del-edit-box img {
+  margin-left: 10px;
+  width: 15px;
+}
+.del-edit-box .del-img {
+  width: 12px;
+}
+.board-member-input-img-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board-member-form .event-input-img-prev img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.board-member-form .event-input-img-prev {
+  background-color: rgb(255, 255, 255);
+}
+
+.board-form {
+  display: flex;
+  align-items: center;
+  /* gap: 7vw; */
+}
+.board-skelition {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60vh;
+}
+.board-member-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

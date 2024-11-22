@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { resources } from "../../../resources/resources";
 import CmIcon from "../../../photos/Newuiphotos/CM Logo/CM Logo.svg";
 import "./RequestUserForm.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { LoadingButton } from "@mui/lab";
 import successTick from "../../../photos/Newuiphotos/Icons/successTick.svg";
@@ -10,12 +10,14 @@ import CloseIcon from "@mui/icons-material/Close";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 
-import TermAndConditions from "../Shared/TermAndConditions";
+import TermAndConditions from "../Shared/TermsAndCondition/TermAndConditions";
 import BackButton from "../Shared/BackButton";
 import { signUpEmail } from "../../../redux/actions/AuthActions/SignUpFormAction";
 import { useAppThunkDispatch } from "../../../redux/hooks";
 import { Box, FormControl, MenuItem, Select } from "@mui/material";
 import { ChangeSnackbar } from "../../../redux/actions/SnackbarActions/ChangeSnackbarAction";
+import { customNavigatorTo } from "../../../helpers/HelperFunction";
+import { useNavigationprop } from "../../../../MyProvider";
 
 interface FormState {
   whoIAm: string;
@@ -33,6 +35,7 @@ interface FormState {
 }
 
 function RequestUserForm() {
+  const navigation = useNavigationprop();
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
   const dispatch = useAppThunkDispatch();
@@ -52,7 +55,6 @@ function RequestUserForm() {
     errors: {},
   });
   const language = resources["en"];
-  const navigate = useNavigate();
 
   const validateField = (field: keyof FormState, value: string) => {
     let errorMessage = "";
@@ -157,7 +159,6 @@ function RequestUserForm() {
       (error) => error === ""
     );
     if (isValid) {
-      console.log(formState);
       try {
         const response = dispatch(
           signUpEmail({
@@ -181,7 +182,7 @@ function RequestUserForm() {
             name: `${formState.firstName} ${formState.lastName}`,
           })
         );
-        console.log("Email sent successfully:", response);
+
         const snackbarDetails = {
           snackbarOpen: true,
           snackbarType: "success",
@@ -212,7 +213,8 @@ function RequestUserForm() {
   };
 
   const handleBackBtn = () => {
-    navigate("/login");
+    if (navigation) navigation("/login");
+    else customNavigatorTo("/login");
   };
   return (
     <>
@@ -321,6 +323,7 @@ function RequestUserForm() {
                       <Select
                         // labelId="demo-simple-select-label"
                         // id="demo-simple-select"
+                        data-testid="whoiam"
                         id="recurrenceType"
                         name="recurrenceType"
                         value={formState.whoIAm || ""}
@@ -341,16 +344,23 @@ function RequestUserForm() {
                         displayEmpty
                         required
                       >
-                        <MenuItem value="" disabled sx={{ fontSize: "12px" }}>
+                        <MenuItem
+                          value=""
+                          disabled
+                          sx={{ fontSize: "12px" }}
+                          data-testid="option"
+                        >
                           Who I am*
                         </MenuItem>
                         <MenuItem
+                          data-testid="option"
                           value="Masjid Admin"
                           sx={{ fontSize: "12px" }}
                         >
                           Masjid Admin : Who controls masjid
                         </MenuItem>
                         <MenuItem
+                          data-testid="option"
                           value="Musali Admin"
                           sx={{ fontSize: "12px" }}
                         >
@@ -562,6 +572,7 @@ function RequestUserForm() {
 
                 <div className="formFields">
                   <input
+                    id="termsAndConditions"
                     type="checkbox"
                     checked={formState.termsAndConditions}
                     onChange={(e) =>
@@ -570,6 +581,7 @@ function RequestUserForm() {
                     required
                   />
                   <label
+                    htmlFor="termsAndConditions"
                     style={{ textDecoration: "underline" }}
                     onClick={handleOpen}
                   >

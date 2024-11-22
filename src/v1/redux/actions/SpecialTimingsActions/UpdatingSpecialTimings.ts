@@ -12,11 +12,11 @@ export const updatingSpecialTimings =
       );
       if (data.message === "Success") {
         toast.dismiss(loading);
-        toast.success("SpecialTimings Updated Successfully");
+        // toast.success("Other Salah Updated Successfully");
         return data;
       }
       toast.dismiss(loading);
-      toast.success("SpecialTimings Updated Successfully");
+      // toast.success("SpecialTimings Updated Successfully");
       return data;
     } catch (error: any) {
       const msg = error.response.data.data.error

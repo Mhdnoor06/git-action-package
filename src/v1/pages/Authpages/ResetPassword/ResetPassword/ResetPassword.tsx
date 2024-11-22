@@ -12,38 +12,40 @@ import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { useAppThunkDispatch } from "../../../../redux/hooks";
 import resetSuccessIcon from "../../../../photos/Newuiphotos/Icons/successTick.svg";
-import { useNavigate } from "react-router-dom";
+import { customNavigatorTo } from "../../../../helpers/HelperFunction";
 import "./ResetPassword.css";
+import { useNavigationprop } from "../../../../../MyProvider";
 
 type propsType = {
   email: string;
 };
 
 function ResetPassword({ email }: propsType) {
-  const [otpSuccess, setOtpSuccess] = useState(false);
-  const [PasswordPopup, setPasswordPopup] = useState(false);
+  const navigation = useNavigationprop();
+  const [isOtpVerified, setIsOtpVerified] = useState(false);
   const language = resources["en"];
   const [password, setpassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [otp, setOtp] = useState<string>("");
-  const [passwordType, setPasswordType] = useState("password");
-  const [PasswordShow, setPasswordShow] = useState(true);
-  const [ConfirmPasswordType, setConfirmPasswordType] = useState("password");
-  const [ConfirmPasswordShow, setConfirmPasswordShow] = useState(true);
-  const [isFetching, setisFetching] = useState(false);
-  const [resetSuccess, setResetSuccess] = useState(false);
-  const navigate = useNavigate();
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
+    useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isResetSuccess, setIsResetSuccess] = useState(false);
+
   const dispatch = useAppThunkDispatch();
 
-  const handleOtp = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleOtpSubmit = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.stopPropagation();
     if (otp !== "") {
-      setOtpSuccess((prev) => !prev);
+      setIsOtpVerified((prev) => !prev);
     } else {
       const snackbarDetails = {
         snackbarOpen: true,
         snackbarType: "error",
-        snackbarMessage: `please enter your OTP to proceed`,
+        snackbarMessage: `Please enter your OTP to proceed`,
       };
       dispatch(ChangeSnackbar(snackbarDetails));
     }
@@ -58,15 +60,13 @@ function ResetPassword({ email }: propsType) {
         email: email,
         type: "otp",
       };
-      setisFetching(true);
+      setIsSubmitting(true);
       const res = dispatch(resetPassword(formData));
-      console.log(formData);
 
       res.then((result) => {
         if (result.success) {
-          setResetSuccess(true);
-          setPasswordPopup(true);
-          setisFetching(false);
+          setIsResetSuccess(true);
+          setIsSubmitting(false);
         } else {
           const snackbarDetails = {
             snackbarOpen: true,
@@ -74,7 +74,7 @@ function ResetPassword({ email }: propsType) {
             snackbarMessage: `Failed To Setup the Password, check your OTP again`,
           };
           dispatch(ChangeSnackbar(snackbarDetails));
-          setisFetching(false);
+          setIsSubmitting(false);
         }
       });
     } else {
@@ -84,41 +84,21 @@ function ResetPassword({ email }: propsType) {
         snackbarMessage: `Password and Confirmed Password does not match`,
       };
       dispatch(ChangeSnackbar(snackbarDetails));
-      setisFetching(false);
+      setIsSubmitting(false);
     }
-  };
-
-  const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
-      setPasswordShow(true);
-      return;
-    }
-    setPasswordType("password");
-    setPasswordShow(false);
-  };
-
-  const ConfirmTogglePassword = () => {
-    if (ConfirmPasswordType === "password") {
-      setConfirmPasswordType("text");
-      setConfirmPasswordShow(true);
-      return;
-    }
-    setConfirmPasswordType("password");
-    setConfirmPasswordShow(false);
   };
 
   return (
     <div>
-      {!resetSuccess ? (
+      {!isResetSuccess ? (
         <>
-          {otpSuccess ? (
+          {isOtpVerified ? (
             <div className="ForgotPassowordHeadContainer">
               <div className="ForgotPassowordrightContainer">
                 <form onSubmit={handleSubmit} className="ForgotPasswordBox">
                   <span
                     className="BackToLogin"
-                    onClick={() => setOtpSuccess(false)}
+                    onClick={() => setIsOtpVerified(false)}
                   >
                     <CloseIcon fontSize="150px" />
                   </span>
@@ -138,21 +118,21 @@ function ResetPassword({ email }: propsType) {
                       placeholder={
                         language.RESET_PASSWORD.INPUT_PLACEHOLDER_NEW_PASSWORD
                       }
-                      type={passwordType}
+                      type={isPasswordVisible ? "text" : "password"}
                       value={password}
                       onChange={(e) => setpassword(e.target.value)}
-                      required={otpSuccess}
+                      required={isOtpVerified}
                       className="ForgotPasswordInput"
                       style={{ marginBottom: "15px" }}
                     />
-                    {PasswordShow ? (
+                    {isPasswordVisible ? (
                       <AiFillEye
-                        onClick={togglePassword}
+                        onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                         className="ShowPasswordLogin"
                       />
                     ) : (
                       <AiFillEyeInvisible
-                        onClick={togglePassword}
+                        onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                         className="ShowPasswordLogin"
                       />
                     )}
@@ -163,21 +143,25 @@ function ResetPassword({ email }: propsType) {
                         language.RESET_PASSWORD
                           .INPUT_PLACEHOLDER_CONFIRM_PASSWORD
                       }
-                      type={ConfirmPasswordType}
+                      type={isConfirmPasswordVisible ? "text" : "password"}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      required={otpSuccess}
+                      required={isOtpVerified}
                       className="ForgotPasswordInput"
                       style={{ marginBottom: "15px" }}
                     />
-                    {ConfirmPasswordShow ? (
+                    {isConfirmPasswordVisible ? (
                       <AiFillEye
-                        onClick={ConfirmTogglePassword}
+                        onClick={() =>
+                          setIsConfirmPasswordVisible(!isConfirmPasswordVisible)
+                        }
                         className="ShowPasswordLogin"
                       />
                     ) : (
                       <AiFillEyeInvisible
-                        onClick={ConfirmTogglePassword}
+                        onClick={() =>
+                          setIsConfirmPasswordVisible(!isConfirmPasswordVisible)
+                        }
                         className="ShowPasswordLogin"
                       />
                     )}
@@ -186,10 +170,10 @@ function ResetPassword({ email }: propsType) {
                   <button
                     className="ForgotPasswordBtnn"
                     type="submit"
-                    disabled={isFetching}
+                    disabled={isSubmitting}
                     style={{ padding: "0", borderRadius: "25px" }}
                   >
-                    {isFetching ? (
+                    {isSubmitting ? (
                       <CircularProgress size="20px" />
                     ) : (
                       <>{language.FORGOT_PASSWORD.VERIFY}</>
@@ -200,7 +184,10 @@ function ResetPassword({ email }: propsType) {
             </div>
           ) : (
             <>
-              <div className="ForgotPassowordHeadContainer">
+              <div
+                className="ForgotPassowordHeadContainer"
+                data-testid="reset-password-component"
+              >
                 <div className="ForgotPassowordrightContainer">
                   <form className="ForgotPasswordBox">
                     <span className="BackToLogin">
@@ -232,11 +219,11 @@ function ResetPassword({ email }: propsType) {
                     <button
                       className="ForgotPasswordBtnn"
                       //   type="submit"
-                      onClick={(e) => handleOtp(e)}
-                      disabled={isFetching}
+                      onClick={(e) => handleOtpSubmit(e)}
+                      disabled={isSubmitting}
                       style={{ padding: "0", borderRadius: "25px  " }}
                     >
-                      {isFetching ? (
+                      {isSubmitting ? (
                         <CircularProgress size="20px" color="inherit" />
                       ) : (
                         <>{language.FORGOT_PASSWORD.VERIFY}</>
@@ -249,7 +236,10 @@ function ResetPassword({ email }: propsType) {
           )}
         </>
       ) : (
-        <div className="ForgotPassowordHeadContainer">
+        <div
+          className="ForgotPassowordHeadContainer"
+          data-testid="reset-password-component-success"
+        >
           <div className="ForgotPassowordrightContainer">
             <div className="resetsuccess">
               <img
@@ -261,12 +251,16 @@ function ResetPassword({ email }: propsType) {
               <b style={{ marginBottom: "20px" }}>“Successfully”</b>
               <button
                 className="ForgotPasswordBtnn"
+                role="login-btn"
                 style={{
                   padding: "0",
                   borderRadius: "25px",
                   background: "#1B8368",
                 }}
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  if (navigation) navigation("/login");
+                  else customNavigatorTo("/login");
+                }}
               >
                 Log In
               </button>

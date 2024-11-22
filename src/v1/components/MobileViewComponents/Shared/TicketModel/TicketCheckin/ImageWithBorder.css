@@ -1,0 +1,43 @@
+.camera-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: transparent;
+  position: relative;
+}
+.camera-frame img {
+  width: 80%;
+}
+.camera-frame .corner {
+  position: absolute;
+
+  border: 2px solid white;
+  width: 12px;
+  height: 12px;
+}
+.camera-frame .cornertopleft {
+  border-right: none;
+  border-bottom: none;
+  top: 0;
+  left: 0;
+}
+.camera-frame .cornertopright {
+  border-left: none;
+  border-bottom: none;
+  top: 0;
+  right: 0;
+}
+
+.camera-frame .cornerbottomleft {
+  border-right: none;
+  border-top: none;
+  bottom: 0;
+  left: 0;
+}
+.camera-frame .cornerbottomright {
+  border-left: none;
+  border-top: none;
+  bottom: 0;
+  right: 0;
+}

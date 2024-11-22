@@ -1,0 +1,20 @@
+.chart {
+  width: 50%;
+  height: 150px;
+}
+
+.pieChart {
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px solid #dcdbdb;
+}
+
+@media (min-width: 1700px) {
+  .chart {
+    height: 250px;
+  }
+
+  .pieChart {
+    height: 250px;
+  }
+}

@@ -1,0 +1,337 @@
+.backBtnContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tv-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.connectionlist {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.addtvcontainer {
+  position: fixed;
+  right: 25px;
+  bottom: 55px;
+}
+
+.AddTv {
+  background-color: #1b8368;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.add-tv-device {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  max-width: 400px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+}
+
+.add-tv-device h1 {
+  font-size: 1em;
+  font-style: italic;
+  text-align: center;
+  color: #1d785a;
+}
+
+.paringImg {
+  width: 100%;
+  text-align: center;
+}
+
+.note {
+  color: #828282;
+  font-size: 0.85em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.step {
+  /* margin-bottom: 20px; */
+  font-size: small;
+}
+
+.step p {
+  font-weight: bold;
+  /* margin-bottom: 5px; */
+}
+
+.step b {
+  color: #1d785a;
+  font-weight: bold;
+}
+
+.step label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.step input {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.step .input-with-icon {
+  position: relative;
+}
+
+.step .input-with-icon input {
+  width: 93%;
+}
+
+.step .input-with-icon .tv-icon {
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 30px; /* The size of your icon */
+  height: 20px;
+  background: url("../../../photos/Newuiphotos/Icons/TV.svg") no-repeat center;
+  background-size: cover;
+}
+
+.add-tv-device button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1b8368;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.salahview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.view-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #1d785a;
+  border-radius: 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.view-name img {
+  width: 20px;
+  height: 20px;
+}
+
+.view-name b {
+  font-size: 1rem;
+  color: #1d785a;
+  font-weight: 600;
+}
+
+.active-dot {
+  width: 8px;
+  height: 8px;
+  background: #00c986;
+  border-radius: 50%;
+}
+
+/* button:hover {
+  background-color: #186c56;
+} */
+
+.pairingpopup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  width: 80%;
+  padding: 20px;
+  border-radius: 20px;
+  gap: 15px;
+}
+
+.pairingpopup p {
+  text-align: center;
+}
+
+.pairingpopup em {
+  color: #186c56;
+}
+
+.pairingpopup button {
+  width: 100%;
+  background: #ff7272;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  padding: 10px;
+}
+
+.successfulpair {
+  width: 90%;
+  border-radius: 30px;
+  display: flex !important;
+  align-items: center;
+  display: block;
+  background: white;
+  justify-content: center;
+  gap: 10px;
+}
+
+.successfulpair p {
+  color: #00a860;
+}
+
+.selecthead {
+  text-align: center;
+}
+
+.tv-view-selection {
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  margin: 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewImg {
+  border-radius: 20px;
+  padding: 8px;
+  margin: 15px 0;
+  background: #cccccc;
+}
+
+.viewcardtop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectedview {
+  background: #1d785a;
+}
+
+.device-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-name em {
+  font-weight: bold;
+  color: #186c56;
+}
+
+.device-name b {
+  color: #3d544e;
+}
+
+.viewImg img {
+  width: 100%;
+}
+.viewImg b {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.view-save {
+  background: #1b8368;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.restarttv b {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.restarttv p {
+  font-size: small;
+}
+
+.tv-view-selection button {
+  background-color: #1b8368;
+  color: white;
+  font-weight: 700;
+  margin: 10px 0;
+  padding: 10px 40px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  gap: 10px;
+}
+
+@media (min-width: 425px) {
+  .add-tv-device {
+    margin: 20px auto;
+  }
+
+  .step .input-with-icon input {
+    width: 93%;
+  }
+
+  .pairingpopup {
+    background: white;
+    width: 300px;
+    padding: 20px;
+  }
+
+  .tv-view-selection {
+    margin: 20px auto;
+  }
+}
+
+.step-text {
+  display: inline-block;
+  background: linear-gradient(270deg, rgba(242, 193, 78, 0) 0%, #ffe098 96.88%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-style: italic;
+}

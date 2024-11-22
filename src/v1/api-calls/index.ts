@@ -4,20 +4,18 @@ import {
   AuthDataType,
   EventType,
   AddingEvent,
-  NamazTimings,
+  NamazTimingsType,
   NamajTiming,
   AuthTokens,
   optionalTimings,
 } from "../redux/Types";
+import { getAdminAPIRootDomain } from "../helpers/ApiSetter/ApiSetter";
 
 // export const rootURL = "https://admin-api.connectmazjid.com/api/v2";//prod API
-// export const rootURL = "https://dev-admin-api.connectmazjid.com/api/v2";//test
+// export const rootURL = "https://devadmin-api.connectmazjid.com/api/v2";//test
 // export const rootURL = import.meta.env.VITE_ADMIN_BASE_URL;
-export const rootURL =
-  window.location.hostname === "musali-admin.netlify.app"
-    ? "https://dev-admin-api.connectmazjid.com/api/v2"
-    : import.meta.env.VITE_ADMIN_BASE_URL; //test API
 
+export const rootURL = getAdminAPIRootDomain();
 const API = axios.create({
   baseURL: rootURL,
 });
@@ -95,6 +93,7 @@ export const fetchAdminMasjid = (id: string) =>
   API.get(`/masjid/get-masjid-by-admin/` + id);
 export const updateMasjid = (masjidId: string, formData: Masjid) =>
   API.put(`/masjid/${masjidId}/update-masjid`, formData);
+
 type formData = {
   imageId: string;
   url?: string;
@@ -134,7 +133,9 @@ export const fetchLatestUpdatedEventsByAdminId = (id: string, limit: string) =>
   });
 export const addEvent = (masjidId: string, formData: AddingEvent) =>
   API.post(`/event/${masjidId}/create`, formData);
+
 export const getRSVP = (eventId: string) => API.get(`/event/rsvp/${eventId}`);
+
 export const updateEvent = (
   formData: AddingEvent,
   masjidId: string,
@@ -154,13 +155,7 @@ export const getEventsByDateRange = (
   masjidId: string
 ) =>
   API.get(
-    `/event/${masjidId}/get-events-by-date-range/${startDate}/${endDate}?filterCancelled=false`,
-    {
-      params: {
-        limit: `50`,
-        page: `1`,
-      },
-    }
+    `/event/${masjidId}/get-events-by-date-range/${startDate}/${endDate}?filterCancelled=false`
   );
 export const getCancelledEvents = (
   sortBy: string,
@@ -173,8 +168,16 @@ export const getCancelledEvents = (
       sortIn: `${sortIn}`,
     },
   });
-export const cancelEvent = (masjidId: string, eventId: string) =>
-  API.put(`/event/${masjidId}/cancel/` + eventId);
+export const cancelEvent = (
+  masjidId: string,
+  eventId: string,
+  updateType: string | null
+) =>
+  API.put(`/event/${masjidId}/cancel/` + eventId, {
+    params: {
+      updateType: `${updateType}`,
+    },
+  });
 
 export const rsvpEvent = (eventId: string) => API.get(`/event/rsvp/${eventId}`);
 
@@ -241,8 +244,10 @@ export const triggeringAnnouncement = (formData: UploadDataType) =>
 
 export const fetchingAnnouncement2 = () =>
   API.get(`/notification/announcement/get`);
-export const addTimings = (formData: NamazTimings<number>, masjidId: string) =>
-  API.post(`/timing/${masjidId}/add-timing`, formData);
+export const addTimings = (
+  formData: NamazTimingsType<number>,
+  masjidId: string
+) => API.post(`/timing/${masjidId}/add-timing`, formData);
 export const addSolarTimings = (formData: any, masjidId: string) =>
   API.post(`/timing/${masjidId}/solar/range`, formData);
 //not used api
@@ -314,6 +319,7 @@ export const updateSpecialTiming = (
   );
 export const deleteSpecialTiming = (masjidId: string, timingId: string) =>
   API.delete(`/special-timing/${masjidId}/delete-special-time/${timingId}`);
+
 export const fetchMasjidById = (masjidId: string) =>
   API.get(`/masjid/get-masjid-by-id/` + masjidId);
 

@@ -121,7 +121,7 @@ The project can be built and run using Docker. The Dockerfile is located in the 
 
 
 ## URLs
-The following URLs are used to access the portal:
+The following URLs are used to access the portal : 
 
 - [Local Env](http://localhost:5173/)
 - [Test Env](https://musali-admin.netlify.app/)

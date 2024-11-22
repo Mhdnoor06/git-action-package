@@ -1,0 +1,116 @@
+/* CSS for EventCard Component */
+.donation-card {
+  position: relative;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: #ffff;
+  margin-bottom: 10px;
+  width: 85%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(0, 0, 0, 0.2);
+  /* background-color: #065f464d; */
+}
+.donation-card-content {
+  margin-right: 7px;
+  width: 55%;
+}
+.reddot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fc4a4a;
+}
+.greendot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00c986;
+}
+
+.donation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.donation-card-image {
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+}
+
+.donation-card-image img {
+  /* width: 100%; */
+  border-radius: 16px;
+  width: 21vw;
+  height: 70px;
+  object-fit: cover;
+}
+
+.donation-card h3 {
+  margin: 0;
+  color: #2e382e;
+  font-size: 14px;
+}
+
+.event-card-description {
+  margin-top: 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.donation-card-details {
+  word-break: break-all;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.donation-card-details strong {
+  color: black;
+}
+
+.Datetime {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.next-step-icon {
+  width: 12px;
+  height: 12px;
+  /* position: absolute;
+  top: 10px;
+  right: 10px; */
+}
+.donation-card-next {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .donation-card-image img {
+    width: 9vw;
+  }
+}
+@media (min-width: 1700px) {
+  .donation-card h3 {
+    font-size: 21px;
+  }
+  .donation-card-details {
+    font-size: 25px;
+  }
+
+  .calbtn .green-dot::after {
+    top: 2px;
+    right: 30px !important;
+    width: 10px;
+    height: 10px;
+  }
+}

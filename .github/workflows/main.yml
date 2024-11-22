@@ -3,26 +3,26 @@ name: Node.js Package
 on:
   push:
     branches:
-      - common-portel-test
+      - main
 
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      
+        uses: actions/checkout@v3
+
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/ 
-          scope: '@Mhdnoor06'
-      
+          node-version: "16" # Updated to a more current version
+          registry-url: https://npm.pkg.github.com/
+          scope: "@msa-software-llc"
+
       - name: Install dependencies
-        run: npm install
-      
+        run: npm install --force
+
       - name: Publish package
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GH_PACKAGES_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}

@@ -1,0 +1,25 @@
+.PaymentTransactions {
+  /* width: 95vw !important; */
+  /* background-color: white !important; */
+  /* width: 90% !important;
+  background-color: white !important;
+  padding: 20px; */
+}
+.PaymentTransactions {
+  /* width: 90%;
+  background-color: white !important; */
+  /* padding: 20px; */
+}
+.payments-main-container .PaymentTransactionCard {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .payments-main-container .PaymentTransactionCard {
+    width: 80% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .payments-main-container .PaymentTransactionCard {
+    width: 60% !important;
+  }
+}

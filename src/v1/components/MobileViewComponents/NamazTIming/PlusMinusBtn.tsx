@@ -21,6 +21,7 @@ const PlusMinusBtn: React.FC<PlusMinusBtn> = ({
       border={`1px solid #1B8368`}
       display="flex"
       alignItems="center"
+      // width="95px"
     >
       <Typography
         variant="body2"
@@ -40,6 +41,7 @@ const PlusMinusBtn: React.FC<PlusMinusBtn> = ({
         justifyContent="center"
       >
         <IconButton
+          aria-label="increment-btn"
           size="small"
           style={iconBtnStyle}
           onClick={handleCountIncrement}
@@ -47,6 +49,7 @@ const PlusMinusBtn: React.FC<PlusMinusBtn> = ({
           <KeyboardArrowUpIcon />
         </IconButton>
         <IconButton
+          aria-label="decrement-btn"
           size="small"
           style={iconBtnStyle}
           onClick={handleCountDecrement}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../AdminProfile/AdminProfile.css";
 import profileIcon from "../../../photos/Newuiphotos/nav bar/png/Vector-2.png";
 import changePassIcon from "../../../photos/Newuiphotos/Profile/changepass.svg";
@@ -6,30 +6,32 @@ import logoutIcon from "../../../photos/Newuiphotos/Profile/logout.svg";
 import deleteAccIcon from "../../../photos/Newuiphotos/Profile/delete.svg";
 import roleIcon from "../../../photos/Newuiphotos/Profile/Group 1221.svg";
 import Alert from "../../../photos/Newuiphotos/Icons/alert.svg";
-
+import packageJSON from "../../../../../package.json";
 import { useAppThunkDispatch } from "../../../redux/hooks";
 import { authLogout } from "../../../redux/actions/AuthActions/LogoutAction";
 import { fetchAdminDetails } from "../../../redux/actions/AuthActions/fetchAdminDetails";
 import { AdminInterFace } from "../../../redux/Types";
 import { Button } from "@mui/material";
-import DeleteProfileIcon from "../../../photos/Newuiphotos/Profile/material-symbols_account-circle-off.svg";
-import { useNavigate } from "react-router";
+
 import { deleteUserAction } from "../../../redux/actions/AuthActions/DeleteUserAction";
 import { changePassword } from "../../../redux/actions/AuthActions/ChangePasswordAction";
 import { ChangeSnackbar } from "../../../redux/actions/SnackbarActions/ChangeSnackbarAction";
 import { LoadingButton } from "@mui/lab";
 import DeleteConfirmation from "../Shared/DeleteConfirmation/DeleteConfirmation";
 import DeleteWarningCard from "../Shared/DeleteWarningCard/DeleteWarningCard";
+import { customNavigatorTo } from "../../../helpers/HelperFunction";
+import BackButton from "../Shared/BackButton";
+import { useNavigationprop } from "../../../../MyProvider";
 
 function AdminProfile() {
   const dispatch = useAppThunkDispatch();
-  const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
-  const [progress, setProgress] = useState(false);
-  const [isFetching, setisFetching] = useState(false);
-  const [checked, setChecked] = useState(false);
-  const [showDeleteWarning, setShowDeleteWarning] = useState(false);
-  const [warning, setWarning] = useState("");
+  const navigation = useNavigationprop();
+  const [isDeleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [isDeleteInProgress, setDeleteInProgress] = useState(false);
+  const [isPasswordChangeInProgress, setPasswordChangeInProgress] =
+    useState(false);
+  const [isWarningVisible, setWarningVisible] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
   const [wariningType, setWarningtype] = useState("");
 
   const adminString = localStorage.getItem("admin");
@@ -51,8 +53,8 @@ function AdminProfile() {
     }
   }, []);
 
-  const DeleteUser = async () => {
-    setProgress(true);
+  const handleDeleteUser = async () => {
+    setDeleteInProgress(true);
     const response = await dispatch(deleteUserAction());
     if (response === "success") {
       window.location.reload();
@@ -60,14 +62,12 @@ function AdminProfile() {
     }
   };
 
-  const handleDeleteUserCard = () => {
-    setOpen(!open);
-    setChecked((prev) => !prev);
+  const toggleDeleteDialog = () => {
+    setDeleteDialogOpen(!isDeleteDialogOpen);
   };
 
-  const handleChagePassword = () => {
-    setisFetching(true);
-    // e.preventDefault();
+  const handleChangePassword = () => {
+    setPasswordChangeInProgress(true);
     const res = dispatch(changePassword());
     res.then((result) => {
       if (result.success) {
@@ -77,8 +77,9 @@ function AdminProfile() {
           snackbarMessage: `OTP Sent SuccessFully`,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        navigate("/changePassword");
-        setisFetching(false);
+        if (navigation) navigation("/changePassword");
+        else customNavigatorTo("/changePassword");
+        setPasswordChangeInProgress(false);
       } else if (!result.success) {
         const snackbarDetails = {
           snackbarOpen: true,
@@ -86,14 +87,14 @@ function AdminProfile() {
           snackbarMessage: `Failed To Reset Password `,
         };
         dispatch(ChangeSnackbar(snackbarDetails));
-        setisFetching(false);
+        setPasswordChangeInProgress(false);
       }
     });
   };
   const handleLogout = () => {
     dispatch(authLogout());
   };
-  const texts = {
+  const warningTexts = {
     main: "Are you sure you want to Delete Your Account Permanently ?",
     sub: "Deleting your account will remove all of your information from our database. This cannot be undone.",
   };
@@ -102,37 +103,42 @@ function AdminProfile() {
       <div className="Mainconatiner">
         <div className="deleteCard">
           <DeleteConfirmation
-            open={open}
-            setOpen={setOpen}
-            progress={progress}
-            texts={texts}
-            handleReject={handleDeleteUserCard}
-            handleDelete={DeleteUser}
+            isDeleteDialogOpen={isDeleteDialogOpen}
+            setDeleteDialogOpen={setDeleteDialogOpen}
+            isDeleteInProgress={isDeleteInProgress}
+            warningTexts={warningTexts}
+            handleReject={toggleDeleteDialog}
+            handleDelete={handleDeleteUser}
           />
         </div>
         <div>
-          {showDeleteWarning && (
+          {isWarningVisible && (
             <DeleteWarningCard
               wariningType={wariningType}
-              warining={warning}
-              onClose={() => setShowDeleteWarning(false)}
+              warining={warningMessage}
+              onClose={() => setWarningVisible(false)}
               onConfirm={() => {
-                setShowDeleteWarning(false);
+                setWarningVisible(false);
                 wariningType === "Logout"
                   ? handleLogout()
-                  : handleChagePassword();
+                  : handleChangePassword();
               }}
               icon={Alert}
             />
           )}
         </div>
         <div className="Topcontainer">
-          <h3 className="page-title">Admin Profile</h3>
+          <div className="goback">
+            <BackButton
+              handleBackBtn={navigation ? navigation : customNavigatorTo}
+            />
+          </div>
+          <h3 className="page-title">Settings</h3>
         </div>
         <div className="Middlecontainer">
           <span className="role">
             <h4>
-              Role :{" "}
+              Role :
               {admin?.role === "musaliadmin" ? "Musali Admin" : "Masjid Admin"}
               <img
                 src={roleIcon}
@@ -165,21 +171,28 @@ function AdminProfile() {
                 <img src={profileIcon} alt="" style={{ marginRight: "10px" }} />
                 {admin?.email}
               </p>
-              <p style={{ color: "grey", fontWeight: "400" }}>
-                {/* Profile Created : - - - */}
+              <p
+                style={{
+                  color: "grey",
+                  fontWeight: "400",
+                  textAlign: "center",
+                }}
+              >
+                V{packageJSON.version}
               </p>
             </div>
           </div>
         </div>
+
         <div className="Btncontainer">
           <LoadingButton
             size="small"
             onClick={(e) => {
-              setShowDeleteWarning(true);
-              setWarning("Do you want to change your password ?");
+              setWarningVisible(true);
+              setWarningMessage("Do you want to change your password ?");
               setWarningtype("Change password");
             }}
-            loading={isFetching}
+            loading={isPasswordChangeInProgress}
             loadingPosition="end"
             variant="contained"
             sx={{
@@ -196,8 +209,8 @@ function AdminProfile() {
 
           <Button
             onClick={() => {
-              setShowDeleteWarning(true);
-              setWarning("Do you want to Log out ?");
+              setWarningVisible(true);
+              setWarningMessage("Do you want to Log out ?");
               setWarningtype("Logout");
             }}
             sx={{
@@ -212,8 +225,27 @@ function AdminProfile() {
             Log Out
           </Button>
 
+          {/* commented for next release 3.7.2 */}
+          {/* <Button
+            onClick={() => {
+              navigation
+                ? navigation("/feed/14")
+                : customNavigatorTo("/feed/14");
+            }}
+            sx={{
+              textTransform: "none",
+            }}
+          >
+            <img
+              src={supportIcon}
+              alt=""
+              style={{ marginRight: "10px", height: "20px" }}
+            />
+            Contact & Support
+          </Button> */}
+
           <Button
-            onClick={handleDeleteUserCard}
+            onClick={toggleDeleteDialog}
             sx={{
               textTransform: "none",
             }}
